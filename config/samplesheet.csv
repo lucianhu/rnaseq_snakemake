@@ -1,7 +1,0 @@
-sample,unit,condition,fq1,fq2,strandedness
-WT,REP1,control,/home/lucianhu/rna_snakemake/rna_snakemake/test-datasets/testdata/SRR6357070_1.fastq.gz,/home/lucianhu/rna_snakemake/rna_snakemake/test-datasets/testdata/SRR6357070_2.fastq.gz,auto
-WT,REP2,control,/home/lucianhu/rna_snakemake/rna_snakemake/test-datasets/testdata/SRR6357071_1.fastq.gz,/home/lucianhu/rna_snakemake/rna_snakemake/test-datasets/testdata/SRR6357071_2.fastq.gz,auto
-WT,REP3,control,/home/lucianhu/rna_snakemake/rna_snakemake/test-datasets/testdata/SRR6357072_1.fastq.gz,/home/lucianhu/rna_snakemake/rna_snakemake/test-datasets/testdata/SRR6357072_2.fastq.gz,reverse
-RAP1,REP1,treatment,/home/lucianhu/rna_snakemake/rna_snakemake/test-datasets/testdata/SRR6357073_1.fastq.gz,,reverse
-RAP1,REP2,treatment,/home/lucianhu/rna_snakemake/rna_snakemake/test-datasets/testdata/SRR6357074_1.fastq.gz,,reverse
-RAP1,REP3,treatment,/home/lucianhu/rna_snakemake/rna_snakemake/test-datasets/testdata/SRR6357075_1.fastq.gz,,reverse
