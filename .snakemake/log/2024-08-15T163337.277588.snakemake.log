@@ -1,0 +1,118 @@
+Building DAG of jobs...
+shared_storage_local_copies: True
+remote_exec: False
+Using shell: /usr/bin/bash
+Provided cores: 24
+Rules claiming more threads will be scaled down.
+Conda environments: ignored
+Job stats:
+job                 count
+----------------  -------
+all                     1
+samtools_process        6
+total                   7
+
+Resources before job selection: {'_cores': 24, '_nodes': 9223372036854775807}
+Ready jobs (6)
+Select jobs to execute...
+Selected jobs (4)
+Resources after job selection: {'_cores': 0, '_nodes': 9223372036854775803}
+Execute 4 jobs...
+
+[Thu Aug 15 16:33:37 2024]
+Job 9: Processing sample WT_REP3_control with Samtools...
+Reason: Code has changed since last execution
+
+
+[Thu Aug 15 16:33:37 2024]
+Job 10: Processing sample RAP1_REP1_treatment with Samtools...
+Reason: Code has changed since last execution
+
+
+[Thu Aug 15 16:33:37 2024]
+Job 7: Processing sample WT_REP1_control with Samtools...
+Reason: Code has changed since last execution
+
+
+[Thu Aug 15 16:33:37 2024]
+Job 12: Processing sample RAP1_REP3_treatment with Samtools...
+Reason: Code has changed since last execution
+
+Completion of job ['samtools_process'] reported to scheduler.
+jobs registered as running before removal {samtools_process, samtools_process, samtools_process, samtools_process}
+[Thu Aug 15 16:33:37 2024]
+Finished job 12.
+1 of 7 steps (14%) done
+Resources before job selection: {'_cores': 6, '_nodes': 9223372036854775804}
+Ready jobs (2)
+Select jobs to execute...
+Selected jobs (1)
+Resources after job selection: {'_cores': 0, '_nodes': 9223372036854775803}
+Execute 1 jobs...
+
+[Thu Aug 15 16:33:37 2024]
+Job 11: Processing sample RAP1_REP2_treatment with Samtools...
+Reason: Code has changed since last execution
+
+Completion of job ['samtools_process'] reported to scheduler.
+jobs registered as running before removal {samtools_process, samtools_process, samtools_process, samtools_process}
+[Thu Aug 15 16:33:37 2024]
+Finished job 10.
+2 of 7 steps (29%) done
+Resources before job selection: {'_cores': 6, '_nodes': 9223372036854775804}
+Ready jobs (1)
+Select jobs to execute...
+Using greedy selector because only single job has to be scheduled.
+Selected jobs (1)
+Resources after job selection: {'_cores': 0, '_nodes': 9223372036854775803}
+Execute 1 jobs...
+
+[Thu Aug 15 16:33:37 2024]
+Job 8: Processing sample WT_REP2_control with Samtools...
+Reason: Code has changed since last execution
+
+Completion of job ['samtools_process'] reported to scheduler.
+jobs registered as running before removal {samtools_process, samtools_process, samtools_process, samtools_process}
+[Thu Aug 15 16:33:37 2024]
+Finished job 7.
+3 of 7 steps (43%) done
+Completion of job ['samtools_process'] reported to scheduler.
+jobs registered as running before removal {samtools_process, samtools_process, samtools_process}
+[Thu Aug 15 16:33:37 2024]
+Finished job 9.
+4 of 7 steps (57%) done
+Completion of job ['samtools_process'] reported to scheduler.
+jobs registered as running before removal {samtools_process, samtools_process}
+[Thu Aug 15 16:33:37 2024]
+Finished job 11.
+5 of 7 steps (71%) done
+Completion of job ['samtools_process'] reported to scheduler.
+jobs registered as running before removal {samtools_process}
+[Thu Aug 15 16:33:37 2024]
+Finished job 8.
+6 of 7 steps (86%) done
+Resources before job selection: {'_cores': 24, '_nodes': 9223372036854775807}
+Ready jobs (1)
+Select jobs to execute...
+Using greedy selector because only single job has to be scheduled.
+Selected jobs (1)
+Resources after job selection: {'_cores': 23, '_nodes': 9223372036854775806}
+Execute 1 jobs...
+
+[Thu Aug 15 16:33:37 2024]
+localrule all:
+    input: results/align/bam_original/WT_REP1_control/WT_REP1_control.Aligned.out.bam, results/align/bam_original/WT_REP2_control/WT_REP2_control.Aligned.out.bam, results/align/bam_original/WT_REP3_control/WT_REP3_control.Aligned.out.bam, results/align/bam_original/RAP1_REP1_treatment/RAP1_REP1_treatment.Aligned.out.bam, results/align/bam_original/RAP1_REP2_treatment/RAP1_REP2_treatment.Aligned.out.bam, results/align/bam_original/RAP1_REP3_treatment/RAP1_REP3_treatment.Aligned.out.bam, results/align/bam_original/WT_REP1_control/WT_REP1_control.sorted.bam.stats, results/align/bam_original/WT_REP2_control/WT_REP2_control.sorted.bam.stats, results/align/bam_original/WT_REP3_control/WT_REP3_control.sorted.bam.stats, results/align/bam_original/RAP1_REP1_treatment/RAP1_REP1_treatment.sorted.bam.stats, results/align/bam_original/RAP1_REP2_treatment/RAP1_REP2_treatment.sorted.bam.stats, results/align/bam_original/RAP1_REP3_treatment/RAP1_REP3_treatment.sorted.bam.stats
+    jobid: 0
+    reason: Input files updated by another job: results/align/bam_original/RAP1_REP3_treatment/RAP1_REP3_treatment.sorted.bam.stats, results/align/bam_original/RAP1_REP1_treatment/RAP1_REP1_treatment.sorted.bam.stats, results/align/bam_original/WT_REP2_control/WT_REP2_control.sorted.bam.stats, results/align/bam_original/WT_REP1_control/WT_REP1_control.sorted.bam.stats, results/align/bam_original/RAP1_REP2_treatment/RAP1_REP2_treatment.sorted.bam.stats, results/align/bam_original/WT_REP3_control/WT_REP3_control.sorted.bam.stats
+    resources: tmpdir=/tmp
+
+Completion of job ['all'] reported to scheduler.
+jobs registered as running before removal {all}
+[Thu Aug 15 16:33:37 2024]
+Finished job 0.
+7 of 7 steps (100%) done
+Complete log: .snakemake/log/2024-08-15T163337.277588.snakemake.log
+unlocking
+removing lock
+removing lock
+removed all locks

@@ -1,0 +1,247 @@
+Building DAG of jobs...
+shared_storage_local_copies: True
+remote_exec: False
+Using shell: /usr/bin/bash
+Provided cores: 24
+Rules claiming more threads will be scaled down.
+Conda environments: ignored
+Job stats:
+job         count
+--------  -------
+all             1
+dupradar        6
+total           7
+
+Resources before job selection: {'_cores': 24, '_nodes': 9223372036854775807}
+Ready jobs (6)
+Select jobs to execute...
+Selected jobs (6)
+Resources after job selection: {'_cores': 18, '_nodes': 9223372036854775801}
+Execute 6 jobs...
+
+[Mon Aug 19 00:01:36 2024]
+Job 63: RAP1_REP2_treatment: Running dupRadar to evaluate technical and biological read duplication
+Reason: Missing output files: results/dupradar/RAP1_REP2_treatment
+
+
+[Mon Aug 19 00:01:36 2024]
+Job 62: RAP1_REP1_treatment: Running dupRadar to evaluate technical and biological read duplication
+Reason: Missing output files: results/dupradar/RAP1_REP1_treatment
+
+
+[Mon Aug 19 00:01:36 2024]
+Job 61: WT_REP3_control: Running dupRadar to evaluate technical and biological read duplication
+Reason: Missing output files: results/dupradar/WT_REP3_control
+
+
+[Mon Aug 19 00:01:36 2024]
+Job 60: WT_REP2_control: Running dupRadar to evaluate technical and biological read duplication
+Reason: Missing output files: results/dupradar/WT_REP2_control
+
+
+[Mon Aug 19 00:01:36 2024]
+Job 59: WT_REP1_control: Running dupRadar to evaluate technical and biological read duplication
+Reason: Missing output files: results/dupradar/WT_REP1_control
+
+
+[Mon Aug 19 00:01:36 2024]
+Job 64: RAP1_REP3_treatment: Running dupRadar to evaluate technical and biological read duplication
+Reason: Missing output files: results/dupradar/RAP1_REP3_treatment
+
+Completion of job ['dupradar'] reported to scheduler.
+Waiting at most 5 seconds for missing files.
+still missing files, waiting...
+still missing files, waiting...
+still missing files, waiting...
+still missing files, waiting...
+still missing files, waiting...
+Full Traceback (most recent call last):
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/dag.py", line 673, in check_and_touch_output
+    await wait_for_files(
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/io.py", line 985, in wait_for_files
+    raise IOError(
+OSError: Missing files after 5 seconds. This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait:
+results/dupradar/WT_REP2_control (missing locally, parent dir contents: WT_REP1_control_intercept_slope.txt, RAP1_REP2_treatment_expressionHist.pdf, RAP1_REP1_treatment_dup_intercept_mqc.txt, RAP1_REP3_treatment_dupMatrix.txt, RAP1_REP3_treatment_expressionHist.pdf, WT_REP3_control_duprateExpDens.pdf, WT_REP2_control_duprateExpDens.pdf, WT_REP1_control_duprateExpBoxplot.pdf, WT_REP1_control_duprateExpDens.pdf, RAP1_REP1_treatment_duprateExpDens.pdf, WT_REP1_control_dupMatrix.txt, WT_REP2_control_dup_intercept_mqc.txt, WT_REP1_control_dup_intercept_mqc.txt, RAP1_REP3_treatment_dup_intercept_mqc.txt, WT_REP2_control_expressionHist.pdf, RAP1_REP2_treatment_dupMatrix.txt, WT_REP3_control_intercept_slope.txt, WT_REP3_control_dup_intercept_mqc.txt, RAP1_REP1_treatment_expressionHist.pdf, RAP1_REP1_treatment_duprateExpDensCurve_mqc.txt, RAP1_REP3_treatment_duprateExpBoxplot.pdf, RAP1_REP2_treatment_duprateExpDens.pdf, WT_REP3_control_dupMatrix.txt, WT_REP2_control_duprateExpBoxplot.pdf, WT_REP1_control_duprateExpDensCurve_mqc.txt, RAP1_REP2_treatment_dup_intercept_mqc.txt, WT_REP3_control_duprateExpDensCurve_mqc.txt, WT_REP2_control_intercept_slope.txt, WT_REP3_control_duprateExpBoxplot.pdf, RAP1_REP3_treatment_intercept_slope.txt, RAP1_REP2_treatment_duprateExpBoxplot.pdf, RAP1_REP3_treatment_duprateExpDensCurve_mqc.txt, RAP1_REP2_treatment_duprateExpDensCurve_mqc.txt, RAP1_REP1_treatment_duprateExpBoxplot.pdf, WT_REP3_control_expressionHist.pdf, WT_REP2_control_duprateExpDensCurve_mqc.txt, RAP1_REP2_treatment_intercept_slope.txt, WT_REP1_control_expressionHist.pdf, RAP1_REP3_treatment_duprateExpDens.pdf, RAP1_REP1_treatment_intercept_slope.txt, RAP1_REP1_treatment_dupMatrix.txt, WT_REP2_control_dupMatrix.txt)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/scheduler.py", line 334, in postprocess
+    await job.postprocess(
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/jobs.py", line 1133, in postprocess
+    await self.dag.check_and_touch_output(
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/dag.py", line 680, in check_and_touch_output
+    raise MissingOutputException(
+snakemake.exceptions.MissingOutputException: Job 60  completed successfully, but some output files are missing. Missing files after 5 seconds. This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait:
+results/dupradar/WT_REP2_control (missing locally, parent dir contents: WT_REP1_control_intercept_slope.txt, RAP1_REP2_treatment_expressionHist.pdf, RAP1_REP1_treatment_dup_intercept_mqc.txt, RAP1_REP3_treatment_dupMatrix.txt, RAP1_REP3_treatment_expressionHist.pdf, WT_REP3_control_duprateExpDens.pdf, WT_REP2_control_duprateExpDens.pdf, WT_REP1_control_duprateExpBoxplot.pdf, WT_REP1_control_duprateExpDens.pdf, RAP1_REP1_treatment_duprateExpDens.pdf, WT_REP1_control_dupMatrix.txt, WT_REP2_control_dup_intercept_mqc.txt, WT_REP1_control_dup_intercept_mqc.txt, RAP1_REP3_treatment_dup_intercept_mqc.txt, WT_REP2_control_expressionHist.pdf, RAP1_REP2_treatment_dupMatrix.txt, WT_REP3_control_intercept_slope.txt, WT_REP3_control_dup_intercept_mqc.txt, RAP1_REP1_treatment_expressionHist.pdf, RAP1_REP1_treatment_duprateExpDensCurve_mqc.txt, RAP1_REP3_treatment_duprateExpBoxplot.pdf, RAP1_REP2_treatment_duprateExpDens.pdf, WT_REP3_control_dupMatrix.txt, WT_REP2_control_duprateExpBoxplot.pdf, WT_REP1_control_duprateExpDensCurve_mqc.txt, RAP1_REP2_treatment_dup_intercept_mqc.txt, WT_REP3_control_duprateExpDensCurve_mqc.txt, WT_REP2_control_intercept_slope.txt, WT_REP3_control_duprateExpBoxplot.pdf, RAP1_REP3_treatment_intercept_slope.txt, RAP1_REP2_treatment_duprateExpBoxplot.pdf, RAP1_REP3_treatment_duprateExpDensCurve_mqc.txt, RAP1_REP2_treatment_duprateExpDensCurve_mqc.txt, RAP1_REP1_treatment_duprateExpBoxplot.pdf, WT_REP3_control_expressionHist.pdf, WT_REP2_control_duprateExpDensCurve_mqc.txt, RAP1_REP2_treatment_intercept_slope.txt, WT_REP1_control_expressionHist.pdf, RAP1_REP3_treatment_duprateExpDens.pdf, RAP1_REP1_treatment_intercept_slope.txt, RAP1_REP1_treatment_dupMatrix.txt, WT_REP2_control_dupMatrix.txt)
+
+MissingOutputException in rule dupradar in file /home/lucianhu/rna_snakemake/test_ting/Snakefile, line 606:
+Job 60  completed successfully, but some output files are missing. Missing files after 5 seconds. This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait:
+results/dupradar/WT_REP2_control (missing locally, parent dir contents: WT_REP1_control_intercept_slope.txt, RAP1_REP2_treatment_expressionHist.pdf, RAP1_REP1_treatment_dup_intercept_mqc.txt, RAP1_REP3_treatment_dupMatrix.txt, RAP1_REP3_treatment_expressionHist.pdf, WT_REP3_control_duprateExpDens.pdf, WT_REP2_control_duprateExpDens.pdf, WT_REP1_control_duprateExpBoxplot.pdf, WT_REP1_control_duprateExpDens.pdf, RAP1_REP1_treatment_duprateExpDens.pdf, WT_REP1_control_dupMatrix.txt, WT_REP2_control_dup_intercept_mqc.txt, WT_REP1_control_dup_intercept_mqc.txt, RAP1_REP3_treatment_dup_intercept_mqc.txt, WT_REP2_control_expressionHist.pdf, RAP1_REP2_treatment_dupMatrix.txt, WT_REP3_control_intercept_slope.txt, WT_REP3_control_dup_intercept_mqc.txt, RAP1_REP1_treatment_expressionHist.pdf, RAP1_REP1_treatment_duprateExpDensCurve_mqc.txt, RAP1_REP3_treatment_duprateExpBoxplot.pdf, RAP1_REP2_treatment_duprateExpDens.pdf, WT_REP3_control_dupMatrix.txt, WT_REP2_control_duprateExpBoxplot.pdf, WT_REP1_control_duprateExpDensCurve_mqc.txt, RAP1_REP2_treatment_dup_intercept_mqc.txt, WT_REP3_control_duprateExpDensCurve_mqc.txt, WT_REP2_control_intercept_slope.txt, WT_REP3_control_duprateExpBoxplot.pdf, RAP1_REP3_treatment_intercept_slope.txt, RAP1_REP2_treatment_duprateExpBoxplot.pdf, RAP1_REP3_treatment_duprateExpDensCurve_mqc.txt, RAP1_REP2_treatment_duprateExpDensCurve_mqc.txt, RAP1_REP1_treatment_duprateExpBoxplot.pdf, WT_REP3_control_expressionHist.pdf, WT_REP2_control_duprateExpDensCurve_mqc.txt, RAP1_REP2_treatment_intercept_slope.txt, WT_REP1_control_expressionHist.pdf, RAP1_REP3_treatment_duprateExpDens.pdf, RAP1_REP1_treatment_intercept_slope.txt, RAP1_REP1_treatment_dupMatrix.txt, WT_REP2_control_dupMatrix.txt)
+Completion of job ['dupradar'] reported to scheduler.
+Completion of job ['dupradar'] reported to scheduler.
+Completion of job ['dupradar'] reported to scheduler.
+Completion of job ['dupradar'] reported to scheduler.
+Completion of job ['dupradar'] reported to scheduler.
+Waiting at most 5 seconds for missing files.
+still missing files, waiting...
+still missing files, waiting...
+still missing files, waiting...
+still missing files, waiting...
+still missing files, waiting...
+Full Traceback (most recent call last):
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/dag.py", line 673, in check_and_touch_output
+    await wait_for_files(
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/io.py", line 985, in wait_for_files
+    raise IOError(
+OSError: Missing files after 5 seconds. This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait:
+results/dupradar/RAP1_REP2_treatment (missing locally, parent dir contents: WT_REP1_control_intercept_slope.txt, RAP1_REP2_treatment_expressionHist.pdf, RAP1_REP1_treatment_dup_intercept_mqc.txt, RAP1_REP3_treatment_dupMatrix.txt, RAP1_REP3_treatment_expressionHist.pdf, WT_REP3_control_duprateExpDens.pdf, WT_REP2_control_duprateExpDens.pdf, WT_REP1_control_duprateExpBoxplot.pdf, WT_REP1_control_duprateExpDens.pdf, RAP1_REP1_treatment_duprateExpDens.pdf, WT_REP1_control_dupMatrix.txt, WT_REP2_control_dup_intercept_mqc.txt, WT_REP1_control_dup_intercept_mqc.txt, RAP1_REP3_treatment_dup_intercept_mqc.txt, WT_REP2_control_expressionHist.pdf, RAP1_REP2_treatment_dupMatrix.txt, WT_REP3_control_intercept_slope.txt, WT_REP3_control_dup_intercept_mqc.txt, RAP1_REP1_treatment_expressionHist.pdf, RAP1_REP1_treatment_duprateExpDensCurve_mqc.txt, RAP1_REP3_treatment_duprateExpBoxplot.pdf, RAP1_REP2_treatment_duprateExpDens.pdf, WT_REP3_control_dupMatrix.txt, WT_REP2_control_duprateExpBoxplot.pdf, WT_REP1_control_duprateExpDensCurve_mqc.txt, RAP1_REP2_treatment_dup_intercept_mqc.txt, WT_REP3_control_duprateExpDensCurve_mqc.txt, WT_REP2_control_intercept_slope.txt, WT_REP3_control_duprateExpBoxplot.pdf, RAP1_REP3_treatment_intercept_slope.txt, RAP1_REP2_treatment_duprateExpBoxplot.pdf, RAP1_REP3_treatment_duprateExpDensCurve_mqc.txt, RAP1_REP2_treatment_duprateExpDensCurve_mqc.txt, RAP1_REP1_treatment_duprateExpBoxplot.pdf, WT_REP3_control_expressionHist.pdf, WT_REP2_control_duprateExpDensCurve_mqc.txt, RAP1_REP2_treatment_intercept_slope.txt, WT_REP1_control_expressionHist.pdf, RAP1_REP3_treatment_duprateExpDens.pdf, RAP1_REP1_treatment_intercept_slope.txt, RAP1_REP1_treatment_dupMatrix.txt, WT_REP2_control_dupMatrix.txt)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/scheduler.py", line 334, in postprocess
+    await job.postprocess(
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/jobs.py", line 1133, in postprocess
+    await self.dag.check_and_touch_output(
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/dag.py", line 680, in check_and_touch_output
+    raise MissingOutputException(
+snakemake.exceptions.MissingOutputException: Job 63  completed successfully, but some output files are missing. Missing files after 5 seconds. This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait:
+results/dupradar/RAP1_REP2_treatment (missing locally, parent dir contents: WT_REP1_control_intercept_slope.txt, RAP1_REP2_treatment_expressionHist.pdf, RAP1_REP1_treatment_dup_intercept_mqc.txt, RAP1_REP3_treatment_dupMatrix.txt, RAP1_REP3_treatment_expressionHist.pdf, WT_REP3_control_duprateExpDens.pdf, WT_REP2_control_duprateExpDens.pdf, WT_REP1_control_duprateExpBoxplot.pdf, WT_REP1_control_duprateExpDens.pdf, RAP1_REP1_treatment_duprateExpDens.pdf, WT_REP1_control_dupMatrix.txt, WT_REP2_control_dup_intercept_mqc.txt, WT_REP1_control_dup_intercept_mqc.txt, RAP1_REP3_treatment_dup_intercept_mqc.txt, WT_REP2_control_expressionHist.pdf, RAP1_REP2_treatment_dupMatrix.txt, WT_REP3_control_intercept_slope.txt, WT_REP3_control_dup_intercept_mqc.txt, RAP1_REP1_treatment_expressionHist.pdf, RAP1_REP1_treatment_duprateExpDensCurve_mqc.txt, RAP1_REP3_treatment_duprateExpBoxplot.pdf, RAP1_REP2_treatment_duprateExpDens.pdf, WT_REP3_control_dupMatrix.txt, WT_REP2_control_duprateExpBoxplot.pdf, WT_REP1_control_duprateExpDensCurve_mqc.txt, RAP1_REP2_treatment_dup_intercept_mqc.txt, WT_REP3_control_duprateExpDensCurve_mqc.txt, WT_REP2_control_intercept_slope.txt, WT_REP3_control_duprateExpBoxplot.pdf, RAP1_REP3_treatment_intercept_slope.txt, RAP1_REP2_treatment_duprateExpBoxplot.pdf, RAP1_REP3_treatment_duprateExpDensCurve_mqc.txt, RAP1_REP2_treatment_duprateExpDensCurve_mqc.txt, RAP1_REP1_treatment_duprateExpBoxplot.pdf, WT_REP3_control_expressionHist.pdf, WT_REP2_control_duprateExpDensCurve_mqc.txt, RAP1_REP2_treatment_intercept_slope.txt, WT_REP1_control_expressionHist.pdf, RAP1_REP3_treatment_duprateExpDens.pdf, RAP1_REP1_treatment_intercept_slope.txt, RAP1_REP1_treatment_dupMatrix.txt, WT_REP2_control_dupMatrix.txt)
+
+MissingOutputException in rule dupradar in file /home/lucianhu/rna_snakemake/test_ting/Snakefile, line 606:
+Job 63  completed successfully, but some output files are missing. Missing files after 5 seconds. This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait:
+results/dupradar/RAP1_REP2_treatment (missing locally, parent dir contents: WT_REP1_control_intercept_slope.txt, RAP1_REP2_treatment_expressionHist.pdf, RAP1_REP1_treatment_dup_intercept_mqc.txt, RAP1_REP3_treatment_dupMatrix.txt, RAP1_REP3_treatment_expressionHist.pdf, WT_REP3_control_duprateExpDens.pdf, WT_REP2_control_duprateExpDens.pdf, WT_REP1_control_duprateExpBoxplot.pdf, WT_REP1_control_duprateExpDens.pdf, RAP1_REP1_treatment_duprateExpDens.pdf, WT_REP1_control_dupMatrix.txt, WT_REP2_control_dup_intercept_mqc.txt, WT_REP1_control_dup_intercept_mqc.txt, RAP1_REP3_treatment_dup_intercept_mqc.txt, WT_REP2_control_expressionHist.pdf, RAP1_REP2_treatment_dupMatrix.txt, WT_REP3_control_intercept_slope.txt, WT_REP3_control_dup_intercept_mqc.txt, RAP1_REP1_treatment_expressionHist.pdf, RAP1_REP1_treatment_duprateExpDensCurve_mqc.txt, RAP1_REP3_treatment_duprateExpBoxplot.pdf, RAP1_REP2_treatment_duprateExpDens.pdf, WT_REP3_control_dupMatrix.txt, WT_REP2_control_duprateExpBoxplot.pdf, WT_REP1_control_duprateExpDensCurve_mqc.txt, RAP1_REP2_treatment_dup_intercept_mqc.txt, WT_REP3_control_duprateExpDensCurve_mqc.txt, WT_REP2_control_intercept_slope.txt, WT_REP3_control_duprateExpBoxplot.pdf, RAP1_REP3_treatment_intercept_slope.txt, RAP1_REP2_treatment_duprateExpBoxplot.pdf, RAP1_REP3_treatment_duprateExpDensCurve_mqc.txt, RAP1_REP2_treatment_duprateExpDensCurve_mqc.txt, RAP1_REP1_treatment_duprateExpBoxplot.pdf, WT_REP3_control_expressionHist.pdf, WT_REP2_control_duprateExpDensCurve_mqc.txt, RAP1_REP2_treatment_intercept_slope.txt, WT_REP1_control_expressionHist.pdf, RAP1_REP3_treatment_duprateExpDens.pdf, RAP1_REP1_treatment_intercept_slope.txt, RAP1_REP1_treatment_dupMatrix.txt, WT_REP2_control_dupMatrix.txt)
+Waiting at most 5 seconds for missing files.
+still missing files, waiting...
+still missing files, waiting...
+still missing files, waiting...
+still missing files, waiting...
+still missing files, waiting...
+Full Traceback (most recent call last):
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/dag.py", line 673, in check_and_touch_output
+    await wait_for_files(
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/io.py", line 985, in wait_for_files
+    raise IOError(
+OSError: Missing files after 5 seconds. This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait:
+results/dupradar/RAP1_REP3_treatment (missing locally, parent dir contents: WT_REP1_control_intercept_slope.txt, RAP1_REP2_treatment_expressionHist.pdf, RAP1_REP1_treatment_dup_intercept_mqc.txt, RAP1_REP3_treatment_dupMatrix.txt, RAP1_REP3_treatment_expressionHist.pdf, WT_REP3_control_duprateExpDens.pdf, WT_REP2_control_duprateExpDens.pdf, WT_REP1_control_duprateExpBoxplot.pdf, WT_REP1_control_duprateExpDens.pdf, RAP1_REP1_treatment_duprateExpDens.pdf, WT_REP1_control_dupMatrix.txt, WT_REP2_control_dup_intercept_mqc.txt, WT_REP1_control_dup_intercept_mqc.txt, RAP1_REP3_treatment_dup_intercept_mqc.txt, WT_REP2_control_expressionHist.pdf, RAP1_REP2_treatment_dupMatrix.txt, WT_REP3_control_intercept_slope.txt, WT_REP3_control_dup_intercept_mqc.txt, RAP1_REP1_treatment_expressionHist.pdf, RAP1_REP1_treatment_duprateExpDensCurve_mqc.txt, RAP1_REP3_treatment_duprateExpBoxplot.pdf, RAP1_REP2_treatment_duprateExpDens.pdf, WT_REP3_control_dupMatrix.txt, WT_REP2_control_duprateExpBoxplot.pdf, WT_REP1_control_duprateExpDensCurve_mqc.txt, RAP1_REP2_treatment_dup_intercept_mqc.txt, WT_REP3_control_duprateExpDensCurve_mqc.txt, WT_REP2_control_intercept_slope.txt, WT_REP3_control_duprateExpBoxplot.pdf, RAP1_REP3_treatment_intercept_slope.txt, RAP1_REP2_treatment_duprateExpBoxplot.pdf, RAP1_REP3_treatment_duprateExpDensCurve_mqc.txt, RAP1_REP2_treatment_duprateExpDensCurve_mqc.txt, RAP1_REP1_treatment_duprateExpBoxplot.pdf, WT_REP3_control_expressionHist.pdf, WT_REP2_control_duprateExpDensCurve_mqc.txt, RAP1_REP2_treatment_intercept_slope.txt, WT_REP1_control_expressionHist.pdf, RAP1_REP3_treatment_duprateExpDens.pdf, RAP1_REP1_treatment_intercept_slope.txt, RAP1_REP1_treatment_dupMatrix.txt, WT_REP2_control_dupMatrix.txt)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/scheduler.py", line 334, in postprocess
+    await job.postprocess(
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/jobs.py", line 1133, in postprocess
+    await self.dag.check_and_touch_output(
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/dag.py", line 680, in check_and_touch_output
+    raise MissingOutputException(
+snakemake.exceptions.MissingOutputException: Job 64  completed successfully, but some output files are missing. Missing files after 5 seconds. This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait:
+results/dupradar/RAP1_REP3_treatment (missing locally, parent dir contents: WT_REP1_control_intercept_slope.txt, RAP1_REP2_treatment_expressionHist.pdf, RAP1_REP1_treatment_dup_intercept_mqc.txt, RAP1_REP3_treatment_dupMatrix.txt, RAP1_REP3_treatment_expressionHist.pdf, WT_REP3_control_duprateExpDens.pdf, WT_REP2_control_duprateExpDens.pdf, WT_REP1_control_duprateExpBoxplot.pdf, WT_REP1_control_duprateExpDens.pdf, RAP1_REP1_treatment_duprateExpDens.pdf, WT_REP1_control_dupMatrix.txt, WT_REP2_control_dup_intercept_mqc.txt, WT_REP1_control_dup_intercept_mqc.txt, RAP1_REP3_treatment_dup_intercept_mqc.txt, WT_REP2_control_expressionHist.pdf, RAP1_REP2_treatment_dupMatrix.txt, WT_REP3_control_intercept_slope.txt, WT_REP3_control_dup_intercept_mqc.txt, RAP1_REP1_treatment_expressionHist.pdf, RAP1_REP1_treatment_duprateExpDensCurve_mqc.txt, RAP1_REP3_treatment_duprateExpBoxplot.pdf, RAP1_REP2_treatment_duprateExpDens.pdf, WT_REP3_control_dupMatrix.txt, WT_REP2_control_duprateExpBoxplot.pdf, WT_REP1_control_duprateExpDensCurve_mqc.txt, RAP1_REP2_treatment_dup_intercept_mqc.txt, WT_REP3_control_duprateExpDensCurve_mqc.txt, WT_REP2_control_intercept_slope.txt, WT_REP3_control_duprateExpBoxplot.pdf, RAP1_REP3_treatment_intercept_slope.txt, RAP1_REP2_treatment_duprateExpBoxplot.pdf, RAP1_REP3_treatment_duprateExpDensCurve_mqc.txt, RAP1_REP2_treatment_duprateExpDensCurve_mqc.txt, RAP1_REP1_treatment_duprateExpBoxplot.pdf, WT_REP3_control_expressionHist.pdf, WT_REP2_control_duprateExpDensCurve_mqc.txt, RAP1_REP2_treatment_intercept_slope.txt, WT_REP1_control_expressionHist.pdf, RAP1_REP3_treatment_duprateExpDens.pdf, RAP1_REP1_treatment_intercept_slope.txt, RAP1_REP1_treatment_dupMatrix.txt, WT_REP2_control_dupMatrix.txt)
+
+MissingOutputException in rule dupradar in file /home/lucianhu/rna_snakemake/test_ting/Snakefile, line 606:
+Job 64  completed successfully, but some output files are missing. Missing files after 5 seconds. This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait:
+results/dupradar/RAP1_REP3_treatment (missing locally, parent dir contents: WT_REP1_control_intercept_slope.txt, RAP1_REP2_treatment_expressionHist.pdf, RAP1_REP1_treatment_dup_intercept_mqc.txt, RAP1_REP3_treatment_dupMatrix.txt, RAP1_REP3_treatment_expressionHist.pdf, WT_REP3_control_duprateExpDens.pdf, WT_REP2_control_duprateExpDens.pdf, WT_REP1_control_duprateExpBoxplot.pdf, WT_REP1_control_duprateExpDens.pdf, RAP1_REP1_treatment_duprateExpDens.pdf, WT_REP1_control_dupMatrix.txt, WT_REP2_control_dup_intercept_mqc.txt, WT_REP1_control_dup_intercept_mqc.txt, RAP1_REP3_treatment_dup_intercept_mqc.txt, WT_REP2_control_expressionHist.pdf, RAP1_REP2_treatment_dupMatrix.txt, WT_REP3_control_intercept_slope.txt, WT_REP3_control_dup_intercept_mqc.txt, RAP1_REP1_treatment_expressionHist.pdf, RAP1_REP1_treatment_duprateExpDensCurve_mqc.txt, RAP1_REP3_treatment_duprateExpBoxplot.pdf, RAP1_REP2_treatment_duprateExpDens.pdf, WT_REP3_control_dupMatrix.txt, WT_REP2_control_duprateExpBoxplot.pdf, WT_REP1_control_duprateExpDensCurve_mqc.txt, RAP1_REP2_treatment_dup_intercept_mqc.txt, WT_REP3_control_duprateExpDensCurve_mqc.txt, WT_REP2_control_intercept_slope.txt, WT_REP3_control_duprateExpBoxplot.pdf, RAP1_REP3_treatment_intercept_slope.txt, RAP1_REP2_treatment_duprateExpBoxplot.pdf, RAP1_REP3_treatment_duprateExpDensCurve_mqc.txt, RAP1_REP2_treatment_duprateExpDensCurve_mqc.txt, RAP1_REP1_treatment_duprateExpBoxplot.pdf, WT_REP3_control_expressionHist.pdf, WT_REP2_control_duprateExpDensCurve_mqc.txt, RAP1_REP2_treatment_intercept_slope.txt, WT_REP1_control_expressionHist.pdf, RAP1_REP3_treatment_duprateExpDens.pdf, RAP1_REP1_treatment_intercept_slope.txt, RAP1_REP1_treatment_dupMatrix.txt, WT_REP2_control_dupMatrix.txt)
+Waiting at most 5 seconds for missing files.
+still missing files, waiting...
+still missing files, waiting...
+still missing files, waiting...
+still missing files, waiting...
+still missing files, waiting...
+Full Traceback (most recent call last):
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/dag.py", line 673, in check_and_touch_output
+    await wait_for_files(
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/io.py", line 985, in wait_for_files
+    raise IOError(
+OSError: Missing files after 5 seconds. This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait:
+results/dupradar/RAP1_REP1_treatment (missing locally, parent dir contents: WT_REP1_control_intercept_slope.txt, RAP1_REP2_treatment_expressionHist.pdf, RAP1_REP1_treatment_dup_intercept_mqc.txt, RAP1_REP3_treatment_dupMatrix.txt, RAP1_REP3_treatment_expressionHist.pdf, WT_REP3_control_duprateExpDens.pdf, WT_REP2_control_duprateExpDens.pdf, WT_REP1_control_duprateExpBoxplot.pdf, WT_REP1_control_duprateExpDens.pdf, RAP1_REP1_treatment_duprateExpDens.pdf, WT_REP1_control_dupMatrix.txt, WT_REP2_control_dup_intercept_mqc.txt, WT_REP1_control_dup_intercept_mqc.txt, RAP1_REP3_treatment_dup_intercept_mqc.txt, WT_REP2_control_expressionHist.pdf, RAP1_REP2_treatment_dupMatrix.txt, WT_REP3_control_intercept_slope.txt, WT_REP3_control_dup_intercept_mqc.txt, RAP1_REP1_treatment_expressionHist.pdf, RAP1_REP1_treatment_duprateExpDensCurve_mqc.txt, RAP1_REP3_treatment_duprateExpBoxplot.pdf, RAP1_REP2_treatment_duprateExpDens.pdf, WT_REP3_control_dupMatrix.txt, WT_REP2_control_duprateExpBoxplot.pdf, WT_REP1_control_duprateExpDensCurve_mqc.txt, RAP1_REP2_treatment_dup_intercept_mqc.txt, WT_REP3_control_duprateExpDensCurve_mqc.txt, WT_REP2_control_intercept_slope.txt, WT_REP3_control_duprateExpBoxplot.pdf, RAP1_REP3_treatment_intercept_slope.txt, RAP1_REP2_treatment_duprateExpBoxplot.pdf, RAP1_REP3_treatment_duprateExpDensCurve_mqc.txt, RAP1_REP2_treatment_duprateExpDensCurve_mqc.txt, RAP1_REP1_treatment_duprateExpBoxplot.pdf, WT_REP3_control_expressionHist.pdf, WT_REP2_control_duprateExpDensCurve_mqc.txt, RAP1_REP2_treatment_intercept_slope.txt, WT_REP1_control_expressionHist.pdf, RAP1_REP3_treatment_duprateExpDens.pdf, RAP1_REP1_treatment_intercept_slope.txt, RAP1_REP1_treatment_dupMatrix.txt, WT_REP2_control_dupMatrix.txt)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/scheduler.py", line 334, in postprocess
+    await job.postprocess(
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/jobs.py", line 1133, in postprocess
+    await self.dag.check_and_touch_output(
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/dag.py", line 680, in check_and_touch_output
+    raise MissingOutputException(
+snakemake.exceptions.MissingOutputException: Job 62  completed successfully, but some output files are missing. Missing files after 5 seconds. This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait:
+results/dupradar/RAP1_REP1_treatment (missing locally, parent dir contents: WT_REP1_control_intercept_slope.txt, RAP1_REP2_treatment_expressionHist.pdf, RAP1_REP1_treatment_dup_intercept_mqc.txt, RAP1_REP3_treatment_dupMatrix.txt, RAP1_REP3_treatment_expressionHist.pdf, WT_REP3_control_duprateExpDens.pdf, WT_REP2_control_duprateExpDens.pdf, WT_REP1_control_duprateExpBoxplot.pdf, WT_REP1_control_duprateExpDens.pdf, RAP1_REP1_treatment_duprateExpDens.pdf, WT_REP1_control_dupMatrix.txt, WT_REP2_control_dup_intercept_mqc.txt, WT_REP1_control_dup_intercept_mqc.txt, RAP1_REP3_treatment_dup_intercept_mqc.txt, WT_REP2_control_expressionHist.pdf, RAP1_REP2_treatment_dupMatrix.txt, WT_REP3_control_intercept_slope.txt, WT_REP3_control_dup_intercept_mqc.txt, RAP1_REP1_treatment_expressionHist.pdf, RAP1_REP1_treatment_duprateExpDensCurve_mqc.txt, RAP1_REP3_treatment_duprateExpBoxplot.pdf, RAP1_REP2_treatment_duprateExpDens.pdf, WT_REP3_control_dupMatrix.txt, WT_REP2_control_duprateExpBoxplot.pdf, WT_REP1_control_duprateExpDensCurve_mqc.txt, RAP1_REP2_treatment_dup_intercept_mqc.txt, WT_REP3_control_duprateExpDensCurve_mqc.txt, WT_REP2_control_intercept_slope.txt, WT_REP3_control_duprateExpBoxplot.pdf, RAP1_REP3_treatment_intercept_slope.txt, RAP1_REP2_treatment_duprateExpBoxplot.pdf, RAP1_REP3_treatment_duprateExpDensCurve_mqc.txt, RAP1_REP2_treatment_duprateExpDensCurve_mqc.txt, RAP1_REP1_treatment_duprateExpBoxplot.pdf, WT_REP3_control_expressionHist.pdf, WT_REP2_control_duprateExpDensCurve_mqc.txt, RAP1_REP2_treatment_intercept_slope.txt, WT_REP1_control_expressionHist.pdf, RAP1_REP3_treatment_duprateExpDens.pdf, RAP1_REP1_treatment_intercept_slope.txt, RAP1_REP1_treatment_dupMatrix.txt, WT_REP2_control_dupMatrix.txt)
+
+MissingOutputException in rule dupradar in file /home/lucianhu/rna_snakemake/test_ting/Snakefile, line 606:
+Job 62  completed successfully, but some output files are missing. Missing files after 5 seconds. This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait:
+results/dupradar/RAP1_REP1_treatment (missing locally, parent dir contents: WT_REP1_control_intercept_slope.txt, RAP1_REP2_treatment_expressionHist.pdf, RAP1_REP1_treatment_dup_intercept_mqc.txt, RAP1_REP3_treatment_dupMatrix.txt, RAP1_REP3_treatment_expressionHist.pdf, WT_REP3_control_duprateExpDens.pdf, WT_REP2_control_duprateExpDens.pdf, WT_REP1_control_duprateExpBoxplot.pdf, WT_REP1_control_duprateExpDens.pdf, RAP1_REP1_treatment_duprateExpDens.pdf, WT_REP1_control_dupMatrix.txt, WT_REP2_control_dup_intercept_mqc.txt, WT_REP1_control_dup_intercept_mqc.txt, RAP1_REP3_treatment_dup_intercept_mqc.txt, WT_REP2_control_expressionHist.pdf, RAP1_REP2_treatment_dupMatrix.txt, WT_REP3_control_intercept_slope.txt, WT_REP3_control_dup_intercept_mqc.txt, RAP1_REP1_treatment_expressionHist.pdf, RAP1_REP1_treatment_duprateExpDensCurve_mqc.txt, RAP1_REP3_treatment_duprateExpBoxplot.pdf, RAP1_REP2_treatment_duprateExpDens.pdf, WT_REP3_control_dupMatrix.txt, WT_REP2_control_duprateExpBoxplot.pdf, WT_REP1_control_duprateExpDensCurve_mqc.txt, RAP1_REP2_treatment_dup_intercept_mqc.txt, WT_REP3_control_duprateExpDensCurve_mqc.txt, WT_REP2_control_intercept_slope.txt, WT_REP3_control_duprateExpBoxplot.pdf, RAP1_REP3_treatment_intercept_slope.txt, RAP1_REP2_treatment_duprateExpBoxplot.pdf, RAP1_REP3_treatment_duprateExpDensCurve_mqc.txt, RAP1_REP2_treatment_duprateExpDensCurve_mqc.txt, RAP1_REP1_treatment_duprateExpBoxplot.pdf, WT_REP3_control_expressionHist.pdf, WT_REP2_control_duprateExpDensCurve_mqc.txt, RAP1_REP2_treatment_intercept_slope.txt, WT_REP1_control_expressionHist.pdf, RAP1_REP3_treatment_duprateExpDens.pdf, RAP1_REP1_treatment_intercept_slope.txt, RAP1_REP1_treatment_dupMatrix.txt, WT_REP2_control_dupMatrix.txt)
+Waiting at most 5 seconds for missing files.
+still missing files, waiting...
+still missing files, waiting...
+still missing files, waiting...
+still missing files, waiting...
+still missing files, waiting...
+Full Traceback (most recent call last):
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/dag.py", line 673, in check_and_touch_output
+    await wait_for_files(
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/io.py", line 985, in wait_for_files
+    raise IOError(
+OSError: Missing files after 5 seconds. This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait:
+results/dupradar/WT_REP1_control (missing locally, parent dir contents: WT_REP1_control_intercept_slope.txt, RAP1_REP2_treatment_expressionHist.pdf, RAP1_REP1_treatment_dup_intercept_mqc.txt, RAP1_REP3_treatment_dupMatrix.txt, RAP1_REP3_treatment_expressionHist.pdf, WT_REP3_control_duprateExpDens.pdf, WT_REP2_control_duprateExpDens.pdf, WT_REP1_control_duprateExpBoxplot.pdf, WT_REP1_control_duprateExpDens.pdf, RAP1_REP1_treatment_duprateExpDens.pdf, WT_REP1_control_dupMatrix.txt, WT_REP2_control_dup_intercept_mqc.txt, WT_REP1_control_dup_intercept_mqc.txt, RAP1_REP3_treatment_dup_intercept_mqc.txt, WT_REP2_control_expressionHist.pdf, RAP1_REP2_treatment_dupMatrix.txt, WT_REP3_control_intercept_slope.txt, WT_REP3_control_dup_intercept_mqc.txt, RAP1_REP1_treatment_expressionHist.pdf, RAP1_REP1_treatment_duprateExpDensCurve_mqc.txt, RAP1_REP3_treatment_duprateExpBoxplot.pdf, RAP1_REP2_treatment_duprateExpDens.pdf, WT_REP3_control_dupMatrix.txt, WT_REP2_control_duprateExpBoxplot.pdf, WT_REP1_control_duprateExpDensCurve_mqc.txt, RAP1_REP2_treatment_dup_intercept_mqc.txt, WT_REP3_control_duprateExpDensCurve_mqc.txt, WT_REP2_control_intercept_slope.txt, WT_REP3_control_duprateExpBoxplot.pdf, RAP1_REP3_treatment_intercept_slope.txt, RAP1_REP2_treatment_duprateExpBoxplot.pdf, RAP1_REP3_treatment_duprateExpDensCurve_mqc.txt, RAP1_REP2_treatment_duprateExpDensCurve_mqc.txt, RAP1_REP1_treatment_duprateExpBoxplot.pdf, WT_REP3_control_expressionHist.pdf, WT_REP2_control_duprateExpDensCurve_mqc.txt, RAP1_REP2_treatment_intercept_slope.txt, WT_REP1_control_expressionHist.pdf, RAP1_REP3_treatment_duprateExpDens.pdf, RAP1_REP1_treatment_intercept_slope.txt, RAP1_REP1_treatment_dupMatrix.txt, WT_REP2_control_dupMatrix.txt)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/scheduler.py", line 334, in postprocess
+    await job.postprocess(
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/jobs.py", line 1133, in postprocess
+    await self.dag.check_and_touch_output(
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/dag.py", line 680, in check_and_touch_output
+    raise MissingOutputException(
+snakemake.exceptions.MissingOutputException: Job 59  completed successfully, but some output files are missing. Missing files after 5 seconds. This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait:
+results/dupradar/WT_REP1_control (missing locally, parent dir contents: WT_REP1_control_intercept_slope.txt, RAP1_REP2_treatment_expressionHist.pdf, RAP1_REP1_treatment_dup_intercept_mqc.txt, RAP1_REP3_treatment_dupMatrix.txt, RAP1_REP3_treatment_expressionHist.pdf, WT_REP3_control_duprateExpDens.pdf, WT_REP2_control_duprateExpDens.pdf, WT_REP1_control_duprateExpBoxplot.pdf, WT_REP1_control_duprateExpDens.pdf, RAP1_REP1_treatment_duprateExpDens.pdf, WT_REP1_control_dupMatrix.txt, WT_REP2_control_dup_intercept_mqc.txt, WT_REP1_control_dup_intercept_mqc.txt, RAP1_REP3_treatment_dup_intercept_mqc.txt, WT_REP2_control_expressionHist.pdf, RAP1_REP2_treatment_dupMatrix.txt, WT_REP3_control_intercept_slope.txt, WT_REP3_control_dup_intercept_mqc.txt, RAP1_REP1_treatment_expressionHist.pdf, RAP1_REP1_treatment_duprateExpDensCurve_mqc.txt, RAP1_REP3_treatment_duprateExpBoxplot.pdf, RAP1_REP2_treatment_duprateExpDens.pdf, WT_REP3_control_dupMatrix.txt, WT_REP2_control_duprateExpBoxplot.pdf, WT_REP1_control_duprateExpDensCurve_mqc.txt, RAP1_REP2_treatment_dup_intercept_mqc.txt, WT_REP3_control_duprateExpDensCurve_mqc.txt, WT_REP2_control_intercept_slope.txt, WT_REP3_control_duprateExpBoxplot.pdf, RAP1_REP3_treatment_intercept_slope.txt, RAP1_REP2_treatment_duprateExpBoxplot.pdf, RAP1_REP3_treatment_duprateExpDensCurve_mqc.txt, RAP1_REP2_treatment_duprateExpDensCurve_mqc.txt, RAP1_REP1_treatment_duprateExpBoxplot.pdf, WT_REP3_control_expressionHist.pdf, WT_REP2_control_duprateExpDensCurve_mqc.txt, RAP1_REP2_treatment_intercept_slope.txt, WT_REP1_control_expressionHist.pdf, RAP1_REP3_treatment_duprateExpDens.pdf, RAP1_REP1_treatment_intercept_slope.txt, RAP1_REP1_treatment_dupMatrix.txt, WT_REP2_control_dupMatrix.txt)
+
+MissingOutputException in rule dupradar in file /home/lucianhu/rna_snakemake/test_ting/Snakefile, line 606:
+Job 59  completed successfully, but some output files are missing. Missing files after 5 seconds. This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait:
+results/dupradar/WT_REP1_control (missing locally, parent dir contents: WT_REP1_control_intercept_slope.txt, RAP1_REP2_treatment_expressionHist.pdf, RAP1_REP1_treatment_dup_intercept_mqc.txt, RAP1_REP3_treatment_dupMatrix.txt, RAP1_REP3_treatment_expressionHist.pdf, WT_REP3_control_duprateExpDens.pdf, WT_REP2_control_duprateExpDens.pdf, WT_REP1_control_duprateExpBoxplot.pdf, WT_REP1_control_duprateExpDens.pdf, RAP1_REP1_treatment_duprateExpDens.pdf, WT_REP1_control_dupMatrix.txt, WT_REP2_control_dup_intercept_mqc.txt, WT_REP1_control_dup_intercept_mqc.txt, RAP1_REP3_treatment_dup_intercept_mqc.txt, WT_REP2_control_expressionHist.pdf, RAP1_REP2_treatment_dupMatrix.txt, WT_REP3_control_intercept_slope.txt, WT_REP3_control_dup_intercept_mqc.txt, RAP1_REP1_treatment_expressionHist.pdf, RAP1_REP1_treatment_duprateExpDensCurve_mqc.txt, RAP1_REP3_treatment_duprateExpBoxplot.pdf, RAP1_REP2_treatment_duprateExpDens.pdf, WT_REP3_control_dupMatrix.txt, WT_REP2_control_duprateExpBoxplot.pdf, WT_REP1_control_duprateExpDensCurve_mqc.txt, RAP1_REP2_treatment_dup_intercept_mqc.txt, WT_REP3_control_duprateExpDensCurve_mqc.txt, WT_REP2_control_intercept_slope.txt, WT_REP3_control_duprateExpBoxplot.pdf, RAP1_REP3_treatment_intercept_slope.txt, RAP1_REP2_treatment_duprateExpBoxplot.pdf, RAP1_REP3_treatment_duprateExpDensCurve_mqc.txt, RAP1_REP2_treatment_duprateExpDensCurve_mqc.txt, RAP1_REP1_treatment_duprateExpBoxplot.pdf, WT_REP3_control_expressionHist.pdf, WT_REP2_control_duprateExpDensCurve_mqc.txt, RAP1_REP2_treatment_intercept_slope.txt, WT_REP1_control_expressionHist.pdf, RAP1_REP3_treatment_duprateExpDens.pdf, RAP1_REP1_treatment_intercept_slope.txt, RAP1_REP1_treatment_dupMatrix.txt, WT_REP2_control_dupMatrix.txt)
+Waiting at most 5 seconds for missing files.
+still missing files, waiting...
+still missing files, waiting...
+still missing files, waiting...
+still missing files, waiting...
+still missing files, waiting...
+Full Traceback (most recent call last):
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/dag.py", line 673, in check_and_touch_output
+    await wait_for_files(
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/io.py", line 985, in wait_for_files
+    raise IOError(
+OSError: Missing files after 5 seconds. This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait:
+results/dupradar/WT_REP3_control (missing locally, parent dir contents: WT_REP1_control_intercept_slope.txt, RAP1_REP2_treatment_expressionHist.pdf, RAP1_REP1_treatment_dup_intercept_mqc.txt, RAP1_REP3_treatment_dupMatrix.txt, RAP1_REP3_treatment_expressionHist.pdf, WT_REP3_control_duprateExpDens.pdf, WT_REP2_control_duprateExpDens.pdf, WT_REP1_control_duprateExpBoxplot.pdf, WT_REP1_control_duprateExpDens.pdf, RAP1_REP1_treatment_duprateExpDens.pdf, WT_REP1_control_dupMatrix.txt, WT_REP2_control_dup_intercept_mqc.txt, WT_REP1_control_dup_intercept_mqc.txt, RAP1_REP3_treatment_dup_intercept_mqc.txt, WT_REP2_control_expressionHist.pdf, RAP1_REP2_treatment_dupMatrix.txt, WT_REP3_control_intercept_slope.txt, WT_REP3_control_dup_intercept_mqc.txt, RAP1_REP1_treatment_expressionHist.pdf, RAP1_REP1_treatment_duprateExpDensCurve_mqc.txt, RAP1_REP3_treatment_duprateExpBoxplot.pdf, RAP1_REP2_treatment_duprateExpDens.pdf, WT_REP3_control_dupMatrix.txt, WT_REP2_control_duprateExpBoxplot.pdf, WT_REP1_control_duprateExpDensCurve_mqc.txt, RAP1_REP2_treatment_dup_intercept_mqc.txt, WT_REP3_control_duprateExpDensCurve_mqc.txt, WT_REP2_control_intercept_slope.txt, WT_REP3_control_duprateExpBoxplot.pdf, RAP1_REP3_treatment_intercept_slope.txt, RAP1_REP2_treatment_duprateExpBoxplot.pdf, RAP1_REP3_treatment_duprateExpDensCurve_mqc.txt, RAP1_REP2_treatment_duprateExpDensCurve_mqc.txt, RAP1_REP1_treatment_duprateExpBoxplot.pdf, WT_REP3_control_expressionHist.pdf, WT_REP2_control_duprateExpDensCurve_mqc.txt, RAP1_REP2_treatment_intercept_slope.txt, WT_REP1_control_expressionHist.pdf, RAP1_REP3_treatment_duprateExpDens.pdf, RAP1_REP1_treatment_intercept_slope.txt, RAP1_REP1_treatment_dupMatrix.txt, WT_REP2_control_dupMatrix.txt)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/scheduler.py", line 334, in postprocess
+    await job.postprocess(
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/jobs.py", line 1133, in postprocess
+    await self.dag.check_and_touch_output(
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/dag.py", line 680, in check_and_touch_output
+    raise MissingOutputException(
+snakemake.exceptions.MissingOutputException: Job 61  completed successfully, but some output files are missing. Missing files after 5 seconds. This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait:
+results/dupradar/WT_REP3_control (missing locally, parent dir contents: WT_REP1_control_intercept_slope.txt, RAP1_REP2_treatment_expressionHist.pdf, RAP1_REP1_treatment_dup_intercept_mqc.txt, RAP1_REP3_treatment_dupMatrix.txt, RAP1_REP3_treatment_expressionHist.pdf, WT_REP3_control_duprateExpDens.pdf, WT_REP2_control_duprateExpDens.pdf, WT_REP1_control_duprateExpBoxplot.pdf, WT_REP1_control_duprateExpDens.pdf, RAP1_REP1_treatment_duprateExpDens.pdf, WT_REP1_control_dupMatrix.txt, WT_REP2_control_dup_intercept_mqc.txt, WT_REP1_control_dup_intercept_mqc.txt, RAP1_REP3_treatment_dup_intercept_mqc.txt, WT_REP2_control_expressionHist.pdf, RAP1_REP2_treatment_dupMatrix.txt, WT_REP3_control_intercept_slope.txt, WT_REP3_control_dup_intercept_mqc.txt, RAP1_REP1_treatment_expressionHist.pdf, RAP1_REP1_treatment_duprateExpDensCurve_mqc.txt, RAP1_REP3_treatment_duprateExpBoxplot.pdf, RAP1_REP2_treatment_duprateExpDens.pdf, WT_REP3_control_dupMatrix.txt, WT_REP2_control_duprateExpBoxplot.pdf, WT_REP1_control_duprateExpDensCurve_mqc.txt, RAP1_REP2_treatment_dup_intercept_mqc.txt, WT_REP3_control_duprateExpDensCurve_mqc.txt, WT_REP2_control_intercept_slope.txt, WT_REP3_control_duprateExpBoxplot.pdf, RAP1_REP3_treatment_intercept_slope.txt, RAP1_REP2_treatment_duprateExpBoxplot.pdf, RAP1_REP3_treatment_duprateExpDensCurve_mqc.txt, RAP1_REP2_treatment_duprateExpDensCurve_mqc.txt, RAP1_REP1_treatment_duprateExpBoxplot.pdf, WT_REP3_control_expressionHist.pdf, WT_REP2_control_duprateExpDensCurve_mqc.txt, RAP1_REP2_treatment_intercept_slope.txt, WT_REP1_control_expressionHist.pdf, RAP1_REP3_treatment_duprateExpDens.pdf, RAP1_REP1_treatment_intercept_slope.txt, RAP1_REP1_treatment_dupMatrix.txt, WT_REP2_control_dupMatrix.txt)
+
+MissingOutputException in rule dupradar in file /home/lucianhu/rna_snakemake/test_ting/Snakefile, line 606:
+Job 61  completed successfully, but some output files are missing. Missing files after 5 seconds. This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait:
+results/dupradar/WT_REP3_control (missing locally, parent dir contents: WT_REP1_control_intercept_slope.txt, RAP1_REP2_treatment_expressionHist.pdf, RAP1_REP1_treatment_dup_intercept_mqc.txt, RAP1_REP3_treatment_dupMatrix.txt, RAP1_REP3_treatment_expressionHist.pdf, WT_REP3_control_duprateExpDens.pdf, WT_REP2_control_duprateExpDens.pdf, WT_REP1_control_duprateExpBoxplot.pdf, WT_REP1_control_duprateExpDens.pdf, RAP1_REP1_treatment_duprateExpDens.pdf, WT_REP1_control_dupMatrix.txt, WT_REP2_control_dup_intercept_mqc.txt, WT_REP1_control_dup_intercept_mqc.txt, RAP1_REP3_treatment_dup_intercept_mqc.txt, WT_REP2_control_expressionHist.pdf, RAP1_REP2_treatment_dupMatrix.txt, WT_REP3_control_intercept_slope.txt, WT_REP3_control_dup_intercept_mqc.txt, RAP1_REP1_treatment_expressionHist.pdf, RAP1_REP1_treatment_duprateExpDensCurve_mqc.txt, RAP1_REP3_treatment_duprateExpBoxplot.pdf, RAP1_REP2_treatment_duprateExpDens.pdf, WT_REP3_control_dupMatrix.txt, WT_REP2_control_duprateExpBoxplot.pdf, WT_REP1_control_duprateExpDensCurve_mqc.txt, RAP1_REP2_treatment_dup_intercept_mqc.txt, WT_REP3_control_duprateExpDensCurve_mqc.txt, WT_REP2_control_intercept_slope.txt, WT_REP3_control_duprateExpBoxplot.pdf, RAP1_REP3_treatment_intercept_slope.txt, RAP1_REP2_treatment_duprateExpBoxplot.pdf, RAP1_REP3_treatment_duprateExpDensCurve_mqc.txt, RAP1_REP2_treatment_duprateExpDensCurve_mqc.txt, RAP1_REP1_treatment_duprateExpBoxplot.pdf, WT_REP3_control_expressionHist.pdf, WT_REP2_control_duprateExpDensCurve_mqc.txt, RAP1_REP2_treatment_intercept_slope.txt, WT_REP1_control_expressionHist.pdf, RAP1_REP3_treatment_duprateExpDens.pdf, RAP1_REP1_treatment_intercept_slope.txt, RAP1_REP1_treatment_dupMatrix.txt, WT_REP2_control_dupMatrix.txt)
+Terminating processes on user request, this might take some time.
+Complete log: .snakemake/log/2024-08-19T000136.823476.snakemake.log
+unlocking
+removing lock
+removing lock
+removed all locks
+Full Traceback (most recent call last):
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/cli.py", line 2103, in args_to_api
+    dag_api.execute_workflow(
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/api.py", line 594, in execute_workflow
+    workflow.execute(
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/workflow.py", line 1286, in execute
+    raise WorkflowError("At least one job did not complete successfully.")
+snakemake_interface_common.exceptions.WorkflowError: At least one job did not complete successfully.
+
+WorkflowError:
+At least one job did not complete successfully.

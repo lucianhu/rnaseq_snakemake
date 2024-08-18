@@ -1,0 +1,24 @@
+name: trimgalore
+description: Trim FastQ files using Trim Galore!
+keywords:
+  - trimming
+  - adapters
+  - sequencing adapters
+  - fastq
+tools:
+  - trimgalore:
+      description: |
+        A wrapper tool around Cutadapt and FastQC to consistently apply quality
+        and adapter trimming to FastQ files, with some extra functionality for
+        MspI-digested RRBS-type (Reduced Representation Bisufite-Seq) libraries.
+      homepage: https://www.bioinformatics.babraham.ac.uk/projects/trim_galore/
+      documentation: https://github.com/FelixKrueger/TrimGalore/blob/master/Docs/Trim_Galore_User_Guide.md
+      licence: ["GPL-3.0-or-later"]
+channels:
+  - bioconda
+  - conda-forge
+  - defaults
+dependencies:
+  - trim-galore=0.6.10
+  - fastqc=0.12.1
+  - pigz=2.8

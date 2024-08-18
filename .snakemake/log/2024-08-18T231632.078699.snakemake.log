@@ -1,0 +1,109 @@
+Building DAG of jobs...
+shared_storage_local_copies: True
+remote_exec: False
+Using shell: /usr/bin/bash
+Provided cores: 24
+Rules claiming more threads will be scaled down.
+Conda environments: ignored
+Job stats:
+job                            count
+---------------------------  -------
+all                                1
+feature_counts                     6
+picard_mark_duplicates             6
+qualimap                           6
+samtools_markdup_processing        6
+stringtie                          6
+total                             31
+
+Resources before job selection: {'_cores': 24, '_nodes': 9223372036854775807}
+Ready jobs (6)
+Select jobs to execute...
+Selected jobs (3)
+Resources after job selection: {'_cores': 0, '_nodes': 9223372036854775804}
+Execute 3 jobs...
+
+[Sun Aug 18 23:16:32 2024]
+Job 34: RAP1_REP3_treatment: Marking duplicate reads
+Reason: Code has changed since last execution
+
+unlocking
+removing lock
+removing lock
+removed all locks
+Full Traceback (most recent call last):
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/utils.py", line 427, in format
+    return fmt.format(_pattern, *args, **variables)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/string.py", line 190, in format
+    return self.vformat(format_string, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/string.py", line 194, in vformat
+    result, _ = self._vformat(format_string, args, kwargs, used_args, 2)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/string.py", line 234, in _vformat
+    obj, arg_used = self.get_field(field_name, args, kwargs)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/string.py", line 299, in get_field
+    obj = self.get_value(first, args, kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/string.py", line 256, in get_value
+    return kwargs[key]
+           ~~~~~~^^^^^
+KeyError: 'threads * 4096'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/jobs.py", line 948, in format_wildcards
+    return format(string, **_variables)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/utils.py", line 437, in format
+    raise NameError(
+NameError: The name 'threads * 4096' is unknown in this context. Please make sure that you defined that variable. Also note that braces not used for variable access have to be escaped by repeating them, i.e. {{print $1}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/cli.py", line 2103, in args_to_api
+    dag_api.execute_workflow(
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/api.py", line 594, in execute_workflow
+    workflow.execute(
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/workflow.py", line 1248, in execute
+    raise e
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/workflow.py", line 1244, in execute
+    success = self.scheduler.schedule()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/scheduler.py", line 313, in schedule
+    self.run(
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/scheduler.py", line 406, in run
+    executor.run_jobs(jobs)
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake_interface_executor_plugins/executors/base.py", line 71, in run_jobs
+    self.run_job_pre(job)
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake_interface_executor_plugins/executors/base.py", line 86, in run_job_pre
+    self.printjob(job)
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake_interface_executor_plugins/executors/base.py", line 110, in printjob
+    job.log_info()
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/jobs.py", line 1042, in log_info
+    logger.shellcmd(self.shellcmd, indent=indent)
+                    ^^^^^^^^^^^^^
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/jobs.py", line 601, in shellcmd
+    self.format_wildcards(self.rule.shellcmd)
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/jobs.py", line 950, in format_wildcards
+    raise RuleException(
+snakemake.exceptions.RuleException: NameError: The name 'threads * 4096' is unknown in this context. Please make sure that you defined that variable. Also note that braces not used for variable access have to be escaped by repeating them, i.e. {{print $1}}, when formatting the following:
+
+        # Set Java memory to 4 GB per thread
+        export _JAVA_OPTIONS='-Xmx{threads * 4096}m -Djava.io.tmpdir=./tmp'
+    
+        picard MarkDuplicates         --SORTING_COLLECTION_SIZE_RATIO 0.12         --ASSUME_SORTED true         --REMOVE_DUPLICATES false         --VALIDATION_STRINGENCY LENIENT         --TMP_DIR tmp         --INPUT {input.bam}         --OUTPUT {output.bam}         --REFERENCE_SEQUENCE {input.fasta}         --METRICS_FILE {output.metrics}         &> {log}
+        
+
+RuleException in rule picard_mark_duplicates in file /home/lucianhu/rna_snakemake/test_ting/Snakefile, line 441:
+NameError: The name 'threads * 4096' is unknown in this context. Please make sure that you defined that variable. Also note that braces not used for variable access have to be escaped by repeating them, i.e. {{print $1}}, when formatting the following:
+
+        # Set Java memory to 4 GB per thread
+        export _JAVA_OPTIONS='-Xmx{threads * 4096}m -Djava.io.tmpdir=./tmp'
+    
+        picard MarkDuplicates         --SORTING_COLLECTION_SIZE_RATIO 0.12         --ASSUME_SORTED true         --REMOVE_DUPLICATES false         --VALIDATION_STRINGENCY LENIENT         --TMP_DIR tmp         --INPUT {input.bam}         --OUTPUT {output.bam}         --REFERENCE_SEQUENCE {input.fasta}         --METRICS_FILE {output.metrics}         &> {log}
+        

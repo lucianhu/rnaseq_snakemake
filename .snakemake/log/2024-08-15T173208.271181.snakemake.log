@@ -1,0 +1,357 @@
+Building DAG of jobs...
+Forcing incomplete files:
+	results/align/bam_original/WT_REP2_control/WT_REP2_control.Aligned.out.bam
+	results/align/bam_original/WT_REP2_control/WT_REP2_control.Aligned.toTranscriptome.out.bam
+	results/align/bam_original/WT_REP3_control/WT_REP3_control.Aligned.out.bam
+	results/align/bam_original/WT_REP3_control/WT_REP3_control.Aligned.toTranscriptome.out.bam
+shared_storage_local_copies: True
+remote_exec: False
+Using shell: /usr/bin/bash
+Provided cores: 24
+Rules claiming more threads will be scaled down.
+Conda environments: ignored
+Job stats:
+job                            count
+---------------------------  -------
+align_paired                       3
+all                                1
+picard_mark_duplicates             6
+samtools_markdup_processing        6
+samtools_process                   4
+trim_galore_paired                 1
+total                             21
+
+Resources before job selection: {'_cores': 24, '_nodes': 9223372036854775807}
+Ready jobs (6)
+Select jobs to execute...
+Selected jobs (2)
+Resources after job selection: {'_cores': 0, '_nodes': 9223372036854775805}
+Execute 2 jobs...
+
+[Thu Aug 15 17:32:08 2024]
+Job 22: RAP1_REP1_treatment: Marking duplicate reads
+Reason: Code has changed since last execution
+
+
+[Thu Aug 15 17:32:08 2024]
+Job 5: WT_REP3_control: Aligning on paired-end FASTQ files...
+Reason: Forced execution
+
+Completion of job ['picard_mark_duplicates'] reported to scheduler.
+jobs registered as running before removal {picard_mark_duplicates, align_paired}
+[Thu Aug 15 17:32:09 2024]
+Finished job 22.
+1 of 21 steps (5%) done
+Resources before job selection: {'_cores': 12, '_nodes': 9223372036854775806}
+Ready jobs (5)
+Select jobs to execute...
+Selected jobs (1)
+Resources after job selection: {'_cores': 0, '_nodes': 9223372036854775805}
+Execute 1 jobs...
+
+[Thu Aug 15 17:32:09 2024]
+Job 23: RAP1_REP2_treatment: Marking duplicate reads
+Reason: Code has changed since last execution
+
+Completion of job ['picard_mark_duplicates'] reported to scheduler.
+jobs registered as running before removal {align_paired, picard_mark_duplicates}
+[Thu Aug 15 17:32:10 2024]
+Finished job 23.
+2 of 21 steps (10%) done
+Resources before job selection: {'_cores': 12, '_nodes': 9223372036854775806}
+Ready jobs (5)
+Select jobs to execute...
+Selected jobs (1)
+Resources after job selection: {'_cores': 0, '_nodes': 9223372036854775805}
+Execute 1 jobs...
+
+[Thu Aug 15 17:32:10 2024]
+Job 3: WT_REP2_control: Aligning on paired-end FASTQ files...
+Reason: Forced execution
+
+Completion of job ['align_paired'] reported to scheduler.
+jobs registered as running before removal {align_paired, align_paired}
+[Thu Aug 15 17:33:08 2024]
+Finished job 5.
+3 of 21 steps (14%) done
+Resources before job selection: {'_cores': 12, '_nodes': 9223372036854775806}
+Ready jobs (5)
+Select jobs to execute...
+Selected jobs (2)
+Resources after job selection: {'_cores': 0, '_nodes': 9223372036854775804}
+Execute 2 jobs...
+
+[Thu Aug 15 17:33:08 2024]
+Job 18: RAP1_REP3_treatment: Sorting and indexing alignments
+Reason: Missing output files: results/align/bam_original/RAP1_REP3_treatment/RAP1_REP3_treatment.sorted.bam, results/align/bam_original/RAP1_REP3_treatment/RAP1_REP3_treatment.sorted.bam.stats
+
+
+[Thu Aug 15 17:33:08 2024]
+Job 15: WT_REP3_control: Sorting and indexing alignments
+Reason: Missing output files: results/align/bam_original/WT_REP3_control/WT_REP3_control.sorted.bam.stats, results/align/bam_original/WT_REP3_control/WT_REP3_control.sorted.bam; Input files updated by another job: results/align/bam_original/WT_REP3_control/WT_REP3_control.Aligned.out.bam
+
+Completion of job ['samtools_process'] reported to scheduler.
+jobs registered as running before removal {align_paired, samtools_process, samtools_process}
+[Thu Aug 15 17:33:08 2024]
+Finished job 18.
+4 of 21 steps (19%) done
+Resources before job selection: {'_cores': 6, '_nodes': 9223372036854775805}
+Ready jobs (4)
+Select jobs to execute...
+Selected jobs (2)
+Resources after job selection: {'_cores': 4, '_nodes': 9223372036854775803}
+Execute 2 jobs...
+
+[Thu Aug 15 17:33:08 2024]
+Job 28: RAP1_REP1_treatment: Running Samtools to mark duplicate reads
+Reason: Missing output files: results/align/bam_markup/RAP1_REP1_treatment/RAP1_REP1_treatment.markdup.sorted.bam.stats; Input files updated by another job: results/align/bam_markup/RAP1_REP1_treatment/RAP1_REP1_treatment.markdup.sorted.bam
+
+
+[Thu Aug 15 17:33:08 2024]
+Job 29: RAP1_REP2_treatment: Running Samtools to mark duplicate reads
+Reason: Missing output files: results/align/bam_markup/RAP1_REP2_treatment/RAP1_REP2_treatment.markdup.sorted.bam.stats; Input files updated by another job: results/align/bam_markup/RAP1_REP2_treatment/RAP1_REP2_treatment.markdup.sorted.bam
+
+Completion of job ['samtools_process'] reported to scheduler.
+jobs registered as running before removal {align_paired, samtools_process, samtools_markdup_processing, samtools_markdup_processing}
+[Thu Aug 15 17:33:08 2024]
+Finished job 15.
+5 of 21 steps (24%) done
+Resources before job selection: {'_cores': 10, '_nodes': 9223372036854775804}
+Ready jobs (3)
+Select jobs to execute...
+Selected jobs (1)
+Resources after job selection: {'_cores': 2, '_nodes': 9223372036854775803}
+Execute 1 jobs...
+
+[Thu Aug 15 17:33:08 2024]
+Job 2: WT_REP1_control: Trimming and performing quality control on paired-end FASTQ files...
+Reason: Missing output files: results/trimmed/WT_REP1_control_trimmed_R1.fq.gz, results/trimmed/WT_REP1_control_trimmed_R2.fq.gz
+
+Completion of job ['samtools_markdup_processing'] reported to scheduler.
+jobs registered as running before removal {align_paired, samtools_markdup_processing, trim_galore_paired, samtools_markdup_processing}
+[Thu Aug 15 17:33:08 2024]
+Finished job 29.
+6 of 21 steps (29%) done
+Resources before job selection: {'_cores': 3, '_nodes': 9223372036854775804}
+Ready jobs (2)
+Select jobs to execute...
+Completion of job ['samtools_markdup_processing'] reported to scheduler.
+Selected jobs (0)
+Resources after job selection: {'_cores': 3, '_nodes': 9223372036854775804}
+jobs registered as running before removal {align_paired, samtools_markdup_processing, trim_galore_paired}
+[Thu Aug 15 17:33:08 2024]
+Finished job 28.
+7 of 21 steps (33%) done
+Resources before job selection: {'_cores': 4, '_nodes': 9223372036854775805}
+Ready jobs (2)
+Selected jobs (0)
+Resources after job selection: {'_cores': 4, '_nodes': 9223372036854775805}
+Completion of job ['align_paired'] reported to scheduler.
+jobs registered as running before removal {align_paired, trim_galore_paired}
+[Thu Aug 15 17:33:10 2024]
+Finished job 3.
+8 of 21 steps (38%) done
+Resources before job selection: {'_cores': 16, '_nodes': 9223372036854775806}
+Ready jobs (3)
+Selected jobs (1)
+Resources after job selection: {'_cores': 4, '_nodes': 9223372036854775805}
+Execute 1 jobs...
+
+[Thu Aug 15 17:33:10 2024]
+Job 24: RAP1_REP3_treatment: Marking duplicate reads
+Reason: Missing output files: results/align/bam_markup/RAP1_REP3_treatment/RAP1_REP3_treatment.markdup.sorted.bam; Input files updated by another job: results/align/bam_original/RAP1_REP3_treatment/RAP1_REP3_treatment.sorted.bam; Code has changed since last execution
+
+Completion of job ['picard_mark_duplicates'] reported to scheduler.
+jobs registered as running before removal {picard_mark_duplicates, trim_galore_paired}
+[Thu Aug 15 17:33:11 2024]
+Finished job 24.
+9 of 21 steps (43%) done
+Resources before job selection: {'_cores': 16, '_nodes': 9223372036854775806}
+Ready jobs (3)
+Select jobs to execute...
+Selected jobs (2)
+Resources after job selection: {'_cores': 3, '_nodes': 9223372036854775804}
+Execute 2 jobs...
+
+[Thu Aug 15 17:33:11 2024]
+Job 21: WT_REP3_control: Marking duplicate reads
+Reason: Missing output files: results/align/bam_markup/WT_REP3_control/WT_REP3_control.markdup.sorted.bam; Input files updated by another job: results/align/bam_original/WT_REP3_control/WT_REP3_control.sorted.bam
+
+
+[Thu Aug 15 17:33:11 2024]
+Job 30: RAP1_REP3_treatment: Running Samtools to mark duplicate reads
+Reason: Missing output files: results/align/bam_markup/RAP1_REP3_treatment/RAP1_REP3_treatment.markdup.sorted.bam.stats; Input files updated by another job: results/align/bam_markup/RAP1_REP3_treatment/RAP1_REP3_treatment.markdup.sorted.bam
+
+Completion of job ['samtools_markdup_processing'] reported to scheduler.
+jobs registered as running before removal {samtools_markdup_processing, picard_mark_duplicates, trim_galore_paired}
+[Thu Aug 15 17:33:11 2024]
+Finished job 30.
+10 of 21 steps (48%) done
+Resources before job selection: {'_cores': 4, '_nodes': 9223372036854775805}
+Ready jobs (1)
+Select jobs to execute...
+Using greedy selector because only single job has to be scheduled.
+Selected jobs (0)
+Resources after job selection: {'_cores': 4, '_nodes': 9223372036854775805}
+Completion of job ['picard_mark_duplicates'] reported to scheduler.
+jobs registered as running before removal {picard_mark_duplicates, trim_galore_paired}
+[Thu Aug 15 17:33:12 2024]
+Finished job 21.
+11 of 21 steps (52%) done
+Resources before job selection: {'_cores': 16, '_nodes': 9223372036854775806}
+Ready jobs (2)
+Selected jobs (2)
+Resources after job selection: {'_cores': 9, '_nodes': 9223372036854775804}
+Execute 2 jobs...
+
+[Thu Aug 15 17:33:12 2024]
+Job 14: WT_REP2_control: Sorting and indexing alignments
+Reason: Missing output files: results/align/bam_original/WT_REP2_control/WT_REP2_control.sorted.bam.stats, results/align/bam_original/WT_REP2_control/WT_REP2_control.sorted.bam; Input files updated by another job: results/align/bam_original/WT_REP2_control/WT_REP2_control.Aligned.out.bam
+
+
+[Thu Aug 15 17:33:12 2024]
+Job 27: WT_REP3_control: Running Samtools to mark duplicate reads
+Reason: Missing output files: results/align/bam_markup/WT_REP3_control/WT_REP3_control.markdup.sorted.bam.stats; Input files updated by another job: results/align/bam_markup/WT_REP3_control/WT_REP3_control.markdup.sorted.bam
+
+Completion of job ['samtools_markdup_processing'] reported to scheduler.
+jobs registered as running before removal {samtools_process, trim_galore_paired, samtools_markdup_processing}
+[Thu Aug 15 17:33:12 2024]
+Finished job 27.
+12 of 21 steps (57%) done
+Completion of job ['samtools_process'] reported to scheduler.
+jobs registered as running before removal {samtools_process, trim_galore_paired}
+[Thu Aug 15 17:33:12 2024]
+Finished job 14.
+13 of 21 steps (62%) done
+Resources before job selection: {'_cores': 16, '_nodes': 9223372036854775806}
+Ready jobs (1)
+Select jobs to execute...
+Using greedy selector because only single job has to be scheduled.
+Selected jobs (1)
+Resources after job selection: {'_cores': 4, '_nodes': 9223372036854775805}
+Execute 1 jobs...
+
+[Thu Aug 15 17:33:12 2024]
+Job 20: WT_REP2_control: Marking duplicate reads
+Reason: Missing output files: results/align/bam_markup/WT_REP2_control/WT_REP2_control.markdup.sorted.bam; Input files updated by another job: results/align/bam_original/WT_REP2_control/WT_REP2_control.sorted.bam
+
+Completion of job ['trim_galore_paired'] reported to scheduler.
+jobs registered as running before removal {picard_mark_duplicates, trim_galore_paired}
+[Thu Aug 15 17:33:14 2024]
+Finished job 2.
+14 of 21 steps (67%) done
+Resources before job selection: {'_cores': 12, '_nodes': 9223372036854775806}
+Ready jobs (1)
+Select jobs to execute...
+Using greedy selector because only single job has to be scheduled.
+Selected jobs (1)
+Resources after job selection: {'_cores': 0, '_nodes': 9223372036854775805}
+Execute 1 jobs...
+
+[Thu Aug 15 17:33:14 2024]
+Job 1: WT_REP1_control: Aligning on paired-end FASTQ files...
+Reason: Missing output files: results/align/bam_original/WT_REP1_control/WT_REP1_control.Aligned.out.bam; Input files updated by another job: results/trimmed/WT_REP1_control_trimmed_R1.fq.gz, results/trimmed/WT_REP1_control_trimmed_R2.fq.gz; Set of input files has changed since last execution
+
+Completion of job ['picard_mark_duplicates'] reported to scheduler.
+jobs registered as running before removal {picard_mark_duplicates, align_paired}
+[Thu Aug 15 17:33:14 2024]
+Finished job 20.
+15 of 21 steps (71%) done
+Resources before job selection: {'_cores': 12, '_nodes': 9223372036854775806}
+Ready jobs (1)
+Select jobs to execute...
+Using greedy selector because only single job has to be scheduled.
+Selected jobs (1)
+Resources after job selection: {'_cores': 11, '_nodes': 9223372036854775805}
+Execute 1 jobs...
+
+[Thu Aug 15 17:33:14 2024]
+Job 26: WT_REP2_control: Running Samtools to mark duplicate reads
+Reason: Missing output files: results/align/bam_markup/WT_REP2_control/WT_REP2_control.markdup.sorted.bam.stats; Input files updated by another job: results/align/bam_markup/WT_REP2_control/WT_REP2_control.markdup.sorted.bam
+
+Completion of job ['samtools_markdup_processing'] reported to scheduler.
+jobs registered as running before removal {samtools_markdup_processing, align_paired}
+[Thu Aug 15 17:33:14 2024]
+Finished job 26.
+16 of 21 steps (76%) done
+Completion of job ['align_paired'] reported to scheduler.
+jobs registered as running before removal {align_paired}
+[Thu Aug 15 17:34:19 2024]
+Finished job 1.
+17 of 21 steps (81%) done
+Resources before job selection: {'_cores': 24, '_nodes': 9223372036854775807}
+Ready jobs (1)
+Select jobs to execute...
+Using greedy selector because only single job has to be scheduled.
+Selected jobs (1)
+Resources after job selection: {'_cores': 18, '_nodes': 9223372036854775806}
+Execute 1 jobs...
+
+[Thu Aug 15 17:34:19 2024]
+Job 13: WT_REP1_control: Sorting and indexing alignments
+Reason: Missing output files: results/align/bam_original/WT_REP1_control/WT_REP1_control.sorted.bam, results/align/bam_original/WT_REP1_control/WT_REP1_control.sorted.bam.stats; Input files updated by another job: results/align/bam_original/WT_REP1_control/WT_REP1_control.Aligned.out.bam
+
+Completion of job ['samtools_process'] reported to scheduler.
+jobs registered as running before removal {samtools_process}
+[Thu Aug 15 17:34:19 2024]
+Finished job 13.
+18 of 21 steps (86%) done
+Resources before job selection: {'_cores': 24, '_nodes': 9223372036854775807}
+Ready jobs (1)
+Select jobs to execute...
+Using greedy selector because only single job has to be scheduled.
+Selected jobs (1)
+Resources after job selection: {'_cores': 12, '_nodes': 9223372036854775806}
+Execute 1 jobs...
+
+[Thu Aug 15 17:34:19 2024]
+Job 19: WT_REP1_control: Marking duplicate reads
+Reason: Missing output files: results/align/bam_markup/WT_REP1_control/WT_REP1_control.markdup.sorted.bam; Input files updated by another job: results/align/bam_original/WT_REP1_control/WT_REP1_control.sorted.bam
+
+Completion of job ['picard_mark_duplicates'] reported to scheduler.
+jobs registered as running before removal {picard_mark_duplicates}
+[Thu Aug 15 17:34:20 2024]
+Finished job 19.
+19 of 21 steps (90%) done
+Resources before job selection: {'_cores': 24, '_nodes': 9223372036854775807}
+Ready jobs (1)
+Select jobs to execute...
+Using greedy selector because only single job has to be scheduled.
+Selected jobs (1)
+Resources after job selection: {'_cores': 23, '_nodes': 9223372036854775806}
+Execute 1 jobs...
+
+[Thu Aug 15 17:34:20 2024]
+Job 25: WT_REP1_control: Running Samtools to mark duplicate reads
+Reason: Missing output files: results/align/bam_markup/WT_REP1_control/WT_REP1_control.markdup.sorted.bam.stats; Input files updated by another job: results/align/bam_markup/WT_REP1_control/WT_REP1_control.markdup.sorted.bam
+
+Completion of job ['samtools_markdup_processing'] reported to scheduler.
+jobs registered as running before removal {samtools_markdup_processing}
+[Thu Aug 15 17:34:20 2024]
+Finished job 25.
+20 of 21 steps (95%) done
+Resources before job selection: {'_cores': 24, '_nodes': 9223372036854775807}
+Ready jobs (1)
+Select jobs to execute...
+Using greedy selector because only single job has to be scheduled.
+Selected jobs (1)
+Resources after job selection: {'_cores': 23, '_nodes': 9223372036854775806}
+Execute 1 jobs...
+
+[Thu Aug 15 17:34:20 2024]
+localrule all:
+    input: results/align/bam_original/WT_REP1_control/WT_REP1_control.Aligned.out.bam, results/align/bam_original/WT_REP2_control/WT_REP2_control.Aligned.out.bam, results/align/bam_original/WT_REP3_control/WT_REP3_control.Aligned.out.bam, results/align/bam_original/RAP1_REP1_treatment/RAP1_REP1_treatment.Aligned.out.bam, results/align/bam_original/RAP1_REP2_treatment/RAP1_REP2_treatment.Aligned.out.bam, results/align/bam_original/RAP1_REP3_treatment/RAP1_REP3_treatment.Aligned.out.bam, results/align/bam_original/WT_REP1_control/WT_REP1_control.sorted.bam.stats, results/align/bam_original/WT_REP2_control/WT_REP2_control.sorted.bam.stats, results/align/bam_original/WT_REP3_control/WT_REP3_control.sorted.bam.stats, results/align/bam_original/RAP1_REP1_treatment/RAP1_REP1_treatment.sorted.bam.stats, results/align/bam_original/RAP1_REP2_treatment/RAP1_REP2_treatment.sorted.bam.stats, results/align/bam_original/RAP1_REP3_treatment/RAP1_REP3_treatment.sorted.bam.stats, results/align/bam_markup/WT_REP1_control/WT_REP1_control.markdup.sorted.bam, results/align/bam_markup/WT_REP2_control/WT_REP2_control.markdup.sorted.bam, results/align/bam_markup/WT_REP3_control/WT_REP3_control.markdup.sorted.bam, results/align/bam_markup/RAP1_REP1_treatment/RAP1_REP1_treatment.markdup.sorted.bam, results/align/bam_markup/RAP1_REP2_treatment/RAP1_REP2_treatment.markdup.sorted.bam, results/align/bam_markup/RAP1_REP3_treatment/RAP1_REP3_treatment.markdup.sorted.bam, results/align/bam_markup/WT_REP1_control/WT_REP1_control.markdup.sorted.bam.stats, results/align/bam_markup/WT_REP2_control/WT_REP2_control.markdup.sorted.bam.stats, results/align/bam_markup/WT_REP3_control/WT_REP3_control.markdup.sorted.bam.stats, results/align/bam_markup/RAP1_REP1_treatment/RAP1_REP1_treatment.markdup.sorted.bam.stats, results/align/bam_markup/RAP1_REP2_treatment/RAP1_REP2_treatment.markdup.sorted.bam.stats, results/align/bam_markup/RAP1_REP3_treatment/RAP1_REP3_treatment.markdup.sorted.bam.stats
+    jobid: 0
+    reason: Input files updated by another job: results/align/bam_markup/RAP1_REP1_treatment/RAP1_REP1_treatment.markdup.sorted.bam.stats, results/align/bam_markup/RAP1_REP3_treatment/RAP1_REP3_treatment.markdup.sorted.bam.stats, results/align/bam_original/WT_REP1_control/WT_REP1_control.sorted.bam.stats, results/align/bam_markup/WT_REP1_control/WT_REP1_control.markdup.sorted.bam.stats, results/align/bam_markup/WT_REP1_control/WT_REP1_control.markdup.sorted.bam, results/align/bam_markup/WT_REP2_control/WT_REP2_control.markdup.sorted.bam, results/align/bam_markup/RAP1_REP2_treatment/RAP1_REP2_treatment.markdup.sorted.bam, results/align/bam_original/WT_REP2_control/WT_REP2_control.sorted.bam.stats, results/align/bam_markup/RAP1_REP3_treatment/RAP1_REP3_treatment.markdup.sorted.bam, results/align/bam_original/WT_REP3_control/WT_REP3_control.Aligned.out.bam, results/align/bam_markup/WT_REP3_control/WT_REP3_control.markdup.sorted.bam.stats, results/align/bam_markup/RAP1_REP1_treatment/RAP1_REP1_treatment.markdup.sorted.bam, results/align/bam_markup/WT_REP2_control/WT_REP2_control.markdup.sorted.bam.stats, results/align/bam_original/RAP1_REP3_treatment/RAP1_REP3_treatment.sorted.bam.stats, results/align/bam_original/WT_REP1_control/WT_REP1_control.Aligned.out.bam, results/align/bam_original/WT_REP2_control/WT_REP2_control.Aligned.out.bam, results/align/bam_markup/RAP1_REP2_treatment/RAP1_REP2_treatment.markdup.sorted.bam.stats, results/align/bam_original/WT_REP3_control/WT_REP3_control.sorted.bam.stats, results/align/bam_markup/WT_REP3_control/WT_REP3_control.markdup.sorted.bam
+    resources: tmpdir=/tmp
+
+Completion of job ['all'] reported to scheduler.
+jobs registered as running before removal {all}
+[Thu Aug 15 17:34:20 2024]
+Finished job 0.
+21 of 21 steps (100%) done
+Complete log: .snakemake/log/2024-08-15T173208.271181.snakemake.log
+unlocking
+removing lock
+removing lock
+removed all locks

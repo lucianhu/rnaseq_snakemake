@@ -1,0 +1,227 @@
+Building DAG of jobs...
+shared_storage_local_copies: True
+remote_exec: False
+Using shell: /usr/bin/bash
+Provided cores: 24
+Rules claiming more threads will be scaled down.
+Conda environments: ignored
+Job stats:
+job                   count
+------------------  -------
+align_paired              3
+align_single              3
+all                       1
+trim_galore_paired        3
+trim_galore_single        3
+total                    13
+
+Resources before job selection: {'_cores': 24, '_nodes': 9223372036854775807}
+Ready jobs (6)
+Select jobs to execute...
+Selected jobs (3)
+Resources after job selection: {'_cores': 0, '_nodes': 9223372036854775804}
+Execute 3 jobs...
+
+[Thu Aug 15 16:03:19 2024]
+Job 4: Trimming and performing quality control on paired-end FASTQ files...
+Reason: Missing output files: results/trimmed/WT_REP2_control_trimmed_R2.fq.gz, results/trimmed/WT_REP2_control_trimmed_R1.fq.gz
+
+
+[Thu Aug 15 16:03:19 2024]
+Job 12: Trimming and performing quality control on single-end FASTQ files...
+Reason: Missing output files: results/trimmed/RAP1_REP3_treatment_trimmed_R1.fq.gz
+
+
+[Thu Aug 15 16:03:19 2024]
+Job 10: Trimming and performing quality control on single-end FASTQ files...
+Reason: Missing output files: results/trimmed/RAP1_REP2_treatment_trimmed_R1.fq.gz
+
+Completion of job ['trim_galore_single'] reported to scheduler.
+jobs registered as running before removal {trim_galore_paired, trim_galore_single, trim_galore_single}
+[Thu Aug 15 16:03:23 2024]
+Finished job 10.
+1 of 13 steps (8%) done
+Resources before job selection: {'_cores': 8, '_nodes': 9223372036854775805}
+Ready jobs (4)
+Select jobs to execute...
+Selected jobs (1)
+Resources after job selection: {'_cores': 0, '_nodes': 9223372036854775804}
+Execute 1 jobs...
+
+[Thu Aug 15 16:03:23 2024]
+Job 6: Trimming and performing quality control on paired-end FASTQ files...
+Reason: Missing output files: results/trimmed/WT_REP3_control_trimmed_R1.fq.gz, results/trimmed/WT_REP3_control_trimmed_R2.fq.gz
+
+Completion of job ['trim_galore_single'] reported to scheduler.
+jobs registered as running before removal {trim_galore_paired, trim_galore_single, trim_galore_paired}
+[Thu Aug 15 16:03:23 2024]
+Finished job 12.
+2 of 13 steps (15%) done
+Resources before job selection: {'_cores': 8, '_nodes': 9223372036854775805}
+Ready jobs (4)
+Select jobs to execute...
+Selected jobs (1)
+Resources after job selection: {'_cores': 0, '_nodes': 9223372036854775804}
+Execute 1 jobs...
+
+[Thu Aug 15 16:03:23 2024]
+Job 8: Trimming and performing quality control on single-end FASTQ files...
+Reason: Missing output files: results/trimmed/RAP1_REP1_treatment_trimmed_R1.fq.gz
+
+Completion of job ['trim_galore_paired'] reported to scheduler.
+jobs registered as running before removal {trim_galore_single, trim_galore_paired, trim_galore_paired}
+[Thu Aug 15 16:03:25 2024]
+Finished job 4.
+3 of 13 steps (23%) done
+Resources before job selection: {'_cores': 8, '_nodes': 9223372036854775805}
+Ready jobs (4)
+Select jobs to execute...
+Selected jobs (1)
+Resources after job selection: {'_cores': 0, '_nodes': 9223372036854775804}
+Execute 1 jobs...
+
+[Thu Aug 15 16:03:25 2024]
+Job 2: Trimming and performing quality control on paired-end FASTQ files...
+Reason: Missing output files: results/trimmed/WT_REP1_control_trimmed_R2.fq.gz, results/trimmed/WT_REP1_control_trimmed_R1.fq.gz
+
+Completion of job ['trim_galore_single'] reported to scheduler.
+jobs registered as running before removal {trim_galore_single, trim_galore_paired, trim_galore_paired}
+[Thu Aug 15 16:03:26 2024]
+Finished job 8.
+4 of 13 steps (31%) done
+Resources before job selection: {'_cores': 8, '_nodes': 9223372036854775805}
+Ready jobs (4)
+Select jobs to execute...
+Selected jobs (0)
+Resources after job selection: {'_cores': 8, '_nodes': 9223372036854775805}
+Completion of job ['trim_galore_paired'] reported to scheduler.
+jobs registered as running before removal {trim_galore_paired, trim_galore_paired}
+[Thu Aug 15 16:03:29 2024]
+Finished job 6.
+5 of 13 steps (38%) done
+Resources before job selection: {'_cores': 16, '_nodes': 9223372036854775806}
+Ready jobs (5)
+Selected jobs (1)
+Resources after job selection: {'_cores': 4, '_nodes': 9223372036854775805}
+Execute 1 jobs...
+
+[Thu Aug 15 16:03:29 2024]
+Job 3: Aligning on paired-end FASTQ files...
+Reason: Missing output files: results/align/bam_original/WT_REP2_control/WT_REP2_control.Aligned.out.bam; Input files updated by another job: results/trimmed/WT_REP2_control_trimmed_R2.fq.gz, results/trimmed/WT_REP2_control_trimmed_R1.fq.gz
+
+Completion of job ['trim_galore_paired'] reported to scheduler.
+jobs registered as running before removal {trim_galore_paired, align_paired}
+[Thu Aug 15 16:03:31 2024]
+Finished job 2.
+6 of 13 steps (46%) done
+Resources before job selection: {'_cores': 12, '_nodes': 9223372036854775806}
+Ready jobs (5)
+Select jobs to execute...
+Selected jobs (1)
+Resources after job selection: {'_cores': 0, '_nodes': 9223372036854775805}
+Execute 1 jobs...
+
+[Thu Aug 15 16:03:31 2024]
+Job 11: Aligning on single-end FASTQ files...
+Reason: Missing output files: results/align/bam_original/RAP1_REP3_treatment/RAP1_REP3_treatment.Aligned.out.bam; Input files updated by another job: results/trimmed/RAP1_REP3_treatment_trimmed_R1.fq.gz
+
+Completion of job ['align_single'] reported to scheduler.
+jobs registered as running before removal {align_single, align_paired}
+[Thu Aug 15 16:03:51 2024]
+Finished job 11.
+7 of 13 steps (54%) done
+Resources before job selection: {'_cores': 12, '_nodes': 9223372036854775806}
+Ready jobs (4)
+Select jobs to execute...
+Selected jobs (1)
+Resources after job selection: {'_cores': 0, '_nodes': 9223372036854775805}
+Execute 1 jobs...
+
+[Thu Aug 15 16:03:51 2024]
+Job 9: Aligning on single-end FASTQ files...
+Reason: Missing output files: results/align/bam_original/RAP1_REP2_treatment/RAP1_REP2_treatment.Aligned.out.bam; Input files updated by another job: results/trimmed/RAP1_REP2_treatment_trimmed_R1.fq.gz
+
+Completion of job ['align_single'] reported to scheduler.
+jobs registered as running before removal {align_single, align_paired}
+[Thu Aug 15 16:04:09 2024]
+Finished job 9.
+8 of 13 steps (62%) done
+Resources before job selection: {'_cores': 12, '_nodes': 9223372036854775806}
+Ready jobs (3)
+Select jobs to execute...
+Selected jobs (1)
+Resources after job selection: {'_cores': 0, '_nodes': 9223372036854775805}
+Execute 1 jobs...
+
+[Thu Aug 15 16:04:09 2024]
+Job 1: Aligning on paired-end FASTQ files...
+Reason: Missing output files: results/align/bam_original/WT_REP1_control/WT_REP1_control.Aligned.out.bam; Input files updated by another job: results/trimmed/WT_REP1_control_trimmed_R2.fq.gz, results/trimmed/WT_REP1_control_trimmed_R1.fq.gz
+
+Completion of job ['align_paired'] reported to scheduler.
+jobs registered as running before removal {align_paired, align_paired}
+[Thu Aug 15 16:04:53 2024]
+Finished job 3.
+9 of 13 steps (69%) done
+Resources before job selection: {'_cores': 12, '_nodes': 9223372036854775806}
+Ready jobs (2)
+Select jobs to execute...
+Selected jobs (1)
+Resources after job selection: {'_cores': 0, '_nodes': 9223372036854775805}
+Execute 1 jobs...
+
+[Thu Aug 15 16:04:53 2024]
+Job 7: Aligning on single-end FASTQ files...
+Reason: Missing output files: results/align/bam_original/RAP1_REP1_treatment/RAP1_REP1_treatment.Aligned.out.bam; Input files updated by another job: results/trimmed/RAP1_REP1_treatment_trimmed_R1.fq.gz
+
+Completion of job ['align_single'] reported to scheduler.
+jobs registered as running before removal {align_single, align_paired}
+[Thu Aug 15 16:05:14 2024]
+Finished job 7.
+10 of 13 steps (77%) done
+Resources before job selection: {'_cores': 12, '_nodes': 9223372036854775806}
+Ready jobs (1)
+Select jobs to execute...
+Using greedy selector because only single job has to be scheduled.
+Selected jobs (1)
+Resources after job selection: {'_cores': 0, '_nodes': 9223372036854775805}
+Execute 1 jobs...
+
+[Thu Aug 15 16:05:14 2024]
+Job 5: Aligning on paired-end FASTQ files...
+Reason: Missing output files: results/align/bam_original/WT_REP3_control/WT_REP3_control.Aligned.out.bam; Input files updated by another job: results/trimmed/WT_REP3_control_trimmed_R1.fq.gz, results/trimmed/WT_REP3_control_trimmed_R2.fq.gz
+
+Completion of job ['align_paired'] reported to scheduler.
+jobs registered as running before removal {align_paired, align_paired}
+[Thu Aug 15 16:05:32 2024]
+Finished job 1.
+11 of 13 steps (85%) done
+Completion of job ['align_paired'] reported to scheduler.
+jobs registered as running before removal {align_paired}
+[Thu Aug 15 16:06:50 2024]
+Finished job 5.
+12 of 13 steps (92%) done
+Resources before job selection: {'_cores': 24, '_nodes': 9223372036854775807}
+Ready jobs (1)
+Select jobs to execute...
+Using greedy selector because only single job has to be scheduled.
+Selected jobs (1)
+Resources after job selection: {'_cores': 23, '_nodes': 9223372036854775806}
+Execute 1 jobs...
+
+[Thu Aug 15 16:06:50 2024]
+localrule all:
+    input: results/align/bam_original/WT_REP1_control/WT_REP1_control.Aligned.out.bam, results/align/bam_original/WT_REP2_control/WT_REP2_control.Aligned.out.bam, results/align/bam_original/WT_REP3_control/WT_REP3_control.Aligned.out.bam, results/align/bam_original/RAP1_REP1_treatment/RAP1_REP1_treatment.Aligned.out.bam, results/align/bam_original/RAP1_REP2_treatment/RAP1_REP2_treatment.Aligned.out.bam, results/align/bam_original/RAP1_REP3_treatment/RAP1_REP3_treatment.Aligned.out.bam
+    jobid: 0
+    reason: Input files updated by another job: results/align/bam_original/RAP1_REP2_treatment/RAP1_REP2_treatment.Aligned.out.bam, results/align/bam_original/WT_REP3_control/WT_REP3_control.Aligned.out.bam, results/align/bam_original/RAP1_REP3_treatment/RAP1_REP3_treatment.Aligned.out.bam, results/align/bam_original/WT_REP2_control/WT_REP2_control.Aligned.out.bam, results/align/bam_original/WT_REP1_control/WT_REP1_control.Aligned.out.bam, results/align/bam_original/RAP1_REP1_treatment/RAP1_REP1_treatment.Aligned.out.bam
+    resources: tmpdir=/tmp
+
+Completion of job ['all'] reported to scheduler.
+jobs registered as running before removal {all}
+[Thu Aug 15 16:06:50 2024]
+Finished job 0.
+13 of 13 steps (100%) done
+Complete log: .snakemake/log/2024-08-15T160319.199555.snakemake.log
+unlocking
+removing lock
+removing lock
+removed all locks

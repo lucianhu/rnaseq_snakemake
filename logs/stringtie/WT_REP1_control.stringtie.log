@@ -1,0 +1,14 @@
+Running StringTie 2.2.3. Command line:
+stringtie results/align/bam_markup/WT_REP1_control/WT_REP1_control.markdup.sorted.bam --rf -G resources/annotation.filtered.gtf -o results/stringtie/WT_REP1_control/WT_REP1_control.transcripts.gtf -A results/stringtie/WT_REP1_control/WT_REP1_control.gene.abundance.txt -C results/stringtie/WT_REP1_control/WT_REP1_control.coverage.gtf -b results/stringtie/WT_REP1_control/WT_REP1_control.ballgown -p 6 -v -e
+[08/19 00:54:28] Loading reference annotation (guides)..
+[08/19 00:54:28] 124 reference transcripts loaded.
+Default stack size for threads: 8388608
+[08/19 00:54:28]>bundle I:1791-2169 [2 alignments (2 distinct), 0 junctions, 1 guides] begins processing...
+[08/19 00:54:28]^bundle I:1791-2169 done (1 processed potential transcripts).
+Warning: invalid mapping found for read SRR6357070.7209123 (position=165057, mapped length=9)
+[08/19 00:54:28]>bundle I:4358-229947 [72201 alignments (20989 distinct), 69 junctions, 120 guides] begins processing...
+[08/19 00:54:28] 2 aligned fragments found.
+[08/19 00:54:28]^bundle I:4358-229947 done (93 processed potential transcripts).
+[08/19 00:54:28] All threads finished.
+Total count of aligned fragments: 40705
+Fragment coverage length: 172.343

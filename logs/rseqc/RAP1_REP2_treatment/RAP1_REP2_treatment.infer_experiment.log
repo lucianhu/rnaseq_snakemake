@@ -1,0 +1,4 @@
+[W::hts_idx_load3] The index file is older than the data file: results/align/bam_markup/RAP1_REP2_treatment/RAP1_REP2_treatment.markdup.sorted.bam.bai
+Reading reference gene model resources/annotation.filtered.bed ... Done
+Loading SAM/BAM file ...  Finished
+Total 10300 usable reads were sampled

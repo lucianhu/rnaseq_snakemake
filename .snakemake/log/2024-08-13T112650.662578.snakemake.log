@@ -1,0 +1,61 @@
+Building DAG of jobs...
+shared_storage_local_copies: True
+remote_exec: False
+Using shell: /usr/bin/bash
+Provided cores: 24
+Rules claiming more threads will be scaled down.
+Conda environments: ignored
+Job stats:
+job       count
+------  -------
+all           1
+fastqc        1
+total         2
+
+Resources before job selection: {'_cores': 24, '_nodes': 9223372036854775807}
+Ready jobs (1)
+Select jobs to execute...
+Using greedy selector because only single job has to be scheduled.
+Selected jobs (1)
+Resources after job selection: {'_cores': 23, '_nodes': 9223372036854775806}
+Execute 1 jobs...
+
+[Tue Aug 13 11:26:50 2024]
+localrule fastqc:
+    input: /home/lucianhu/rna_snakemake/rnaseq-tutorial/reads/Id1_AA-rep1.R1.fastq, /home/lucianhu/rna_snakemake/rnaseq-tutorial/reads/Id1_AA-rep1.R2.fastq
+    output: fastqc/Id1_AA_rep1_AA
+    jobid: 1
+    reason: Missing output files: fastqc/Id1_AA_rep1_AA
+    wildcards: sample=Id1_AA_rep1_AA
+    resources: tmpdir=/tmp
+
+Completion of job ['fastqc'] reported to scheduler.
+jobs registered as running before removal {fastqc}
+[Tue Aug 13 11:26:54 2024]
+Finished job 1.
+1 of 2 steps (50%) done
+Resources before job selection: {'_cores': 24, '_nodes': 9223372036854775807}
+Ready jobs (1)
+Select jobs to execute...
+Using greedy selector because only single job has to be scheduled.
+Selected jobs (1)
+Resources after job selection: {'_cores': 23, '_nodes': 9223372036854775806}
+Execute 1 jobs...
+
+[Tue Aug 13 11:26:54 2024]
+localrule all:
+    input: fastqc/Id1_AA_rep1_AA
+    jobid: 0
+    reason: Input files updated by another job: fastqc/Id1_AA_rep1_AA
+    resources: tmpdir=/tmp
+
+Completion of job ['all'] reported to scheduler.
+jobs registered as running before removal {all}
+[Tue Aug 13 11:26:54 2024]
+Finished job 0.
+2 of 2 steps (100%) done
+Complete log: .snakemake/log/2024-08-13T112650.662578.snakemake.log
+unlocking
+removing lock
+removing lock
+removed all locks

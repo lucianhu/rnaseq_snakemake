@@ -1,0 +1,166 @@
+Building DAG of jobs...
+shared_storage_local_copies: True
+remote_exec: False
+Using shell: /usr/bin/bash
+Provided cores: 24
+Rules claiming more threads will be scaled down.
+Conda environments: ignored
+Job stats:
+job            count
+-----------  -------
+all                1
+trim_galore        6
+total              7
+
+Resources before job selection: {'_cores': 24, '_nodes': 9223372036854775807}
+Ready jobs (6)
+Select jobs to execute...
+Selected jobs (3)
+Resources after job selection: {'_cores': 0, '_nodes': 9223372036854775804}
+Execute 3 jobs...
+
+[Wed Aug 14 00:11:17 2024]
+localrule trim_galore:
+    input: /home/lucianhu/rna_snakemake/rna_snakemake/test-datasets/testdata/SRR6357073_1.fastq.gz
+    output: results/trimmed/RAP1_REP1_treatment
+    log: logs/trim_galore/RAP1_REP1_treatment.trimmed.log
+    jobid: 4
+    reason: Missing output files: results/trimmed/RAP1_REP1_treatment; Code has changed since last execution
+    wildcards: sample=RAP1_REP1_treatment
+    threads: 8
+    resources: tmpdir=/tmp
+
+
+[Wed Aug 14 00:11:17 2024]
+localrule trim_galore:
+    input: /home/lucianhu/rna_snakemake/rna_snakemake/test-datasets/testdata/SRR6357070_1.fastq.gz, /home/lucianhu/rna_snakemake/rna_snakemake/test-datasets/testdata/SRR6357070_2.fastq.gz
+    output: results/trimmed/WT_REP1_control
+    log: logs/trim_galore/WT_REP1_control.trimmed.log
+    jobid: 1
+    reason: Missing output files: results/trimmed/WT_REP1_control; Code has changed since last execution
+    wildcards: sample=WT_REP1_control
+    threads: 8
+    resources: tmpdir=/tmp
+
+
+[Wed Aug 14 00:11:17 2024]
+localrule trim_galore:
+    input: /home/lucianhu/rna_snakemake/rna_snakemake/test-datasets/testdata/SRR6357071_1.fastq.gz, /home/lucianhu/rna_snakemake/rna_snakemake/test-datasets/testdata/SRR6357071_2.fastq.gz
+    output: results/trimmed/WT_REP2_control
+    log: logs/trim_galore/WT_REP2_control.trimmed.log
+    jobid: 2
+    reason: Missing output files: results/trimmed/WT_REP2_control; Code has changed since last execution
+    wildcards: sample=WT_REP2_control
+    threads: 8
+    resources: tmpdir=/tmp
+
+Completion of job ['trim_galore'] reported to scheduler.
+jobs registered as running before removal {trim_galore, trim_galore, trim_galore}
+[Wed Aug 14 00:11:20 2024]
+Finished job 4.
+1 of 7 steps (14%) done
+Resources before job selection: {'_cores': 8, '_nodes': 9223372036854775805}
+Ready jobs (3)
+Select jobs to execute...
+Selected jobs (1)
+Resources after job selection: {'_cores': 0, '_nodes': 9223372036854775804}
+Execute 1 jobs...
+
+[Wed Aug 14 00:11:20 2024]
+localrule trim_galore:
+    input: /home/lucianhu/rna_snakemake/rna_snakemake/test-datasets/testdata/SRR6357074_1.fastq.gz
+    output: results/trimmed/RAP1_REP2_treatment
+    log: logs/trim_galore/RAP1_REP2_treatment.trimmed.log
+    jobid: 5
+    reason: Missing output files: results/trimmed/RAP1_REP2_treatment; Code has changed since last execution
+    wildcards: sample=RAP1_REP2_treatment
+    threads: 8
+    resources: tmpdir=/tmp
+
+Completion of job ['trim_galore'] reported to scheduler.
+jobs registered as running before removal {trim_galore, trim_galore, trim_galore}
+[Wed Aug 14 00:11:24 2024]
+Finished job 1.
+2 of 7 steps (29%) done
+Resources before job selection: {'_cores': 8, '_nodes': 9223372036854775805}
+Ready jobs (2)
+Select jobs to execute...
+Selected jobs (1)
+Resources after job selection: {'_cores': 0, '_nodes': 9223372036854775804}
+Execute 1 jobs...
+
+[Wed Aug 14 00:11:24 2024]
+localrule trim_galore:
+    input: /home/lucianhu/rna_snakemake/rna_snakemake/test-datasets/testdata/SRR6357072_1.fastq.gz, /home/lucianhu/rna_snakemake/rna_snakemake/test-datasets/testdata/SRR6357072_2.fastq.gz
+    output: results/trimmed/WT_REP3_control
+    log: logs/trim_galore/WT_REP3_control.trimmed.log
+    jobid: 3
+    reason: Missing output files: results/trimmed/WT_REP3_control; Code has changed since last execution
+    wildcards: sample=WT_REP3_control
+    threads: 8
+    resources: tmpdir=/tmp
+
+Completion of job ['trim_galore'] reported to scheduler.
+jobs registered as running before removal {trim_galore, trim_galore, trim_galore}
+[Wed Aug 14 00:11:24 2024]
+Finished job 2.
+3 of 7 steps (43%) done
+Resources before job selection: {'_cores': 8, '_nodes': 9223372036854775805}
+Ready jobs (1)
+Select jobs to execute...
+Using greedy selector because only single job has to be scheduled.
+Selected jobs (1)
+Resources after job selection: {'_cores': 0, '_nodes': 9223372036854775804}
+Execute 1 jobs...
+
+[Wed Aug 14 00:11:24 2024]
+localrule trim_galore:
+    input: /home/lucianhu/rna_snakemake/rna_snakemake/test-datasets/testdata/SRR6357075_1.fastq.gz
+    output: results/trimmed/RAP1_REP3_treatment
+    log: logs/trim_galore/RAP1_REP3_treatment.trimmed.log
+    jobid: 6
+    reason: Missing output files: results/trimmed/RAP1_REP3_treatment; Code has changed since last execution
+    wildcards: sample=RAP1_REP3_treatment
+    threads: 8
+    resources: tmpdir=/tmp
+
+Completion of job ['trim_galore'] reported to scheduler.
+jobs registered as running before removal {trim_galore, trim_galore, trim_galore}
+[Wed Aug 14 00:11:24 2024]
+Finished job 5.
+4 of 7 steps (57%) done
+Completion of job ['trim_galore'] reported to scheduler.
+jobs registered as running before removal {trim_galore, trim_galore}
+[Wed Aug 14 00:11:27 2024]
+Finished job 6.
+5 of 7 steps (71%) done
+Completion of job ['trim_galore'] reported to scheduler.
+jobs registered as running before removal {trim_galore}
+[Wed Aug 14 00:11:30 2024]
+Finished job 3.
+6 of 7 steps (86%) done
+Resources before job selection: {'_cores': 24, '_nodes': 9223372036854775807}
+Ready jobs (1)
+Select jobs to execute...
+Using greedy selector because only single job has to be scheduled.
+Selected jobs (1)
+Resources after job selection: {'_cores': 23, '_nodes': 9223372036854775806}
+Execute 1 jobs...
+
+[Wed Aug 14 00:11:30 2024]
+localrule all:
+    input: results/trimmed/WT_REP1_control, results/trimmed/WT_REP2_control, results/trimmed/WT_REP3_control, results/trimmed/RAP1_REP1_treatment, results/trimmed/RAP1_REP2_treatment, results/trimmed/RAP1_REP3_treatment
+    jobid: 0
+    reason: Input files updated by another job: results/trimmed/WT_REP1_control, results/trimmed/RAP1_REP1_treatment, results/trimmed/WT_REP3_control, results/trimmed/RAP1_REP3_treatment, results/trimmed/RAP1_REP2_treatment, results/trimmed/WT_REP2_control
+    resources: tmpdir=/tmp
+
+Completion of job ['all'] reported to scheduler.
+jobs registered as running before removal {all}
+[Wed Aug 14 00:11:30 2024]
+Finished job 0.
+7 of 7 steps (100%) done
+Complete log: .snakemake/log/2024-08-14T001117.663277.snakemake.log
+unlocking
+removing lock
+removing lock
+removed all locks

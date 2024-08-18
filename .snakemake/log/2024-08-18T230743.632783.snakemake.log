@@ -1,0 +1,105 @@
+Building DAG of jobs...
+shared_storage_local_copies: True
+remote_exec: False
+Using shell: /usr/bin/bash
+Provided cores: 24
+Rules claiming more threads will be scaled down.
+Conda environments: ignored
+Job stats:
+job         count
+--------  -------
+all             1
+qualimap        6
+total           7
+
+Resources before job selection: {'_cores': 24, '_nodes': 9223372036854775807}
+Ready jobs (6)
+Select jobs to execute...
+Selected jobs (6)
+Resources after job selection: {'_cores': 18, '_nodes': 9223372036854775801}
+Execute 6 jobs...
+
+[Sun Aug 18 23:07:43 2024]
+Job 54: WT_REP2_control: Running Qualimap
+Reason: Missing output files: results/qualimap/WT_REP2_control
+
+
+[Sun Aug 18 23:07:43 2024]
+Job 58: RAP1_REP3_treatment: Running Qualimap
+Reason: Missing output files: results/qualimap/RAP1_REP3_treatment
+
+
+[Sun Aug 18 23:07:43 2024]
+Job 57: RAP1_REP2_treatment: Running Qualimap
+Reason: Missing output files: results/qualimap/RAP1_REP2_treatment
+
+
+[Sun Aug 18 23:07:43 2024]
+Job 56: RAP1_REP1_treatment: Running Qualimap
+Reason: Missing output files: results/qualimap/RAP1_REP1_treatment
+
+
+[Sun Aug 18 23:07:43 2024]
+Job 53: WT_REP1_control: Running Qualimap
+Reason: Missing output files: results/qualimap/WT_REP1_control
+
+
+[Sun Aug 18 23:07:43 2024]
+Job 55: WT_REP3_control: Running Qualimap
+Reason: Missing output files: results/qualimap/WT_REP3_control
+
+Completion of job ['qualimap'] reported to scheduler.
+jobs registered as running before removal {qualimap, qualimap, qualimap, qualimap, qualimap, qualimap}
+[Sun Aug 18 23:07:46 2024]
+Finished job 58.
+1 of 7 steps (14%) done
+Completion of job ['qualimap'] reported to scheduler.
+jobs registered as running before removal {qualimap, qualimap, qualimap, qualimap, qualimap}
+[Sun Aug 18 23:07:46 2024]
+Finished job 56.
+2 of 7 steps (29%) done
+Completion of job ['qualimap'] reported to scheduler.
+jobs registered as running before removal {qualimap, qualimap, qualimap, qualimap}
+[Sun Aug 18 23:07:46 2024]
+Finished job 57.
+3 of 7 steps (43%) done
+Completion of job ['qualimap'] reported to scheduler.
+jobs registered as running before removal {qualimap, qualimap, qualimap}
+[Sun Aug 18 23:07:46 2024]
+Finished job 54.
+4 of 7 steps (57%) done
+Completion of job ['qualimap'] reported to scheduler.
+jobs registered as running before removal {qualimap, qualimap}
+[Sun Aug 18 23:07:46 2024]
+Finished job 53.
+5 of 7 steps (71%) done
+Completion of job ['qualimap'] reported to scheduler.
+jobs registered as running before removal {qualimap}
+[Sun Aug 18 23:07:46 2024]
+Finished job 55.
+6 of 7 steps (86%) done
+Resources before job selection: {'_cores': 24, '_nodes': 9223372036854775807}
+Ready jobs (1)
+Select jobs to execute...
+Using greedy selector because only single job has to be scheduled.
+Selected jobs (1)
+Resources after job selection: {'_cores': 23, '_nodes': 9223372036854775806}
+Execute 1 jobs...
+
+[Sun Aug 18 23:07:46 2024]
+localrule all:
+    input: results/fastqc/WT_REP1_control, results/fastqc/WT_REP2_control, results/fastqc/WT_REP3_control, results/fastqc/RAP1_REP1_treatment, results/fastqc/RAP1_REP2_treatment, results/fastqc/RAP1_REP3_treatment, results/trimmed/WT_REP1_control, results/trimmed/WT_REP2_control, results/trimmed/WT_REP3_control, results/trimmed/RAP1_REP1_treatment, results/trimmed/RAP1_REP2_treatment, results/trimmed/RAP1_REP3_treatment, results/align/bam_original/WT_REP1_control/WT_REP1_control.Aligned.out.bam, results/align/bam_original/WT_REP2_control/WT_REP2_control.Aligned.out.bam, results/align/bam_original/WT_REP3_control/WT_REP3_control.Aligned.out.bam, results/align/bam_original/RAP1_REP1_treatment/RAP1_REP1_treatment.Aligned.out.bam, results/align/bam_original/RAP1_REP2_treatment/RAP1_REP2_treatment.Aligned.out.bam, results/align/bam_original/RAP1_REP3_treatment/RAP1_REP3_treatment.Aligned.out.bam, results/align/bam_original/WT_REP1_control/WT_REP1_control.Aligned.toTranscriptome.out.bam, results/align/bam_original/WT_REP2_control/WT_REP2_control.Aligned.toTranscriptome.out.bam, results/align/bam_original/WT_REP3_control/WT_REP3_control.Aligned.toTranscriptome.out.bam, results/align/bam_original/RAP1_REP1_treatment/RAP1_REP1_treatment.Aligned.toTranscriptome.out.bam, results/align/bam_original/RAP1_REP2_treatment/RAP1_REP2_treatment.Aligned.toTranscriptome.out.bam, results/align/bam_original/RAP1_REP3_treatment/RAP1_REP3_treatment.Aligned.toTranscriptome.out.bam, results/align/bam_original/WT_REP1_control/WT_REP1_control.sorted.bam, results/align/bam_original/WT_REP2_control/WT_REP2_control.sorted.bam, results/align/bam_original/WT_REP3_control/WT_REP3_control.sorted.bam, results/align/bam_original/RAP1_REP1_treatment/RAP1_REP1_treatment.sorted.bam, results/align/bam_original/RAP1_REP2_treatment/RAP1_REP2_treatment.sorted.bam, results/align/bam_original/RAP1_REP3_treatment/RAP1_REP3_treatment.sorted.bam, results/align/bam_original/WT_REP1_control/WT_REP1_control.sorted.bam.bai, results/align/bam_original/WT_REP2_control/WT_REP2_control.sorted.bam.bai, results/align/bam_original/WT_REP3_control/WT_REP3_control.sorted.bam.bai, results/align/bam_original/RAP1_REP1_treatment/RAP1_REP1_treatment.sorted.bam.bai, results/align/bam_original/RAP1_REP2_treatment/RAP1_REP2_treatment.sorted.bam.bai, results/align/bam_original/RAP1_REP3_treatment/RAP1_REP3_treatment.sorted.bam.bai, results/align/bam_original/WT_REP1_control/WT_REP1_control.sorted.bam.stats, results/align/bam_original/WT_REP2_control/WT_REP2_control.sorted.bam.stats, results/align/bam_original/WT_REP3_control/WT_REP3_control.sorted.bam.stats, results/align/bam_original/RAP1_REP1_treatment/RAP1_REP1_treatment.sorted.bam.stats, results/align/bam_original/RAP1_REP2_treatment/RAP1_REP2_treatment.sorted.bam.stats, results/align/bam_original/RAP1_REP3_treatment/RAP1_REP3_treatment.sorted.bam.stats, results/align/bam_original/WT_REP1_control/WT_REP1_control.sorted.bam.flagstat, results/align/bam_original/WT_REP2_control/WT_REP2_control.sorted.bam.flagstat, results/align/bam_original/WT_REP3_control/WT_REP3_control.sorted.bam.flagstat, results/align/bam_original/RAP1_REP1_treatment/RAP1_REP1_treatment.sorted.bam.flagstat, results/align/bam_original/RAP1_REP2_treatment/RAP1_REP2_treatment.sorted.bam.flagstat, results/align/bam_original/RAP1_REP3_treatment/RAP1_REP3_treatment.sorted.bam.flagstat, results/align/bam_original/WT_REP1_control/WT_REP1_control.sorted.bam.idxstats, results/align/bam_original/WT_REP2_control/WT_REP2_control.sorted.bam.idxstats, results/align/bam_original/WT_REP3_control/WT_REP3_control.sorted.bam.idxstats, results/align/bam_original/RAP1_REP1_treatment/RAP1_REP1_treatment.sorted.bam.idxstats, results/align/bam_original/RAP1_REP2_treatment/RAP1_REP2_treatment.sorted.bam.idxstats, results/align/bam_original/RAP1_REP3_treatment/RAP1_REP3_treatment.sorted.bam.idxstats, results/align/bam_markup/WT_REP1_control/WT_REP1_control.markdup.sorted.bam, results/align/bam_markup/WT_REP2_control/WT_REP2_control.markdup.sorted.bam, results/align/bam_markup/WT_REP3_control/WT_REP3_control.markdup.sorted.bam, results/align/bam_markup/RAP1_REP1_treatment/RAP1_REP1_treatment.markdup.sorted.bam, results/align/bam_markup/RAP1_REP2_treatment/RAP1_REP2_treatment.markdup.sorted.bam, results/align/bam_markup/RAP1_REP3_treatment/RAP1_REP3_treatment.markdup.sorted.bam, results/align/bam_markup/WT_REP1_control/WT_REP1_control.markdup.sorted.MarkDuplicates.metrics.txt, results/align/bam_markup/WT_REP2_control/WT_REP2_control.markdup.sorted.MarkDuplicates.metrics.txt, results/align/bam_markup/WT_REP3_control/WT_REP3_control.markdup.sorted.MarkDuplicates.metrics.txt, results/align/bam_markup/RAP1_REP1_treatment/RAP1_REP1_treatment.markdup.sorted.MarkDuplicates.metrics.txt, results/align/bam_markup/RAP1_REP2_treatment/RAP1_REP2_treatment.markdup.sorted.MarkDuplicates.metrics.txt, results/align/bam_markup/RAP1_REP3_treatment/RAP1_REP3_treatment.markdup.sorted.MarkDuplicates.metrics.txt, results/align/bam_markup/WT_REP1_control/WT_REP1_control.markdup.sorted.bam.bai, results/align/bam_markup/WT_REP2_control/WT_REP2_control.markdup.sorted.bam.bai, results/align/bam_markup/WT_REP3_control/WT_REP3_control.markdup.sorted.bam.bai, results/align/bam_markup/RAP1_REP1_treatment/RAP1_REP1_treatment.markdup.sorted.bam.bai, results/align/bam_markup/RAP1_REP2_treatment/RAP1_REP2_treatment.markdup.sorted.bam.bai, results/align/bam_markup/RAP1_REP3_treatment/RAP1_REP3_treatment.markdup.sorted.bam.bai, results/align/bam_markup/WT_REP1_control/WT_REP1_control.markdup.sorted.bam.stats, results/align/bam_markup/WT_REP2_control/WT_REP2_control.markdup.sorted.bam.stats, results/align/bam_markup/WT_REP3_control/WT_REP3_control.markdup.sorted.bam.stats, results/align/bam_markup/RAP1_REP1_treatment/RAP1_REP1_treatment.markdup.sorted.bam.stats, results/align/bam_markup/RAP1_REP2_treatment/RAP1_REP2_treatment.markdup.sorted.bam.stats, results/align/bam_markup/RAP1_REP3_treatment/RAP1_REP3_treatment.markdup.sorted.bam.stats, results/align/bam_markup/WT_REP1_control/WT_REP1_control.markdup.sorted.bam.flagstat, results/align/bam_markup/WT_REP2_control/WT_REP2_control.markdup.sorted.bam.flagstat, results/align/bam_markup/WT_REP3_control/WT_REP3_control.markdup.sorted.bam.flagstat, results/align/bam_markup/RAP1_REP1_treatment/RAP1_REP1_treatment.markdup.sorted.bam.flagstat, results/align/bam_markup/RAP1_REP2_treatment/RAP1_REP2_treatment.markdup.sorted.bam.flagstat, results/align/bam_markup/RAP1_REP3_treatment/RAP1_REP3_treatment.markdup.sorted.bam.flagstat, results/align/bam_markup/WT_REP1_control/WT_REP1_control.markdup.sorted.bam.idxstats, results/align/bam_markup/WT_REP2_control/WT_REP2_control.markdup.sorted.bam.idxstats, results/align/bam_markup/WT_REP3_control/WT_REP3_control.markdup.sorted.bam.idxstats, results/align/bam_markup/RAP1_REP1_treatment/RAP1_REP1_treatment.markdup.sorted.bam.idxstats, results/align/bam_markup/RAP1_REP2_treatment/RAP1_REP2_treatment.markdup.sorted.bam.idxstats, results/align/bam_markup/RAP1_REP3_treatment/RAP1_REP3_treatment.markdup.sorted.bam.idxstats, results/stringtie/WT_REP1_control/WT_REP1_control.transcripts.gtf, results/stringtie/WT_REP2_control/WT_REP2_control.transcripts.gtf, results/stringtie/WT_REP3_control/WT_REP3_control.transcripts.gtf, results/stringtie/RAP1_REP1_treatment/RAP1_REP1_treatment.transcripts.gtf, results/stringtie/RAP1_REP2_treatment/RAP1_REP2_treatment.transcripts.gtf, results/stringtie/RAP1_REP3_treatment/RAP1_REP3_treatment.transcripts.gtf, results/stringtie/WT_REP1_control/WT_REP1_control.gene.abundance.txt, results/stringtie/WT_REP2_control/WT_REP2_control.gene.abundance.txt, results/stringtie/WT_REP3_control/WT_REP3_control.gene.abundance.txt, results/stringtie/RAP1_REP1_treatment/RAP1_REP1_treatment.gene.abundance.txt, results/stringtie/RAP1_REP2_treatment/RAP1_REP2_treatment.gene.abundance.txt, results/stringtie/RAP1_REP3_treatment/RAP1_REP3_treatment.gene.abundance.txt, results/stringtie/WT_REP1_control/WT_REP1_control.coverage.gtf, results/stringtie/WT_REP2_control/WT_REP2_control.coverage.gtf, results/stringtie/WT_REP3_control/WT_REP3_control.coverage.gtf, results/stringtie/RAP1_REP1_treatment/RAP1_REP1_treatment.coverage.gtf, results/stringtie/RAP1_REP2_treatment/RAP1_REP2_treatment.coverage.gtf, results/stringtie/RAP1_REP3_treatment/RAP1_REP3_treatment.coverage.gtf, results/stringtie/WT_REP1_control/WT_REP1_control.ballgown, results/stringtie/WT_REP2_control/WT_REP2_control.ballgown, results/stringtie/WT_REP3_control/WT_REP3_control.ballgown, results/stringtie/RAP1_REP1_treatment/RAP1_REP1_treatment.ballgown, results/stringtie/RAP1_REP2_treatment/RAP1_REP2_treatment.ballgown, results/stringtie/RAP1_REP3_treatment/RAP1_REP3_treatment.ballgown, results/feature_counts/WT_REP1_control/WT_REP1_control.featurecounts.txt, results/feature_counts/WT_REP2_control/WT_REP2_control.featurecounts.txt, results/feature_counts/WT_REP3_control/WT_REP3_control.featurecounts.txt, results/feature_counts/RAP1_REP1_treatment/RAP1_REP1_treatment.featurecounts.txt, results/feature_counts/RAP1_REP2_treatment/RAP1_REP2_treatment.featurecounts.txt, results/feature_counts/RAP1_REP3_treatment/RAP1_REP3_treatment.featurecounts.txt, results/feature_counts/WT_REP1_control/WT_REP1_control.featurecounts.txt.summary, results/feature_counts/WT_REP2_control/WT_REP2_control.featurecounts.txt.summary, results/feature_counts/WT_REP3_control/WT_REP3_control.featurecounts.txt.summary, results/feature_counts/RAP1_REP1_treatment/RAP1_REP1_treatment.featurecounts.txt.summary, results/feature_counts/RAP1_REP2_treatment/RAP1_REP2_treatment.featurecounts.txt.summary, results/feature_counts/RAP1_REP3_treatment/RAP1_REP3_treatment.featurecounts.txt.summary, results/feature_counts/WT_REP1_control/WT_REP1_control.biotype_counts_rrna_mqc.tsv, results/feature_counts/WT_REP2_control/WT_REP2_control.biotype_counts_rrna_mqc.tsv, results/feature_counts/WT_REP3_control/WT_REP3_control.biotype_counts_rrna_mqc.tsv, results/feature_counts/RAP1_REP1_treatment/RAP1_REP1_treatment.biotype_counts_rrna_mqc.tsv, results/feature_counts/RAP1_REP2_treatment/RAP1_REP2_treatment.biotype_counts_rrna_mqc.tsv, results/feature_counts/RAP1_REP3_treatment/RAP1_REP3_treatment.biotype_counts_rrna_mqc.tsv, results/qualimap/WT_REP1_control, results/qualimap/WT_REP2_control, results/qualimap/WT_REP3_control, results/qualimap/RAP1_REP1_treatment, results/qualimap/RAP1_REP2_treatment, results/qualimap/RAP1_REP3_treatment
+    jobid: 0
+    reason: Input files updated by another job: results/qualimap/WT_REP1_control, results/qualimap/RAP1_REP2_treatment, results/qualimap/RAP1_REP1_treatment, results/qualimap/WT_REP2_control, results/qualimap/RAP1_REP3_treatment, results/qualimap/WT_REP3_control
+    resources: tmpdir=/tmp
+
+Completion of job ['all'] reported to scheduler.
+jobs registered as running before removal {all}
+[Sun Aug 18 23:07:46 2024]
+Finished job 0.
+7 of 7 steps (100%) done
+Complete log: .snakemake/log/2024-08-18T230743.632783.snakemake.log
+unlocking
+removing lock
+removing lock
+removed all locks

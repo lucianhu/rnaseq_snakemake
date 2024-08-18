@@ -1,0 +1,17 @@
+Running StringTie 2.2.3. Command line:
+stringtie results/align/bam_markup/RAP1_REP2_treatment/RAP1_REP2_treatment.markdup.sorted.bam --rf -G resources/annotation.filtered.gtf -o results/stringtie/RAP1_REP2_treatment/RAP1_REP2_treatment.transcripts.gtf -A results/stringtie/RAP1_REP2_treatment/RAP1_REP2_treatment.gene.abundance.txt -C results/stringtie/RAP1_REP2_treatment/RAP1_REP2_treatment.coverage.gtf -b results/stringtie/RAP1_REP2_treatment/RAP1_REP2_treatment.ballgown -p 6 -v -e
+[08/19 00:53:59] Loading reference annotation (guides)..
+[08/19 00:53:59] 124 reference transcripts loaded.
+Default stack size for threads: 8388608
+[08/19 00:53:59]>bundle I:1807-2197 [7 alignments (7 distinct), 0 junctions, 1 guides] begins processing...
+[08/19 00:53:59]>bundle I:7138-9016 [2 alignments (2 distinct), 0 junctions, 1 guides] begins processing...
+[08/19 00:53:59]>bundle I:11565-12581 [1 alignments (1 distinct), 0 junctions, 2 guides] begins processing...
+[08/19 00:53:59]^bundle I:1807-2197 done (1 processed potential transcripts).
+[08/19 00:53:59]^bundle I:11565-12581 done (1 processed potential transcripts).
+[08/19 00:53:59]^bundle I:7138-9016 done (1 processed potential transcripts).
+[08/19 00:53:59]>bundle I:13336-227218 [40544 alignments (15153 distinct), 41 junctions, 116 guides] begins processing...
+[08/19 00:53:59] 10 aligned fragments found.
+[08/19 00:53:59]^bundle I:13336-227218 done (89 processed potential transcripts).
+[08/19 00:53:59] All threads finished.
+Total count of aligned fragments: 40554
+Fragment coverage length: 97.2964

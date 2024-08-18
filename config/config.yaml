@@ -1,0 +1,9 @@
+# Path or URL to the sample sheet (CSV format, columns: sample, unit, condition, fq1, fq2, strandedness)
+samples: config/samplesheet.csv
+
+trimming:
+  activate: True
+
+ref:
+  genome: "/home/lucianhu/rna_snakemake/test_ting/resources/genome.fa"
+  annotation: "/home/lucianhu/rna_snakemake/test_ting/resources/annotation.gtf"

@@ -1,0 +1,21 @@
+Building DAG of jobs...
+Full Traceback (most recent call last):
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/cli.py", line 2103, in args_to_api
+    dag_api.execute_workflow(
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/api.py", line 594, in execute_workflow
+    workflow.execute(
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/workflow.py", line 1083, in execute
+    with self.persistence.lock():
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/persistence.py", line 201, in lock
+    raise snakemake.exceptions.LockException()
+snakemake.exceptions.LockException: Error: Directory cannot be locked. Please make sure that no other Snakemake process is trying to create the same files in the following directory:
+/home/lucianhu/rna_snakemake/test_ting
+If you are sure that no other instances of snakemake are running on this directory, the remaining lock was likely caused by a kill signal or a power loss. It can be removed with the --unlock argument.
+
+LockException:
+Error: Directory cannot be locked. Please make sure that no other Snakemake process is trying to create the same files in the following directory:
+/home/lucianhu/rna_snakemake/test_ting
+If you are sure that no other instances of snakemake are running on this directory, the remaining lock was likely caused by a kill signal or a power loss. It can be removed with the --unlock argument.

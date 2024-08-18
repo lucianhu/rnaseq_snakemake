@@ -1,0 +1,285 @@
+Building DAG of jobs...
+shared_storage_local_copies: True
+remote_exec: False
+Using shell: /usr/bin/bash
+Provided cores: 24
+Rules claiming more threads will be scaled down.
+Conda environments: ignored
+Job stats:
+job            count
+-----------  -------
+all                1
+trim_galore        6
+total              7
+
+Resources before job selection: {'_cores': 24, '_nodes': 9223372036854775807}
+Ready jobs (6)
+Select jobs to execute...
+Selected jobs (3)
+Resources after job selection: {'_cores': 0, '_nodes': 9223372036854775804}
+Execute 3 jobs...
+
+[Wed Aug 14 00:07:23 2024]
+localrule trim_galore:
+    input: /home/lucianhu/rna_snakemake/rna_snakemake/test-datasets/testdata/SRR6357073_1.fastq.gz
+    output: results/trimmed/RAP1_REP1_treatment
+    log: logs/trim_galore/RAP1_REP1_treatment.trimmed.log
+    jobid: 4
+    reason: Missing output files: results/trimmed/RAP1_REP1_treatment
+    wildcards: sample=RAP1_REP1_treatment
+    threads: 8
+    resources: tmpdir=/tmp
+
+
+[Wed Aug 14 00:07:23 2024]
+localrule trim_galore:
+    input: /home/lucianhu/rna_snakemake/rna_snakemake/test-datasets/testdata/SRR6357070_1.fastq.gz, /home/lucianhu/rna_snakemake/rna_snakemake/test-datasets/testdata/SRR6357070_2.fastq.gz
+    output: results/trimmed/WT_REP1_control
+    log: logs/trim_galore/WT_REP1_control.trimmed.log
+    jobid: 1
+    reason: Missing output files: results/trimmed/WT_REP1_control
+    wildcards: sample=WT_REP1_control
+    threads: 8
+    resources: tmpdir=/tmp
+
+
+[Wed Aug 14 00:07:23 2024]
+localrule trim_galore:
+    input: /home/lucianhu/rna_snakemake/rna_snakemake/test-datasets/testdata/SRR6357071_1.fastq.gz, /home/lucianhu/rna_snakemake/rna_snakemake/test-datasets/testdata/SRR6357071_2.fastq.gz
+    output: results/trimmed/WT_REP2_control
+    log: logs/trim_galore/WT_REP2_control.trimmed.log
+    jobid: 2
+    reason: Missing output files: results/trimmed/WT_REP2_control
+    wildcards: sample=WT_REP2_control
+    threads: 8
+    resources: tmpdir=/tmp
+
+Full Traceback (most recent call last):
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/executors/local.py", line 423, in run_wrapper
+    run(
+  File "/home/lucianhu/rna_snakemake/test_ting/Snakefile", line 130, in __rule_trim_galore
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/shell.py", line 357, in __new__
+    raise sp.CalledProcessError(retcode, cmd)
+subprocess.CalledProcessError: Command 'set -euo pipefail;  
+        mkdir -p results/trimmed/WT_REP2_control
+        if [ -z "/home/lucianhu/rna_snakemake/rna_snakemake/test-datasets/testdata/SRR6357071_2.fastq.gz" ]; then
+            # Single-end reads
+            trim_galore --fastqc_args '-t 12' --cores 8                 --gzip                 --output_dir results/trimmed/WT_REP2_control                 /home/lucianhu/rna_snakemake/rna_snakemake/test-datasets/testdata/SRR6357071_1.fastq.gz                 2> logs/trim_galore/WT_REP2_control.trimmed.log
+            
+        else
+            # Paired-end reads
+            trim_galore --fastqc_args '-t 12' --cores 8                 --paired                 --gzip                 --output_dir results/trimmed/WT_REP2_control                 /home/lucianhu/rna_snakemake/rna_snakemake/test-datasets/testdata/SRR6357071_1.fastq.gz /home/lucianhu/rna_snakemake/rna_snakemake/test-datasets/testdata/SRR6357071_2.fastq.gz \             
+                2> logs/trim_galore/WT_REP2_control.trimmed.log
+            
+        fi' returned non-zero exit status 255.
+
+Full Traceback (most recent call last):
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/executors/local.py", line 423, in run_wrapper
+    run(
+  File "/home/lucianhu/rna_snakemake/test_ting/Snakefile", line 130, in __rule_trim_galore
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/shell.py", line 357, in __new__
+    raise sp.CalledProcessError(retcode, cmd)
+subprocess.CalledProcessError: Command 'set -euo pipefail;  
+        mkdir -p results/trimmed/WT_REP2_control
+        if [ -z "/home/lucianhu/rna_snakemake/rna_snakemake/test-datasets/testdata/SRR6357071_2.fastq.gz" ]; then
+            # Single-end reads
+            trim_galore --fastqc_args '-t 12' --cores 8                 --gzip                 --output_dir results/trimmed/WT_REP2_control                 /home/lucianhu/rna_snakemake/rna_snakemake/test-datasets/testdata/SRR6357071_1.fastq.gz                 2> logs/trim_galore/WT_REP2_control.trimmed.log
+            
+        else
+            # Paired-end reads
+            trim_galore --fastqc_args '-t 12' --cores 8                 --paired                 --gzip                 --output_dir results/trimmed/WT_REP2_control                 /home/lucianhu/rna_snakemake/rna_snakemake/test-datasets/testdata/SRR6357071_1.fastq.gz /home/lucianhu/rna_snakemake/rna_snakemake/test-datasets/testdata/SRR6357071_2.fastq.gz \             
+                2> logs/trim_galore/WT_REP2_control.trimmed.log
+            
+        fi' returned non-zero exit status 255.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/executors/local.py", line 261, in _callback
+    raise ex
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/executors/local.py", line 247, in cached_or_run
+    run_func(*args)
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/executors/local.py", line 459, in run_wrapper
+    raise RuleException(
+snakemake.exceptions.RuleException: CalledProcessError in file /home/lucianhu/rna_snakemake/test_ting/Snakefile, line 49:
+Command 'set -euo pipefail;  
+        mkdir -p results/trimmed/WT_REP2_control
+        if [ -z "/home/lucianhu/rna_snakemake/rna_snakemake/test-datasets/testdata/SRR6357071_2.fastq.gz" ]; then
+            # Single-end reads
+            trim_galore --fastqc_args '-t 12' --cores 8                 --gzip                 --output_dir results/trimmed/WT_REP2_control                 /home/lucianhu/rna_snakemake/rna_snakemake/test-datasets/testdata/SRR6357071_1.fastq.gz                 2> logs/trim_galore/WT_REP2_control.trimmed.log
+            
+        else
+            # Paired-end reads
+            trim_galore --fastqc_args '-t 12' --cores 8                 --paired                 --gzip                 --output_dir results/trimmed/WT_REP2_control                 /home/lucianhu/rna_snakemake/rna_snakemake/test-datasets/testdata/SRR6357071_1.fastq.gz /home/lucianhu/rna_snakemake/rna_snakemake/test-datasets/testdata/SRR6357071_2.fastq.gz \             
+                2> logs/trim_galore/WT_REP2_control.trimmed.log
+            
+        fi' returned non-zero exit status 255.
+
+RuleException:
+CalledProcessError in file /home/lucianhu/rna_snakemake/test_ting/Snakefile, line 49:
+Command 'set -euo pipefail;  
+        mkdir -p results/trimmed/WT_REP2_control
+        if [ -z "/home/lucianhu/rna_snakemake/rna_snakemake/test-datasets/testdata/SRR6357071_2.fastq.gz" ]; then
+            # Single-end reads
+            trim_galore --fastqc_args '-t 12' --cores 8                 --gzip                 --output_dir results/trimmed/WT_REP2_control                 /home/lucianhu/rna_snakemake/rna_snakemake/test-datasets/testdata/SRR6357071_1.fastq.gz                 2> logs/trim_galore/WT_REP2_control.trimmed.log
+            
+        else
+            # Paired-end reads
+            trim_galore --fastqc_args '-t 12' --cores 8                 --paired                 --gzip                 --output_dir results/trimmed/WT_REP2_control                 /home/lucianhu/rna_snakemake/rna_snakemake/test-datasets/testdata/SRR6357071_1.fastq.gz /home/lucianhu/rna_snakemake/rna_snakemake/test-datasets/testdata/SRR6357071_2.fastq.gz \             
+                2> logs/trim_galore/WT_REP2_control.trimmed.log
+            
+        fi' returned non-zero exit status 255.
+[Wed Aug 14 00:07:23 2024]
+Error in rule trim_galore:
+    jobid: 2
+    input: /home/lucianhu/rna_snakemake/rna_snakemake/test-datasets/testdata/SRR6357071_1.fastq.gz, /home/lucianhu/rna_snakemake/rna_snakemake/test-datasets/testdata/SRR6357071_2.fastq.gz
+    output: results/trimmed/WT_REP2_control
+    log: logs/trim_galore/WT_REP2_control.trimmed.log (check log file(s) for error details)
+    conda-env: /home/lucianhu/rna_snakemake/test_ting/.snakemake/conda/cd96ed42c911eeae2331e9bea5ddc6ae_
+    shell:
+        
+        mkdir -p results/trimmed/WT_REP2_control
+        if [ -z "/home/lucianhu/rna_snakemake/rna_snakemake/test-datasets/testdata/SRR6357071_2.fastq.gz" ]; then
+            # Single-end reads
+            trim_galore --fastqc_args '-t 12' --cores 8                 --gzip                 --output_dir results/trimmed/WT_REP2_control                 /home/lucianhu/rna_snakemake/rna_snakemake/test-datasets/testdata/SRR6357071_1.fastq.gz                 2> logs/trim_galore/WT_REP2_control.trimmed.log
+            
+        else
+            # Paired-end reads
+            trim_galore --fastqc_args '-t 12' --cores 8                 --paired                 --gzip                 --output_dir results/trimmed/WT_REP2_control                 /home/lucianhu/rna_snakemake/rna_snakemake/test-datasets/testdata/SRR6357071_1.fastq.gz /home/lucianhu/rna_snakemake/rna_snakemake/test-datasets/testdata/SRR6357071_2.fastq.gz \             
+                2> logs/trim_galore/WT_REP2_control.trimmed.log
+            
+        fi
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job trim_galore since they might be corrupted:
+results/trimmed/WT_REP2_control
+Full Traceback (most recent call last):
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/executors/local.py", line 423, in run_wrapper
+    run(
+  File "/home/lucianhu/rna_snakemake/test_ting/Snakefile", line 130, in __rule_trim_galore
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/shell.py", line 357, in __new__
+    raise sp.CalledProcessError(retcode, cmd)
+subprocess.CalledProcessError: Command 'set -euo pipefail;  
+        mkdir -p results/trimmed/WT_REP1_control
+        if [ -z "/home/lucianhu/rna_snakemake/rna_snakemake/test-datasets/testdata/SRR6357070_2.fastq.gz" ]; then
+            # Single-end reads
+            trim_galore --fastqc_args '-t 12' --cores 8                 --gzip                 --output_dir results/trimmed/WT_REP1_control                 /home/lucianhu/rna_snakemake/rna_snakemake/test-datasets/testdata/SRR6357070_1.fastq.gz                 2> logs/trim_galore/WT_REP1_control.trimmed.log
+            
+        else
+            # Paired-end reads
+            trim_galore --fastqc_args '-t 12' --cores 8                 --paired                 --gzip                 --output_dir results/trimmed/WT_REP1_control                 /home/lucianhu/rna_snakemake/rna_snakemake/test-datasets/testdata/SRR6357070_1.fastq.gz /home/lucianhu/rna_snakemake/rna_snakemake/test-datasets/testdata/SRR6357070_2.fastq.gz \             
+                2> logs/trim_galore/WT_REP1_control.trimmed.log
+            
+        fi' returned non-zero exit status 255.
+
+Full Traceback (most recent call last):
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/executors/local.py", line 423, in run_wrapper
+    run(
+  File "/home/lucianhu/rna_snakemake/test_ting/Snakefile", line 130, in __rule_trim_galore
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/shell.py", line 357, in __new__
+    raise sp.CalledProcessError(retcode, cmd)
+subprocess.CalledProcessError: Command 'set -euo pipefail;  
+        mkdir -p results/trimmed/WT_REP1_control
+        if [ -z "/home/lucianhu/rna_snakemake/rna_snakemake/test-datasets/testdata/SRR6357070_2.fastq.gz" ]; then
+            # Single-end reads
+            trim_galore --fastqc_args '-t 12' --cores 8                 --gzip                 --output_dir results/trimmed/WT_REP1_control                 /home/lucianhu/rna_snakemake/rna_snakemake/test-datasets/testdata/SRR6357070_1.fastq.gz                 2> logs/trim_galore/WT_REP1_control.trimmed.log
+            
+        else
+            # Paired-end reads
+            trim_galore --fastqc_args '-t 12' --cores 8                 --paired                 --gzip                 --output_dir results/trimmed/WT_REP1_control                 /home/lucianhu/rna_snakemake/rna_snakemake/test-datasets/testdata/SRR6357070_1.fastq.gz /home/lucianhu/rna_snakemake/rna_snakemake/test-datasets/testdata/SRR6357070_2.fastq.gz \             
+                2> logs/trim_galore/WT_REP1_control.trimmed.log
+            
+        fi' returned non-zero exit status 255.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/executors/local.py", line 261, in _callback
+    raise ex
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/executors/local.py", line 247, in cached_or_run
+    run_func(*args)
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/executors/local.py", line 459, in run_wrapper
+    raise RuleException(
+snakemake.exceptions.RuleException: CalledProcessError in file /home/lucianhu/rna_snakemake/test_ting/Snakefile, line 49:
+Command 'set -euo pipefail;  
+        mkdir -p results/trimmed/WT_REP1_control
+        if [ -z "/home/lucianhu/rna_snakemake/rna_snakemake/test-datasets/testdata/SRR6357070_2.fastq.gz" ]; then
+            # Single-end reads
+            trim_galore --fastqc_args '-t 12' --cores 8                 --gzip                 --output_dir results/trimmed/WT_REP1_control                 /home/lucianhu/rna_snakemake/rna_snakemake/test-datasets/testdata/SRR6357070_1.fastq.gz                 2> logs/trim_galore/WT_REP1_control.trimmed.log
+            
+        else
+            # Paired-end reads
+            trim_galore --fastqc_args '-t 12' --cores 8                 --paired                 --gzip                 --output_dir results/trimmed/WT_REP1_control                 /home/lucianhu/rna_snakemake/rna_snakemake/test-datasets/testdata/SRR6357070_1.fastq.gz /home/lucianhu/rna_snakemake/rna_snakemake/test-datasets/testdata/SRR6357070_2.fastq.gz \             
+                2> logs/trim_galore/WT_REP1_control.trimmed.log
+            
+        fi' returned non-zero exit status 255.
+
+RuleException:
+CalledProcessError in file /home/lucianhu/rna_snakemake/test_ting/Snakefile, line 49:
+Command 'set -euo pipefail;  
+        mkdir -p results/trimmed/WT_REP1_control
+        if [ -z "/home/lucianhu/rna_snakemake/rna_snakemake/test-datasets/testdata/SRR6357070_2.fastq.gz" ]; then
+            # Single-end reads
+            trim_galore --fastqc_args '-t 12' --cores 8                 --gzip                 --output_dir results/trimmed/WT_REP1_control                 /home/lucianhu/rna_snakemake/rna_snakemake/test-datasets/testdata/SRR6357070_1.fastq.gz                 2> logs/trim_galore/WT_REP1_control.trimmed.log
+            
+        else
+            # Paired-end reads
+            trim_galore --fastqc_args '-t 12' --cores 8                 --paired                 --gzip                 --output_dir results/trimmed/WT_REP1_control                 /home/lucianhu/rna_snakemake/rna_snakemake/test-datasets/testdata/SRR6357070_1.fastq.gz /home/lucianhu/rna_snakemake/rna_snakemake/test-datasets/testdata/SRR6357070_2.fastq.gz \             
+                2> logs/trim_galore/WT_REP1_control.trimmed.log
+            
+        fi' returned non-zero exit status 255.
+[Wed Aug 14 00:07:23 2024]
+Error in rule trim_galore:
+    jobid: 1
+    input: /home/lucianhu/rna_snakemake/rna_snakemake/test-datasets/testdata/SRR6357070_1.fastq.gz, /home/lucianhu/rna_snakemake/rna_snakemake/test-datasets/testdata/SRR6357070_2.fastq.gz
+    output: results/trimmed/WT_REP1_control
+    log: logs/trim_galore/WT_REP1_control.trimmed.log (check log file(s) for error details)
+    conda-env: /home/lucianhu/rna_snakemake/test_ting/.snakemake/conda/cd96ed42c911eeae2331e9bea5ddc6ae_
+    shell:
+        
+        mkdir -p results/trimmed/WT_REP1_control
+        if [ -z "/home/lucianhu/rna_snakemake/rna_snakemake/test-datasets/testdata/SRR6357070_2.fastq.gz" ]; then
+            # Single-end reads
+            trim_galore --fastqc_args '-t 12' --cores 8                 --gzip                 --output_dir results/trimmed/WT_REP1_control                 /home/lucianhu/rna_snakemake/rna_snakemake/test-datasets/testdata/SRR6357070_1.fastq.gz                 2> logs/trim_galore/WT_REP1_control.trimmed.log
+            
+        else
+            # Paired-end reads
+            trim_galore --fastqc_args '-t 12' --cores 8                 --paired                 --gzip                 --output_dir results/trimmed/WT_REP1_control                 /home/lucianhu/rna_snakemake/rna_snakemake/test-datasets/testdata/SRR6357070_1.fastq.gz /home/lucianhu/rna_snakemake/rna_snakemake/test-datasets/testdata/SRR6357070_2.fastq.gz \             
+                2> logs/trim_galore/WT_REP1_control.trimmed.log
+            
+        fi
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job trim_galore since they might be corrupted:
+results/trimmed/WT_REP1_control
+Completion of job ['trim_galore'] reported to scheduler.
+jobs registered as running before removal {trim_galore}
+[Wed Aug 14 00:07:25 2024]
+Finished job 4.
+1 of 7 steps (14%) done
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2024-08-14T000722.978959.snakemake.log
+unlocking
+removing lock
+removing lock
+removed all locks
+Full Traceback (most recent call last):
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/cli.py", line 2103, in args_to_api
+    dag_api.execute_workflow(
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/api.py", line 594, in execute_workflow
+    workflow.execute(
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/workflow.py", line 1286, in execute
+    raise WorkflowError("At least one job did not complete successfully.")
+snakemake_interface_common.exceptions.WorkflowError: At least one job did not complete successfully.
+
+WorkflowError:
+At least one job did not complete successfully.

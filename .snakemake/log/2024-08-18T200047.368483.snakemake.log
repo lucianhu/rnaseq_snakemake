@@ -1,0 +1,235 @@
+Building DAG of jobs...
+Forcing incomplete files:
+	results/align/bam_original/WT_REP2_control/WT_REP2_control.Aligned.out.bam
+	results/align/bam_original/WT_REP2_control/WT_REP2_control.Aligned.toTranscriptome.out.bam
+shared_storage_local_copies: True
+remote_exec: False
+Using shell: /usr/bin/bash
+Provided cores: 24
+Rules claiming more threads will be scaled down.
+Conda environments: ignored
+Job stats:
+job                            count
+---------------------------  -------
+align_paired                       1
+all                                1
+filter_gtf                         1
+picard_mark_duplicates             2
+samtools_markdup_processing        6
+samtools_process                   1
+stringtie                          6
+total                             18
+
+Resources before job selection: {'_cores': 24, '_nodes': 9223372036854775807}
+Ready jobs (7)
+Select jobs to execute...
+Selected jobs (2)
+Resources after job selection: {'_cores': 0, '_nodes': 9223372036854775805}
+Execute 2 jobs...
+
+[Sun Aug 18 20:00:47 2024]
+Job 21: WT_REP3_control: Marking duplicate reads
+Reason: Updated input files: results/align/bam_original/WT_REP3_control/WT_REP3_control.sorted.bam
+
+
+[Sun Aug 18 20:00:47 2024]
+Job 3: WT_REP2_control: Aligning on paired-end FASTQ files...
+Reason: Forced execution
+
+Completion of job ['picard_mark_duplicates'] reported to scheduler.
+jobs registered as running before removal {picard_mark_duplicates, align_paired}
+[Sun Aug 18 20:00:48 2024]
+Finished job 21.
+1 of 18 steps (6%) done
+Resources before job selection: {'_cores': 12, '_nodes': 9223372036854775806}
+Ready jobs (6)
+Select jobs to execute...
+Selected jobs (6)
+Resources after job selection: {'_cores': 6, '_nodes': 9223372036854775800}
+Execute 6 jobs...
+
+[Sun Aug 18 20:00:48 2024]
+Job 30: RAP1_REP3_treatment: Running Samtools to mark duplicate reads
+Reason: Updated input files: results/align/bam_markup/RAP1_REP3_treatment/RAP1_REP3_treatment.markdup.sorted.bam
+
+
+[Sun Aug 18 20:00:48 2024]
+Job 28: RAP1_REP1_treatment: Running Samtools to mark duplicate reads
+Reason: Updated input files: results/align/bam_markup/RAP1_REP1_treatment/RAP1_REP1_treatment.markdup.sorted.bam
+
+
+[Sun Aug 18 20:00:48 2024]
+localrule filter_gtf:
+    input: resources/annotation.gtf, resources/genome.fa
+    output: resources/annotation.filtered.gtf
+    log: logs/filter_gtf.log
+    jobid: 32
+    reason: Missing output files: resources/annotation.filtered.gtf
+    resources: tmpdir=/tmp
+
+
+[Sun Aug 18 20:00:48 2024]
+Job 25: WT_REP1_control: Running Samtools to mark duplicate reads
+Reason: Updated input files: results/align/bam_markup/WT_REP1_control/WT_REP1_control.markdup.sorted.bam
+
+
+[Sun Aug 18 20:00:48 2024]
+Job 29: RAP1_REP2_treatment: Running Samtools to mark duplicate reads
+Reason: Updated input files: results/align/bam_markup/RAP1_REP2_treatment/RAP1_REP2_treatment.markdup.sorted.bam
+
+
+[Sun Aug 18 20:00:48 2024]
+Job 27: WT_REP3_control: Running Samtools to mark duplicate reads
+Reason: Input files updated by another job: results/align/bam_markup/WT_REP3_control/WT_REP3_control.markdup.sorted.bam
+
+Full Traceback (most recent call last):
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/executors/local.py", line 423, in run_wrapper
+    run(
+  File "/home/lucianhu/rna_snakemake/test_ting/Snakefile", line 727, in __rule_filter_gtf
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/shell.py", line 357, in __new__
+    raise sp.CalledProcessError(retcode, cmd)
+subprocess.CalledProcessError: Command 'set -euo pipefail;  
+        python scripts/filter_gtf.py --gtf resources/annotation.gtf --fasta resources/genome.fa --prefix resources/annotation.filtered &> logs/filter_gtf.log' returned non-zero exit status 2.
+
+Full Traceback (most recent call last):
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/executors/local.py", line 423, in run_wrapper
+    run(
+  File "/home/lucianhu/rna_snakemake/test_ting/Snakefile", line 727, in __rule_filter_gtf
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/shell.py", line 357, in __new__
+    raise sp.CalledProcessError(retcode, cmd)
+subprocess.CalledProcessError: Command 'set -euo pipefail;  
+        python scripts/filter_gtf.py --gtf resources/annotation.gtf --fasta resources/genome.fa --prefix resources/annotation.filtered &> logs/filter_gtf.log' returned non-zero exit status 2.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/executors/local.py", line 261, in _callback
+    raise ex
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/executors/local.py", line 247, in cached_or_run
+    run_func(*args)
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/executors/local.py", line 459, in run_wrapper
+    raise RuleException(
+snakemake.exceptions.RuleException: CalledProcessError in file /home/lucianhu/rna_snakemake/test_ting/Snakefile, line 373:
+Command 'set -euo pipefail;  
+        python scripts/filter_gtf.py --gtf resources/annotation.gtf --fasta resources/genome.fa --prefix resources/annotation.filtered &> logs/filter_gtf.log' returned non-zero exit status 2.
+
+RuleException:
+CalledProcessError in file /home/lucianhu/rna_snakemake/test_ting/Snakefile, line 373:
+Command 'set -euo pipefail;  
+        python scripts/filter_gtf.py --gtf resources/annotation.gtf --fasta resources/genome.fa --prefix resources/annotation.filtered &> logs/filter_gtf.log' returned non-zero exit status 2.
+[Sun Aug 18 20:00:48 2024]
+Error in rule filter_gtf:
+    jobid: 32
+    input: resources/annotation.gtf, resources/genome.fa
+    output: resources/annotation.filtered.gtf
+    log: logs/filter_gtf.log (check log file(s) for error details)
+    conda-env: /home/lucianhu/rna_snakemake/test_ting/.snakemake/conda/a3c206334a76b4f4861aaeb71260b3d0_
+    shell:
+        
+        python scripts/filter_gtf.py --gtf resources/annotation.gtf --fasta resources/genome.fa --prefix resources/annotation.filtered &> logs/filter_gtf.log
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Completion of job ['samtools_markdup_processing'] reported to scheduler.
+jobs registered as running before removal {samtools_markdup_processing, samtools_markdup_processing, samtools_markdup_processing, samtools_markdup_processing, samtools_markdup_processing, align_paired}
+[Sun Aug 18 20:00:48 2024]
+Finished job 28.
+2 of 18 steps (11%) done
+Completion of job ['samtools_markdup_processing'] reported to scheduler.
+jobs registered as running before removal {samtools_markdup_processing, samtools_markdup_processing, samtools_markdup_processing, samtools_markdup_processing, align_paired}
+[Sun Aug 18 20:00:48 2024]
+Finished job 30.
+3 of 18 steps (17%) done
+Completion of job ['samtools_markdup_processing'] reported to scheduler.
+jobs registered as running before removal {samtools_markdup_processing, samtools_markdup_processing, samtools_markdup_processing, align_paired}
+[Sun Aug 18 20:00:48 2024]
+Finished job 29.
+4 of 18 steps (22%) done
+Completion of job ['samtools_markdup_processing'] reported to scheduler.
+jobs registered as running before removal {samtools_markdup_processing, samtools_markdup_processing, align_paired}
+[Sun Aug 18 20:00:48 2024]
+Finished job 25.
+5 of 18 steps (28%) done
+Completion of job ['samtools_markdup_processing'] reported to scheduler.
+jobs registered as running before removal {samtools_markdup_processing, align_paired}
+[Sun Aug 18 20:00:48 2024]
+Finished job 27.
+6 of 18 steps (33%) done
+Terminating processes on user request, this might take some time.
+Full Traceback (most recent call last):
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/executors/local.py", line 423, in run_wrapper
+    run(
+  File "/home/lucianhu/rna_snakemake/test_ting/Snakefile", line 340, in __rule_align_paired
+    "{wildcards.sample}: Running Samtools to mark duplicate reads"
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/shell.py", line 357, in __new__
+    raise sp.CalledProcessError(retcode, cmd)
+subprocess.CalledProcessError: Command 'set -euo pipefail;  
+        # Run STAR alignment
+        STAR --genomeDir resources/star_index              --readFilesIn results/trimmed/WT_REP2_control_trimmed_R1.fq.gz results/trimmed/WT_REP2_control_trimmed_R2.fq.gz              --runThreadN 12              --genomeLoad NoSharedMemory              --outFileNamePrefix results/align/bam_original/WT_REP2_control/WT_REP2_control.              --sjdbGTFfile resources/annotation.gtf              --outSAMattrRGline 'ID:WT_REP2_control' 'SM:WT_REP2_control'              --outSAMtype BAM Unsorted              --quantMode TranscriptomeSAM              --twopassMode Basic              --readFilesCommand zcat              --runRNGseed 0              --alignSJDBoverhangMin 1              --outSAMattributes NH HI AS NM MD              --outSAMstrandField intronMotif              --quantTranscriptomeSAMoutput BanSingleEnd              --outFilterMultimapNmax 1              --outFilterMismatchNmax 3              --peOverlapNbasesMin 10              --alignSplicedMateMapLminOverLmate 0.5              --chimSegmentMin 10              --chimOutType WithinBAM SoftClip              --chimJunctionOverhangMin 10              --chimScoreMin 1              --chimScoreDropMax 30              --chimScoreJunctionNonGTAG 0              --chimScoreSeparation 1              --alignSJstitchMismatchNmax 5 -1 5 5              --chimSegmentReadGapMax 3 &> logs/star_align/WT_REP2_control.star_align.log' died with <Signals.SIGINT: 2>.
+
+Full Traceback (most recent call last):
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/executors/local.py", line 423, in run_wrapper
+    run(
+  File "/home/lucianhu/rna_snakemake/test_ting/Snakefile", line 340, in __rule_align_paired
+    "{wildcards.sample}: Running Samtools to mark duplicate reads"
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/shell.py", line 357, in __new__
+    raise sp.CalledProcessError(retcode, cmd)
+subprocess.CalledProcessError: Command 'set -euo pipefail;  
+        # Run STAR alignment
+        STAR --genomeDir resources/star_index              --readFilesIn results/trimmed/WT_REP2_control_trimmed_R1.fq.gz results/trimmed/WT_REP2_control_trimmed_R2.fq.gz              --runThreadN 12              --genomeLoad NoSharedMemory              --outFileNamePrefix results/align/bam_original/WT_REP2_control/WT_REP2_control.              --sjdbGTFfile resources/annotation.gtf              --outSAMattrRGline 'ID:WT_REP2_control' 'SM:WT_REP2_control'              --outSAMtype BAM Unsorted              --quantMode TranscriptomeSAM              --twopassMode Basic              --readFilesCommand zcat              --runRNGseed 0              --alignSJDBoverhangMin 1              --outSAMattributes NH HI AS NM MD              --outSAMstrandField intronMotif              --quantTranscriptomeSAMoutput BanSingleEnd              --outFilterMultimapNmax 1              --outFilterMismatchNmax 3              --peOverlapNbasesMin 10              --alignSplicedMateMapLminOverLmate 0.5              --chimSegmentMin 10              --chimOutType WithinBAM SoftClip              --chimJunctionOverhangMin 10              --chimScoreMin 1              --chimScoreDropMax 30              --chimScoreJunctionNonGTAG 0              --chimScoreSeparation 1              --alignSJstitchMismatchNmax 5 -1 5 5              --chimSegmentReadGapMax 3 &> logs/star_align/WT_REP2_control.star_align.log' died with <Signals.SIGINT: 2>.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/executors/local.py", line 261, in _callback
+    raise ex
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/executors/local.py", line 247, in cached_or_run
+    run_func(*args)
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/executors/local.py", line 459, in run_wrapper
+    raise RuleException(
+snakemake.exceptions.RuleException: CalledProcessError in file /home/lucianhu/rna_snakemake/test_ting/Snakefile, line 180:
+Command 'set -euo pipefail;  
+        # Run STAR alignment
+        STAR --genomeDir resources/star_index              --readFilesIn results/trimmed/WT_REP2_control_trimmed_R1.fq.gz results/trimmed/WT_REP2_control_trimmed_R2.fq.gz              --runThreadN 12              --genomeLoad NoSharedMemory              --outFileNamePrefix results/align/bam_original/WT_REP2_control/WT_REP2_control.              --sjdbGTFfile resources/annotation.gtf              --outSAMattrRGline 'ID:WT_REP2_control' 'SM:WT_REP2_control'              --outSAMtype BAM Unsorted              --quantMode TranscriptomeSAM              --twopassMode Basic              --readFilesCommand zcat              --runRNGseed 0              --alignSJDBoverhangMin 1              --outSAMattributes NH HI AS NM MD              --outSAMstrandField intronMotif              --quantTranscriptomeSAMoutput BanSingleEnd              --outFilterMultimapNmax 1              --outFilterMismatchNmax 3              --peOverlapNbasesMin 10              --alignSplicedMateMapLminOverLmate 0.5              --chimSegmentMin 10              --chimOutType WithinBAM SoftClip              --chimJunctionOverhangMin 10              --chimScoreMin 1              --chimScoreDropMax 30              --chimScoreJunctionNonGTAG 0              --chimScoreSeparation 1              --alignSJstitchMismatchNmax 5 -1 5 5              --chimSegmentReadGapMax 3 &> logs/star_align/WT_REP2_control.star_align.log' died with <Signals.SIGINT: 2>.
+
+RuleException:
+CalledProcessError in file /home/lucianhu/rna_snakemake/test_ting/Snakefile, line 180:
+Command 'set -euo pipefail;  
+        # Run STAR alignment
+        STAR --genomeDir resources/star_index              --readFilesIn results/trimmed/WT_REP2_control_trimmed_R1.fq.gz results/trimmed/WT_REP2_control_trimmed_R2.fq.gz              --runThreadN 12              --genomeLoad NoSharedMemory              --outFileNamePrefix results/align/bam_original/WT_REP2_control/WT_REP2_control.              --sjdbGTFfile resources/annotation.gtf              --outSAMattrRGline 'ID:WT_REP2_control' 'SM:WT_REP2_control'              --outSAMtype BAM Unsorted              --quantMode TranscriptomeSAM              --twopassMode Basic              --readFilesCommand zcat              --runRNGseed 0              --alignSJDBoverhangMin 1              --outSAMattributes NH HI AS NM MD              --outSAMstrandField intronMotif              --quantTranscriptomeSAMoutput BanSingleEnd              --outFilterMultimapNmax 1              --outFilterMismatchNmax 3              --peOverlapNbasesMin 10              --alignSplicedMateMapLminOverLmate 0.5              --chimSegmentMin 10              --chimOutType WithinBAM SoftClip              --chimJunctionOverhangMin 10              --chimScoreMin 1              --chimScoreDropMax 30              --chimScoreJunctionNonGTAG 0              --chimScoreSeparation 1              --alignSJstitchMismatchNmax 5 -1 5 5              --chimSegmentReadGapMax 3 &> logs/star_align/WT_REP2_control.star_align.log' died with <Signals.SIGINT: 2>.
+[Sun Aug 18 20:01:03 2024]
+Error in rule align_paired:
+    jobid: 3
+    input: results/trimmed/WT_REP2_control_trimmed_R1.fq.gz, results/trimmed/WT_REP2_control_trimmed_R2.fq.gz, resources/annotation.gtf, resources/star_index
+    output: results/align/bam_original/WT_REP2_control/WT_REP2_control.Aligned.out.bam, results/align/bam_original/WT_REP2_control/WT_REP2_control.Aligned.toTranscriptome.out.bam
+    log: logs/star_align/WT_REP2_control.star_align.log (check log file(s) for error details)
+    conda-env: /home/lucianhu/rna_snakemake/test_ting/.snakemake/conda/1f835baae0b7b062716b90b833a307f5_
+    shell:
+        
+        # Run STAR alignment
+        STAR --genomeDir resources/star_index              --readFilesIn results/trimmed/WT_REP2_control_trimmed_R1.fq.gz results/trimmed/WT_REP2_control_trimmed_R2.fq.gz              --runThreadN 12              --genomeLoad NoSharedMemory              --outFileNamePrefix results/align/bam_original/WT_REP2_control/WT_REP2_control.              --sjdbGTFfile resources/annotation.gtf              --outSAMattrRGline 'ID:WT_REP2_control' 'SM:WT_REP2_control'              --outSAMtype BAM Unsorted              --quantMode TranscriptomeSAM              --twopassMode Basic              --readFilesCommand zcat              --runRNGseed 0              --alignSJDBoverhangMin 1              --outSAMattributes NH HI AS NM MD              --outSAMstrandField intronMotif              --quantTranscriptomeSAMoutput BanSingleEnd              --outFilterMultimapNmax 1              --outFilterMismatchNmax 3              --peOverlapNbasesMin 10              --alignSplicedMateMapLminOverLmate 0.5              --chimSegmentMin 10              --chimOutType WithinBAM SoftClip              --chimJunctionOverhangMin 10              --chimScoreMin 1              --chimScoreDropMax 30              --chimScoreJunctionNonGTAG 0              --chimScoreSeparation 1              --alignSJstitchMismatchNmax 5 -1 5 5              --chimSegmentReadGapMax 3 &> logs/star_align/WT_REP2_control.star_align.log
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Complete log: .snakemake/log/2024-08-18T200047.368483.snakemake.log
+unlocking
+removing lock
+removing lock
+removed all locks
+Full Traceback (most recent call last):
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/cli.py", line 2103, in args_to_api
+    dag_api.execute_workflow(
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/api.py", line 594, in execute_workflow
+    workflow.execute(
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/workflow.py", line 1286, in execute
+    raise WorkflowError("At least one job did not complete successfully.")
+snakemake_interface_common.exceptions.WorkflowError: At least one job did not complete successfully.
+
+WorkflowError:
+At least one job did not complete successfully.

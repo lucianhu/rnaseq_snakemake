@@ -1,0 +1,16 @@
+rsem-extract-reference-transcripts rsem_genome 0 resources/annotation.filtered.gtf None 0 resources/genome.fa
+Parsing gtf File is done!
+resources/genome.fa is processed!
+124 transcripts are extracted and 0 transcripts are omitted.
+Extracting sequences is done!
+Group File is generated!
+Transcript Information File is generated!
+Chromosome List File is generated!
+Extracted Sequences File is generated!
+
+rsem-preref rsem_genome.transcripts.fa 1 rsem_genome
+Refs.makeRefs finished!
+Refs.saveRefs finished!
+rsem_genome.idx.fa is generated!
+rsem_genome.n2g.idx.fa is generated!
+

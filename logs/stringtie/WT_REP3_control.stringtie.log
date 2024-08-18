@@ -1,0 +1,13 @@
+Running StringTie 2.2.3. Command line:
+stringtie results/align/bam_markup/WT_REP3_control/WT_REP3_control.markdup.sorted.bam --rf -G resources/annotation.filtered.gtf -o results/stringtie/WT_REP3_control/WT_REP3_control.transcripts.gtf -A results/stringtie/WT_REP3_control/WT_REP3_control.gene.abundance.txt -C results/stringtie/WT_REP3_control/WT_REP3_control.coverage.gtf -b results/stringtie/WT_REP3_control/WT_REP3_control.ballgown -p 6 -v -e
+[08/19 00:54:04] Loading reference annotation (guides)..
+[08/19 00:54:04] 124 reference transcripts loaded.
+Default stack size for threads: 8388608
+[08/19 00:54:04]>bundle I:1805-2277 [3 alignments (3 distinct), 0 junctions, 1 guides] begins processing...
+[08/19 00:54:04]^bundle I:1805-2277 done (1 processed potential transcripts).
+[08/19 00:54:04]>bundle I:7235-227218 [74513 alignments (22006 distinct), 46 junctions, 120 guides] begins processing...
+[08/19 00:54:04] 2 aligned fragments found.
+[08/19 00:54:04]^bundle I:7235-227218 done (90 processed potential transcripts).
+[08/19 00:54:04] All threads finished.
+Total count of aligned fragments: 42205
+Fragment coverage length: 171.697

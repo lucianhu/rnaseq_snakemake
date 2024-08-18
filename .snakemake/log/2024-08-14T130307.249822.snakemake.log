@@ -1,0 +1,239 @@
+Building DAG of jobs...
+shared_storage_local_copies: True
+remote_exec: False
+Using shell: /usr/bin/bash
+Provided cores: 24
+Rules claiming more threads will be scaled down.
+Conda environments: ignored
+Job stats:
+job                   count
+------------------  -------
+all                       1
+star_align                6
+trim_galore_paired        3
+trim_galore_single        3
+total                    13
+
+Resources before job selection: {'_cores': 24, '_nodes': 9223372036854775807}
+Ready jobs (6)
+Select jobs to execute...
+Selected jobs (3)
+Resources after job selection: {'_cores': 0, '_nodes': 9223372036854775804}
+Execute 3 jobs...
+
+[Wed Aug 14 13:03:07 2024]
+localrule trim_galore_single:
+    input: /home/lucianhu/rna_snakemake/rna_snakemake/test-datasets/testdata/SRR6357075_1.fastq.gz
+    output: results/trimmed/RAP1_REP3_treatment, results/trimmed/RAP1_REP3_treatment_trimmed_R1.fq.gz
+    log: logs/trim_galore/RAP1_REP3_treatment.trimmed.log
+    jobid: 3
+    reason: Missing output files: results/trimmed/RAP1_REP3_treatment_trimmed_R1.fq.gz; Code has changed since last execution
+    wildcards: sample=RAP1_REP3_treatment
+    threads: 8
+    resources: tmpdir=/tmp
+
+
+[Wed Aug 14 13:03:07 2024]
+localrule trim_galore_paired:
+    input: /home/lucianhu/rna_snakemake/rna_snakemake/test-datasets/testdata/SRR6357071_1.fastq.gz, /home/lucianhu/rna_snakemake/rna_snakemake/test-datasets/testdata/SRR6357071_2.fastq.gz
+    output: results/trimmed/WT_REP2_control, results/trimmed/WT_REP2_control_trimmed_R1.fq.gz, results/trimmed/WT_REP2_control_trimmed_R2.fq.gz
+    log: logs/trim_galore/WT_REP2_control.trimmed.log
+    jobid: 5
+    reason: Missing output files: results/trimmed/WT_REP2_control_trimmed_R1.fq.gz, results/trimmed/WT_REP2_control_trimmed_R2.fq.gz; Code has changed since last execution
+    wildcards: sample=WT_REP2_control
+    threads: 8
+    resources: tmpdir=/tmp
+
+
+[Wed Aug 14 13:03:07 2024]
+localrule trim_galore_paired:
+    input: /home/lucianhu/rna_snakemake/rna_snakemake/test-datasets/testdata/SRR6357070_1.fastq.gz, /home/lucianhu/rna_snakemake/rna_snakemake/test-datasets/testdata/SRR6357070_2.fastq.gz
+    output: results/trimmed/WT_REP1_control, results/trimmed/WT_REP1_control_trimmed_R1.fq.gz, results/trimmed/WT_REP1_control_trimmed_R2.fq.gz
+    log: logs/trim_galore/WT_REP1_control.trimmed.log
+    jobid: 4
+    reason: Missing output files: results/trimmed/WT_REP1_control_trimmed_R1.fq.gz, results/trimmed/WT_REP1_control_trimmed_R2.fq.gz; Code has changed since last execution
+    wildcards: sample=WT_REP1_control
+    threads: 8
+    resources: tmpdir=/tmp
+
+Completion of job ['trim_galore_single'] reported to scheduler.
+jobs registered as running before removal {trim_galore_single, trim_galore_paired, trim_galore_paired}
+[Wed Aug 14 13:03:10 2024]
+Finished job 3.
+1 of 13 steps (8%) done
+Resources before job selection: {'_cores': 8, '_nodes': 9223372036854775805}
+Ready jobs (4)
+Select jobs to execute...
+Selected jobs (1)
+Resources after job selection: {'_cores': 0, '_nodes': 9223372036854775804}
+Execute 1 jobs...
+
+[Wed Aug 14 13:03:10 2024]
+localrule trim_galore_single:
+    input: /home/lucianhu/rna_snakemake/rna_snakemake/test-datasets/testdata/SRR6357074_1.fastq.gz
+    output: results/trimmed/RAP1_REP2_treatment, results/trimmed/RAP1_REP2_treatment_trimmed_R1.fq.gz
+    log: logs/trim_galore/RAP1_REP2_treatment.trimmed.log
+    jobid: 2
+    reason: Missing output files: results/trimmed/RAP1_REP2_treatment_trimmed_R1.fq.gz; Code has changed since last execution
+    wildcards: sample=RAP1_REP2_treatment
+    threads: 8
+    resources: tmpdir=/tmp
+
+Completion of job ['trim_galore_paired'] reported to scheduler.
+jobs registered as running before removal {trim_galore_paired, trim_galore_paired, trim_galore_single}
+[Wed Aug 14 13:03:13 2024]
+Finished job 5.
+2 of 13 steps (15%) done
+Resources before job selection: {'_cores': 8, '_nodes': 9223372036854775805}
+Ready jobs (4)
+Select jobs to execute...
+Selected jobs (1)
+Resources after job selection: {'_cores': 0, '_nodes': 9223372036854775804}
+Execute 1 jobs...
+
+[Wed Aug 14 13:03:13 2024]
+localrule trim_galore_paired:
+    input: /home/lucianhu/rna_snakemake/rna_snakemake/test-datasets/testdata/SRR6357072_1.fastq.gz, /home/lucianhu/rna_snakemake/rna_snakemake/test-datasets/testdata/SRR6357072_2.fastq.gz
+    output: results/trimmed/WT_REP3_control, results/trimmed/WT_REP3_control_trimmed_R1.fq.gz, results/trimmed/WT_REP3_control_trimmed_R2.fq.gz
+    log: logs/trim_galore/WT_REP3_control.trimmed.log
+    jobid: 6
+    reason: Missing output files: results/trimmed/WT_REP3_control_trimmed_R2.fq.gz, results/trimmed/WT_REP3_control_trimmed_R1.fq.gz; Code has changed since last execution
+    wildcards: sample=WT_REP3_control
+    threads: 8
+    resources: tmpdir=/tmp
+
+Completion of job ['trim_galore_paired'] reported to scheduler.
+jobs registered as running before removal {trim_galore_paired, trim_galore_paired, trim_galore_single}
+[Wed Aug 14 13:03:13 2024]
+Finished job 4.
+3 of 13 steps (23%) done
+Resources before job selection: {'_cores': 8, '_nodes': 9223372036854775805}
+Ready jobs (4)
+Select jobs to execute...
+Selected jobs (1)
+Resources after job selection: {'_cores': 0, '_nodes': 9223372036854775804}
+Execute 1 jobs...
+
+[Wed Aug 14 13:03:14 2024]
+localrule trim_galore_single:
+    input: /home/lucianhu/rna_snakemake/rna_snakemake/test-datasets/testdata/SRR6357073_1.fastq.gz
+    output: results/trimmed/RAP1_REP1_treatment, results/trimmed/RAP1_REP1_treatment_trimmed_R1.fq.gz
+    log: logs/trim_galore/RAP1_REP1_treatment.trimmed.log
+    jobid: 1
+    reason: Missing output files: results/trimmed/RAP1_REP1_treatment_trimmed_R1.fq.gz; Code has changed since last execution
+    wildcards: sample=RAP1_REP1_treatment
+    threads: 8
+    resources: tmpdir=/tmp
+
+Completion of job ['trim_galore_single'] reported to scheduler.
+jobs registered as running before removal {trim_galore_paired, trim_galore_single, trim_galore_single}
+[Wed Aug 14 13:03:14 2024]
+Finished job 2.
+4 of 13 steps (31%) done
+Resources before job selection: {'_cores': 8, '_nodes': 9223372036854775805}
+Ready jobs (4)
+Select jobs to execute...
+Selected jobs (0)
+Resources after job selection: {'_cores': 8, '_nodes': 9223372036854775805}
+Completion of job ['trim_galore_single'] reported to scheduler.
+jobs registered as running before removal {trim_galore_paired, trim_galore_single}
+[Wed Aug 14 13:03:16 2024]
+Finished job 1.
+5 of 13 steps (38%) done
+Resources before job selection: {'_cores': 16, '_nodes': 9223372036854775806}
+Ready jobs (5)
+Selected jobs (1)
+Resources after job selection: {'_cores': 4, '_nodes': 9223372036854775805}
+Execute 1 jobs...
+
+[Wed Aug 14 13:03:16 2024]
+localrule star_align:
+    input: resources/annotation.gtf, resources/star_index, results/trimmed/RAP1_REP3_treatment_trimmed_R1.fq.gz
+    output: results/align/bam_original/RAP1_REP3_treatment.Aligned.out.bam, results/align/bam_transcript/RAP1_REP3_treatment.toTranscriptome.out.bam, results/align/junction/RAP1_REP3_treatment.out.junction
+    log: logs/star_align/RAP1_REP3_treatment.star_align.log
+    jobid: 12
+    reason: Missing output files: results/align/bam_transcript/RAP1_REP3_treatment.toTranscriptome.out.bam, results/align/bam_original/RAP1_REP3_treatment.Aligned.out.bam, results/align/junction/RAP1_REP3_treatment.out.junction; Input files updated by another job: results/trimmed/RAP1_REP3_treatment_trimmed_R1.fq.gz
+    wildcards: sample=RAP1_REP3_treatment
+    threads: 12
+    resources: tmpdir=/tmp
+
+unlocking
+removing lock
+removing lock
+removed all locks
+Full Traceback (most recent call last):
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/jobs.py", line 948, in format_wildcards
+    return format(string, **_variables)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/utils.py", line 427, in format
+    return fmt.format(_pattern, *args, **variables)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/string.py", line 190, in format
+    return self.vformat(format_string, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/string.py", line 194, in vformat
+    result, _ = self._vformat(format_string, args, kwargs, used_args, 2)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/string.py", line 234, in _vformat
+    obj, arg_used = self.get_field(field_name, args, kwargs)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/string.py", line 305, in get_field
+    obj = getattr(obj, i)
+          ^^^^^^^^^^^^^^^
+AttributeError: 'InputFiles' object has no attribute 'fastqs|length'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/cli.py", line 2103, in args_to_api
+    dag_api.execute_workflow(
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/api.py", line 594, in execute_workflow
+    workflow.execute(
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/workflow.py", line 1248, in execute
+    raise e
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/workflow.py", line 1244, in execute
+    success = self.scheduler.schedule()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/scheduler.py", line 313, in schedule
+    self.run(
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/scheduler.py", line 406, in run
+    executor.run_jobs(jobs)
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake_interface_executor_plugins/executors/base.py", line 71, in run_jobs
+    self.run_job_pre(job)
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake_interface_executor_plugins/executors/base.py", line 86, in run_job_pre
+    self.printjob(job)
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake_interface_executor_plugins/executors/base.py", line 110, in printjob
+    job.log_info()
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/jobs.py", line 1042, in log_info
+    logger.shellcmd(self.shellcmd, indent=indent)
+                    ^^^^^^^^^^^^^
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/jobs.py", line 601, in shellcmd
+    self.format_wildcards(self.rule.shellcmd)
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/jobs.py", line 950, in format_wildcards
+    raise RuleException(
+snakemake.exceptions.RuleException: AttributeError: 'InputFiles' object has no attribute 'fastqs|length', when formatting the following:
+
+        if [ "{input.fastqs|length}" -eq 2 ]; then
+            fq1="{input.fastqs[0]}"
+            fq2="{input.fastqs[1]}"
+        else
+            fq1="{input.fastqs[0]}"
+            fq2=""
+        fi
+
+        STAR --genomeDir {input.star_index}              --readFilesIn $fq1 $fq2              --runThreadN {threads}              --outFileNamePrefix results/align/{wildcards.sample}_              --sjdbGTFfile {input.gtf}              --outSAMattrRGline 'ID:{wildcards.sample}' 'SM:{wildcards.sample}'              --quantMode TranscriptomeSAM              --twopassMode Basic              --outSAMtype BAM Unsorted              --readFilesCommand zcat              --runRNGseed 0              --outFilterMultimapNmax 20              --alignSJDBoverhangMin 1              --outSAMattributes NH HI AS NM MD              --quantTranscriptomeBan Singleend              --outSAMstrandField intronMotif &> {log}
+        
+
+RuleException in rule star_align in file /home/lucianhu/rna_snakemake/test_ting/Snakefile, line 141:
+AttributeError: 'InputFiles' object has no attribute 'fastqs|length', when formatting the following:
+
+        if [ "{input.fastqs|length}" -eq 2 ]; then
+            fq1="{input.fastqs[0]}"
+            fq2="{input.fastqs[1]}"
+        else
+            fq1="{input.fastqs[0]}"
+            fq2=""
+        fi
+
+        STAR --genomeDir {input.star_index}              --readFilesIn $fq1 $fq2              --runThreadN {threads}              --outFileNamePrefix results/align/{wildcards.sample}_              --sjdbGTFfile {input.gtf}              --outSAMattrRGline 'ID:{wildcards.sample}' 'SM:{wildcards.sample}'              --quantMode TranscriptomeSAM              --twopassMode Basic              --outSAMtype BAM Unsorted              --readFilesCommand zcat              --runRNGseed 0              --outFilterMultimapNmax 20              --alignSJDBoverhangMin 1              --outSAMattributes NH HI AS NM MD              --quantTranscriptomeBan Singleend              --outSAMstrandField intronMotif &> {log}
+        

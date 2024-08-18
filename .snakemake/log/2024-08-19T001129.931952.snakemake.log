@@ -1,0 +1,78 @@
+Building DAG of jobs...
+shared_storage_local_copies: True
+remote_exec: False
+Using shell: /usr/bin/bash
+Provided cores: 24
+Rules claiming more threads will be scaled down.
+Conda environments: ignored
+Job stats:
+job         count
+--------  -------
+all             1
+dupradar        6
+total           7
+
+Resources before job selection: {'_cores': 24, '_nodes': 9223372036854775807}
+Ready jobs (6)
+Select jobs to execute...
+Selected jobs (6)
+Resources after job selection: {'_cores': 0, '_nodes': 9223372036854775801}
+Execute 6 jobs...
+
+[Mon Aug 19 00:11:30 2024]
+Job 63: RAP1_REP2_treatment: Running dupRadar to evaluate technical and biological read duplication
+Reason: Code has changed since last execution
+
+
+[Mon Aug 19 00:11:30 2024]
+Job 62: RAP1_REP1_treatment: Running dupRadar to evaluate technical and biological read duplication
+Reason: Code has changed since last execution
+
+
+[Mon Aug 19 00:11:30 2024]
+Job 61: WT_REP3_control: Running dupRadar to evaluate technical and biological read duplication
+Reason: Code has changed since last execution
+
+
+[Mon Aug 19 00:11:30 2024]
+Job 60: WT_REP2_control: Running dupRadar to evaluate technical and biological read duplication
+Reason: Code has changed since last execution
+
+
+[Mon Aug 19 00:11:30 2024]
+Job 59: WT_REP1_control: Running dupRadar to evaluate technical and biological read duplication
+Reason: Code has changed since last execution
+
+
+[Mon Aug 19 00:11:30 2024]
+Job 64: RAP1_REP3_treatment: Running dupRadar to evaluate technical and biological read duplication
+Reason: Code has changed since last execution
+
+Completion of job ['dupradar'] reported to scheduler.
+Waiting at most 5 seconds for missing files.
+still missing files, waiting...
+still missing files, waiting...
+still missing files, waiting...
+still missing files, waiting...
+Terminating processes on user request, this might take some time.
+Completion of job ['dupradar'] reported to scheduler.
+Completion of job ['dupradar'] reported to scheduler.
+Completion of job ['dupradar'] reported to scheduler.
+Completion of job ['dupradar'] reported to scheduler.
+Completion of job ['dupradar'] reported to scheduler.
+Complete log: .snakemake/log/2024-08-19T001129.931952.snakemake.log
+unlocking
+removing lock
+removing lock
+removed all locks
+Full Traceback (most recent call last):
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/cli.py", line 2103, in args_to_api
+    dag_api.execute_workflow(
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/api.py", line 594, in execute_workflow
+    workflow.execute(
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/workflow.py", line 1286, in execute
+    raise WorkflowError("At least one job did not complete successfully.")
+snakemake_interface_common.exceptions.WorkflowError: At least one job did not complete successfully.
+
+WorkflowError:
+At least one job did not complete successfully.

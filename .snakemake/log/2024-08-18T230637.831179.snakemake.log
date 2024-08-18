@@ -1,0 +1,386 @@
+Building DAG of jobs...
+shared_storage_local_copies: True
+remote_exec: False
+Using shell: /usr/bin/bash
+Provided cores: 24
+Rules claiming more threads will be scaled down.
+Conda environments: ignored
+Job stats:
+job         count
+--------  -------
+all             1
+qualimap        6
+total           7
+
+Resources before job selection: {'_cores': 24, '_nodes': 9223372036854775807}
+Ready jobs (6)
+Select jobs to execute...
+Selected jobs (6)
+Resources after job selection: {'_cores': 18, '_nodes': 9223372036854775801}
+Execute 6 jobs...
+
+[Sun Aug 18 23:06:37 2024]
+Job 54: WT_REP2_control: Running Qualimap
+Reason: Missing output files: results/qualimap/WT_REP2_control
+
+
+[Sun Aug 18 23:06:37 2024]
+Job 58: RAP1_REP3_treatment: Running Qualimap
+Reason: Missing output files: results/qualimap/RAP1_REP3_treatment
+
+
+[Sun Aug 18 23:06:37 2024]
+Job 57: RAP1_REP2_treatment: Running Qualimap
+Reason: Missing output files: results/qualimap/RAP1_REP2_treatment
+
+
+[Sun Aug 18 23:06:37 2024]
+Job 56: RAP1_REP1_treatment: Running Qualimap
+Reason: Missing output files: results/qualimap/RAP1_REP1_treatment
+
+
+[Sun Aug 18 23:06:37 2024]
+Job 53: WT_REP1_control: Running Qualimap
+Reason: Missing output files: results/qualimap/WT_REP1_control
+
+
+[Sun Aug 18 23:06:37 2024]
+Job 55: WT_REP3_control: Running Qualimap
+Reason: Missing output files: results/qualimap/WT_REP3_control
+
+Completion of job ['qualimap'] reported to scheduler.
+Full Traceback (most recent call last):
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/sourcecache.py", line 452, in _open
+    return open(path_or_uri, mode, encoding=None if "b" in mode else encoding)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/smart_open/smart_open_lib.py", line 177, in open
+    fobj = _shortcut_open(
+           ^^^^^^^^^^^^^^^
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/smart_open/smart_open_lib.py", line 363, in _shortcut_open
+    return _builtin_open(local_path, mode, buffering=buffering, **open_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/home/lucianhu/rna_snakemake/test_ting/envs/qualimap.yaml'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/scheduler.py", line 334, in postprocess
+    await job.postprocess(
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/jobs.py", line 1167, in postprocess
+    await self.dag.workflow.persistence.finished(self)
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/persistence.py", line 286, in finished
+    conda_env = self._conda_env(job)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/persistence.py", line 471, in _conda_env
+    return b64encode(job.conda_env.content).decode()
+                     ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/deployment/conda.py", line 155, in content
+    self._content = self._get_content()
+                    ^^^^^^^^^^^^^^^^^^^
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/deployment/conda.py", line 130, in _get_content
+    return self.workflow.sourcecache.open(self.file, "rb").read()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/sourcecache.py", line 366, in open
+    cache_entry = self._cache(source_file)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/sourcecache.py", line 397, in _cache
+    self._do_cache(source_file, cache_entry)
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/sourcecache.py", line 402, in _do_cache
+    with self._open_local_or_remote(source_file, "rb") as source:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/sourcecache.py", line 431, in _open_local_or_remote
+    return self._open(source_file, mode, encoding=encoding)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/sourcecache.py", line 454, in _open
+    raise WorkflowError(f"Failed to open source file {path_or_uri}", e)
+snakemake_interface_common.exceptions.WorkflowError: Failed to open source file /home/lucianhu/rna_snakemake/test_ting/envs/qualimap.yaml
+FileNotFoundError: [Errno 2] No such file or directory: '/home/lucianhu/rna_snakemake/test_ting/envs/qualimap.yaml'
+
+WorkflowError:
+Failed to open source file /home/lucianhu/rna_snakemake/test_ting/envs/qualimap.yaml
+FileNotFoundError: [Errno 2] No such file or directory: '/home/lucianhu/rna_snakemake/test_ting/envs/qualimap.yaml'
+Removing output files of failed job qualimap since they might be corrupted:
+results/qualimap/RAP1_REP1_treatment
+Completion of job ['qualimap'] reported to scheduler.
+Full Traceback (most recent call last):
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/sourcecache.py", line 452, in _open
+    return open(path_or_uri, mode, encoding=None if "b" in mode else encoding)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/smart_open/smart_open_lib.py", line 177, in open
+    fobj = _shortcut_open(
+           ^^^^^^^^^^^^^^^
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/smart_open/smart_open_lib.py", line 363, in _shortcut_open
+    return _builtin_open(local_path, mode, buffering=buffering, **open_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/home/lucianhu/rna_snakemake/test_ting/envs/qualimap.yaml'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/scheduler.py", line 334, in postprocess
+    await job.postprocess(
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/jobs.py", line 1167, in postprocess
+    await self.dag.workflow.persistence.finished(self)
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/persistence.py", line 286, in finished
+    conda_env = self._conda_env(job)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/persistence.py", line 471, in _conda_env
+    return b64encode(job.conda_env.content).decode()
+                     ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/deployment/conda.py", line 155, in content
+    self._content = self._get_content()
+                    ^^^^^^^^^^^^^^^^^^^
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/deployment/conda.py", line 130, in _get_content
+    return self.workflow.sourcecache.open(self.file, "rb").read()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/sourcecache.py", line 366, in open
+    cache_entry = self._cache(source_file)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/sourcecache.py", line 397, in _cache
+    self._do_cache(source_file, cache_entry)
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/sourcecache.py", line 402, in _do_cache
+    with self._open_local_or_remote(source_file, "rb") as source:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/sourcecache.py", line 431, in _open_local_or_remote
+    return self._open(source_file, mode, encoding=encoding)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/sourcecache.py", line 454, in _open
+    raise WorkflowError(f"Failed to open source file {path_or_uri}", e)
+snakemake_interface_common.exceptions.WorkflowError: Failed to open source file /home/lucianhu/rna_snakemake/test_ting/envs/qualimap.yaml
+FileNotFoundError: [Errno 2] No such file or directory: '/home/lucianhu/rna_snakemake/test_ting/envs/qualimap.yaml'
+
+WorkflowError:
+Failed to open source file /home/lucianhu/rna_snakemake/test_ting/envs/qualimap.yaml
+FileNotFoundError: [Errno 2] No such file or directory: '/home/lucianhu/rna_snakemake/test_ting/envs/qualimap.yaml'
+Removing output files of failed job qualimap since they might be corrupted:
+results/qualimap/RAP1_REP3_treatment
+Completion of job ['qualimap'] reported to scheduler.
+Full Traceback (most recent call last):
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/sourcecache.py", line 452, in _open
+    return open(path_or_uri, mode, encoding=None if "b" in mode else encoding)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/smart_open/smart_open_lib.py", line 177, in open
+    fobj = _shortcut_open(
+           ^^^^^^^^^^^^^^^
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/smart_open/smart_open_lib.py", line 363, in _shortcut_open
+    return _builtin_open(local_path, mode, buffering=buffering, **open_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/home/lucianhu/rna_snakemake/test_ting/envs/qualimap.yaml'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/scheduler.py", line 334, in postprocess
+    await job.postprocess(
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/jobs.py", line 1167, in postprocess
+    await self.dag.workflow.persistence.finished(self)
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/persistence.py", line 286, in finished
+    conda_env = self._conda_env(job)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/persistence.py", line 471, in _conda_env
+    return b64encode(job.conda_env.content).decode()
+                     ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/deployment/conda.py", line 155, in content
+    self._content = self._get_content()
+                    ^^^^^^^^^^^^^^^^^^^
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/deployment/conda.py", line 130, in _get_content
+    return self.workflow.sourcecache.open(self.file, "rb").read()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/sourcecache.py", line 366, in open
+    cache_entry = self._cache(source_file)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/sourcecache.py", line 397, in _cache
+    self._do_cache(source_file, cache_entry)
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/sourcecache.py", line 402, in _do_cache
+    with self._open_local_or_remote(source_file, "rb") as source:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/sourcecache.py", line 431, in _open_local_or_remote
+    return self._open(source_file, mode, encoding=encoding)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/sourcecache.py", line 454, in _open
+    raise WorkflowError(f"Failed to open source file {path_or_uri}", e)
+snakemake_interface_common.exceptions.WorkflowError: Failed to open source file /home/lucianhu/rna_snakemake/test_ting/envs/qualimap.yaml
+FileNotFoundError: [Errno 2] No such file or directory: '/home/lucianhu/rna_snakemake/test_ting/envs/qualimap.yaml'
+
+WorkflowError:
+Failed to open source file /home/lucianhu/rna_snakemake/test_ting/envs/qualimap.yaml
+FileNotFoundError: [Errno 2] No such file or directory: '/home/lucianhu/rna_snakemake/test_ting/envs/qualimap.yaml'
+Removing output files of failed job qualimap since they might be corrupted:
+results/qualimap/WT_REP2_control
+Completion of job ['qualimap'] reported to scheduler.
+Full Traceback (most recent call last):
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/sourcecache.py", line 452, in _open
+    return open(path_or_uri, mode, encoding=None if "b" in mode else encoding)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/smart_open/smart_open_lib.py", line 177, in open
+    fobj = _shortcut_open(
+           ^^^^^^^^^^^^^^^
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/smart_open/smart_open_lib.py", line 363, in _shortcut_open
+    return _builtin_open(local_path, mode, buffering=buffering, **open_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/home/lucianhu/rna_snakemake/test_ting/envs/qualimap.yaml'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/scheduler.py", line 334, in postprocess
+    await job.postprocess(
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/jobs.py", line 1167, in postprocess
+    await self.dag.workflow.persistence.finished(self)
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/persistence.py", line 286, in finished
+    conda_env = self._conda_env(job)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/persistence.py", line 471, in _conda_env
+    return b64encode(job.conda_env.content).decode()
+                     ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/deployment/conda.py", line 155, in content
+    self._content = self._get_content()
+                    ^^^^^^^^^^^^^^^^^^^
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/deployment/conda.py", line 130, in _get_content
+    return self.workflow.sourcecache.open(self.file, "rb").read()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/sourcecache.py", line 366, in open
+    cache_entry = self._cache(source_file)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/sourcecache.py", line 397, in _cache
+    self._do_cache(source_file, cache_entry)
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/sourcecache.py", line 402, in _do_cache
+    with self._open_local_or_remote(source_file, "rb") as source:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/sourcecache.py", line 431, in _open_local_or_remote
+    return self._open(source_file, mode, encoding=encoding)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/sourcecache.py", line 454, in _open
+    raise WorkflowError(f"Failed to open source file {path_or_uri}", e)
+snakemake_interface_common.exceptions.WorkflowError: Failed to open source file /home/lucianhu/rna_snakemake/test_ting/envs/qualimap.yaml
+FileNotFoundError: [Errno 2] No such file or directory: '/home/lucianhu/rna_snakemake/test_ting/envs/qualimap.yaml'
+
+WorkflowError:
+Failed to open source file /home/lucianhu/rna_snakemake/test_ting/envs/qualimap.yaml
+FileNotFoundError: [Errno 2] No such file or directory: '/home/lucianhu/rna_snakemake/test_ting/envs/qualimap.yaml'
+Removing output files of failed job qualimap since they might be corrupted:
+results/qualimap/RAP1_REP2_treatment
+Completion of job ['qualimap'] reported to scheduler.
+Full Traceback (most recent call last):
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/sourcecache.py", line 452, in _open
+    return open(path_or_uri, mode, encoding=None if "b" in mode else encoding)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/smart_open/smart_open_lib.py", line 177, in open
+    fobj = _shortcut_open(
+           ^^^^^^^^^^^^^^^
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/smart_open/smart_open_lib.py", line 363, in _shortcut_open
+    return _builtin_open(local_path, mode, buffering=buffering, **open_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/home/lucianhu/rna_snakemake/test_ting/envs/qualimap.yaml'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/scheduler.py", line 334, in postprocess
+    await job.postprocess(
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/jobs.py", line 1167, in postprocess
+    await self.dag.workflow.persistence.finished(self)
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/persistence.py", line 286, in finished
+    conda_env = self._conda_env(job)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/persistence.py", line 471, in _conda_env
+    return b64encode(job.conda_env.content).decode()
+                     ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/deployment/conda.py", line 155, in content
+    self._content = self._get_content()
+                    ^^^^^^^^^^^^^^^^^^^
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/deployment/conda.py", line 130, in _get_content
+    return self.workflow.sourcecache.open(self.file, "rb").read()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/sourcecache.py", line 366, in open
+    cache_entry = self._cache(source_file)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/sourcecache.py", line 397, in _cache
+    self._do_cache(source_file, cache_entry)
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/sourcecache.py", line 402, in _do_cache
+    with self._open_local_or_remote(source_file, "rb") as source:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/sourcecache.py", line 431, in _open_local_or_remote
+    return self._open(source_file, mode, encoding=encoding)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/sourcecache.py", line 454, in _open
+    raise WorkflowError(f"Failed to open source file {path_or_uri}", e)
+snakemake_interface_common.exceptions.WorkflowError: Failed to open source file /home/lucianhu/rna_snakemake/test_ting/envs/qualimap.yaml
+FileNotFoundError: [Errno 2] No such file or directory: '/home/lucianhu/rna_snakemake/test_ting/envs/qualimap.yaml'
+
+WorkflowError:
+Failed to open source file /home/lucianhu/rna_snakemake/test_ting/envs/qualimap.yaml
+FileNotFoundError: [Errno 2] No such file or directory: '/home/lucianhu/rna_snakemake/test_ting/envs/qualimap.yaml'
+Removing output files of failed job qualimap since they might be corrupted:
+results/qualimap/WT_REP1_control
+Completion of job ['qualimap'] reported to scheduler.
+Full Traceback (most recent call last):
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/sourcecache.py", line 452, in _open
+    return open(path_or_uri, mode, encoding=None if "b" in mode else encoding)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/smart_open/smart_open_lib.py", line 177, in open
+    fobj = _shortcut_open(
+           ^^^^^^^^^^^^^^^
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/smart_open/smart_open_lib.py", line 363, in _shortcut_open
+    return _builtin_open(local_path, mode, buffering=buffering, **open_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/home/lucianhu/rna_snakemake/test_ting/envs/qualimap.yaml'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/scheduler.py", line 334, in postprocess
+    await job.postprocess(
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/jobs.py", line 1167, in postprocess
+    await self.dag.workflow.persistence.finished(self)
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/persistence.py", line 286, in finished
+    conda_env = self._conda_env(job)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/persistence.py", line 471, in _conda_env
+    return b64encode(job.conda_env.content).decode()
+                     ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/deployment/conda.py", line 155, in content
+    self._content = self._get_content()
+                    ^^^^^^^^^^^^^^^^^^^
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/deployment/conda.py", line 130, in _get_content
+    return self.workflow.sourcecache.open(self.file, "rb").read()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/sourcecache.py", line 366, in open
+    cache_entry = self._cache(source_file)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/sourcecache.py", line 397, in _cache
+    self._do_cache(source_file, cache_entry)
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/sourcecache.py", line 402, in _do_cache
+    with self._open_local_or_remote(source_file, "rb") as source:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/sourcecache.py", line 431, in _open_local_or_remote
+    return self._open(source_file, mode, encoding=encoding)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/sourcecache.py", line 454, in _open
+    raise WorkflowError(f"Failed to open source file {path_or_uri}", e)
+snakemake_interface_common.exceptions.WorkflowError: Failed to open source file /home/lucianhu/rna_snakemake/test_ting/envs/qualimap.yaml
+FileNotFoundError: [Errno 2] No such file or directory: '/home/lucianhu/rna_snakemake/test_ting/envs/qualimap.yaml'
+
+WorkflowError:
+Failed to open source file /home/lucianhu/rna_snakemake/test_ting/envs/qualimap.yaml
+FileNotFoundError: [Errno 2] No such file or directory: '/home/lucianhu/rna_snakemake/test_ting/envs/qualimap.yaml'
+Removing output files of failed job qualimap since they might be corrupted:
+results/qualimap/WT_REP3_control
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2024-08-18T230637.831179.snakemake.log
+unlocking
+removing lock
+removing lock
+removed all locks
+Full Traceback (most recent call last):
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/cli.py", line 2103, in args_to_api
+    dag_api.execute_workflow(
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/api.py", line 594, in execute_workflow
+    workflow.execute(
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/workflow.py", line 1286, in execute
+    raise WorkflowError("At least one job did not complete successfully.")
+snakemake_interface_common.exceptions.WorkflowError: At least one job did not complete successfully.
+
+WorkflowError:
+At least one job did not complete successfully.

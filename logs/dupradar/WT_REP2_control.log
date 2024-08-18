@@ -1,0 +1,62 @@
+Input bam      (Arg 1): results/align/bam_markup/WT_REP2_control/WT_REP2_control.markdup.sorted.bam
+Input gtf      (Arg 2): resources/annotation.filtered.gtf
+Strandness     (Arg 3): reverse
+paired/single  (Arg 4): paired
+Nb threads     (Arg 5): 4
+R package loc. (Arg 6): paired
+Output basename       : results/dupradar/WT_REP2_control
+Loading required package: dupRadar
+Loading required package: parallel
+null device 
+          1 
+null device 
+          1 
+null device 
+          1 
+[1] "results/dupradar/WT_REP2_control"
+
+To cite package ‘dupRadar’ in publications use:
+
+  Sergi Sayols, Denise Scherzinger and Holger Klein (2016): dupRadar: a
+  Bioconductor package for the assessment of PCR artifacts in RNA-Seq
+  data. BMC Bioinformatics, 17:428, doi:10.1186/s12859-016-1276-2
+
+A BibTeX entry for LaTeX users is
+
+  @Article{,
+    title = {dupRadar: a Bioconductor package for the assessment of PCR artifacts in RNA-Seq data},
+    author = {Sergi Sayols and Denise Scherzinger and Holger Klein},
+    year = {2016},
+    journal = {BMC Bioinformatics},
+    doi = {10.1186/s12859-016-1276-2},
+    url = {http://dx.doi.org/10.1186/s12859-016-1276-2},
+    volume = {17},
+    issue = {1},
+    pages = {428},
+  }
+
+R version 4.2.3 (2023-03-15)
+Platform: x86_64-conda-linux-gnu (64-bit)
+Running under: Ubuntu 24.04 LTS
+
+Matrix products: default
+BLAS/LAPACK: /home/lucianhu/micromamba/envs/rna_snakemake/lib/libopenblasp-r0.3.27.so
+
+locale:
+ [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              
+ [3] LC_TIME=de_DE.UTF-8        LC_COLLATE=en_US.UTF-8    
+ [5] LC_MONETARY=de_DE.UTF-8    LC_MESSAGES=en_US.UTF-8   
+ [7] LC_PAPER=de_DE.UTF-8       LC_NAME=C                 
+ [9] LC_ADDRESS=C               LC_TELEPHONE=C            
+[11] LC_MEASUREMENT=de_DE.UTF-8 LC_IDENTIFICATION=C       
+
+attached base packages:
+[1] parallel  stats     graphics  grDevices utils     datasets  methods  
+[8] base     
+
+other attached packages:
+[1] dupRadar_1.28.0
+
+loaded via a namespace (and not attached):
+[1] compiler_4.2.3     Matrix_1.6-5       tools_4.2.3        KernSmooth_2.23-24
+[5] grid_4.2.3         Rsubread_2.12.0    lattice_0.22-6    

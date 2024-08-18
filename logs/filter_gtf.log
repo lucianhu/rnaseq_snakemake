@@ -1,0 +1,2 @@
+fasta_gtf_filter - 2024-08-19 00:52:35,116 INFO: Extracted chromosome sequence names from resources/genome.fa
+fasta_gtf_filter - 2024-08-19 00:52:35,117 INFO: Extracted 599 matching sequences from resources/annotation.gtf into resources/annotation.filtered.gtf

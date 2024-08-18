@@ -1,0 +1,416 @@
+Building DAG of jobs...
+shared_storage_local_copies: True
+remote_exec: False
+Using shell: /usr/bin/bash
+Provided cores: 24
+Rules claiming more threads will be scaled down.
+Conda environments: ignored
+Job stats:
+job                     count
+--------------------  -------
+all                         1
+junnction_annotation        6
+total                       7
+
+Resources before job selection: {'_cores': 24, '_nodes': 9223372036854775807}
+Ready jobs (6)
+Select jobs to execute...
+Selected jobs (6)
+Resources after job selection: {'_cores': 18, '_nodes': 9223372036854775801}
+Execute 6 jobs...
+
+[Mon Aug 19 01:03:34 2024]
+localrule junnction_annotation:
+    input: results/align/bam_markup/RAP1_REP2_treatment/RAP1_REP2_treatment.markdup.sorted.bam, resources/annotation.filtered.bed
+    output: results/junction_annotation/RAP1_REP2_treatment/RAP1_REP2_treatment.junction.bed
+    log: logs/rseqc/RAP1_REP2_treatment.junction_annotation.log
+    jobid: 82
+    reason: Missing output files: results/junction_annotation/RAP1_REP2_treatment/RAP1_REP2_treatment.junction.bed
+    wildcards: sample=RAP1_REP2_treatment
+    priority: 1
+    resources: tmpdir=/tmp
+
+
+[Mon Aug 19 01:03:34 2024]
+localrule junnction_annotation:
+    input: results/align/bam_markup/RAP1_REP1_treatment/RAP1_REP1_treatment.markdup.sorted.bam, resources/annotation.filtered.bed
+    output: results/junction_annotation/RAP1_REP1_treatment/RAP1_REP1_treatment.junction.bed
+    log: logs/rseqc/RAP1_REP1_treatment.junction_annotation.log
+    jobid: 81
+    reason: Missing output files: results/junction_annotation/RAP1_REP1_treatment/RAP1_REP1_treatment.junction.bed
+    wildcards: sample=RAP1_REP1_treatment
+    priority: 1
+    resources: tmpdir=/tmp
+
+
+[Mon Aug 19 01:03:34 2024]
+localrule junnction_annotation:
+    input: results/align/bam_markup/WT_REP3_control/WT_REP3_control.markdup.sorted.bam, resources/annotation.filtered.bed
+    output: results/junction_annotation/WT_REP3_control/WT_REP3_control.junction.bed
+    log: logs/rseqc/WT_REP3_control.junction_annotation.log
+    jobid: 80
+    reason: Missing output files: results/junction_annotation/WT_REP3_control/WT_REP3_control.junction.bed
+    wildcards: sample=WT_REP3_control
+    priority: 1
+    resources: tmpdir=/tmp
+Full Traceback (most recent call last):
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/executors/local.py", line 423, in run_wrapper
+    run(
+  File "/home/lucianhu/rna_snakemake/test_ting/Snakefile", line 1454, in __rule_junnction_annotation
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/shell.py", line 357, in __new__
+    raise sp.CalledProcessError(retcode, cmd)
+subprocess.CalledProcessError: Command 'set -euo pipefail;  
+        junction_annotation.py -q 255 -i results/align/bam_markup/RAP1_REP1_treatment/RAP1_REP1_treatment.markdup.sorted.bam -r resources/annotation.filtered.bed -o results/junction_annotation/RAP1_REP1_treatment/RAP1_REP1_treatment > logs/rseqc/RAP1_REP1_treatment.junction_annotation.log 2>&1"' returned non-zero exit status 2.
+
+Full Traceback (most recent call last):
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/executors/local.py", line 423, in run_wrapper
+    run(
+  File "/home/lucianhu/rna_snakemake/test_ting/Snakefile", line 1454, in __rule_junnction_annotation
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/shell.py", line 357, in __new__
+    raise sp.CalledProcessError(retcode, cmd)
+subprocess.CalledProcessError: Command 'set -euo pipefail;  
+        junction_annotation.py -q 255 -i results/align/bam_markup/RAP1_REP2_treatment/RAP1_REP2_treatment.markdup.sorted.bam -r resources/annotation.filtered.bed -o results/junction_annotation/RAP1_REP2_treatment/RAP1_REP2_treatment > logs/rseqc/RAP1_REP2_treatment.junction_annotation.log 2>&1"' returned non-zero exit status 2.
+
+
+Full Traceback (most recent call last):
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/executors/local.py", line 423, in run_wrapper
+    run(
+  File "/home/lucianhu/rna_snakemake/test_ting/Snakefile", line 1454, in __rule_junnction_annotation
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/shell.py", line 357, in __new__
+    raise sp.CalledProcessError(retcode, cmd)
+subprocess.CalledProcessError: Command 'set -euo pipefail;  
+        junction_annotation.py -q 255 -i results/align/bam_markup/RAP1_REP1_treatment/RAP1_REP1_treatment.markdup.sorted.bam -r resources/annotation.filtered.bed -o results/junction_annotation/RAP1_REP1_treatment/RAP1_REP1_treatment > logs/rseqc/RAP1_REP1_treatment.junction_annotation.log 2>&1"' returned non-zero exit status 2.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/executors/local.py", line 261, in _callback
+    raise ex
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/executors/local.py", line 247, in cached_or_run
+    run_func(*args)
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/executors/local.py", line 459, in run_wrapper
+    raise RuleException(
+snakemake.exceptions.RuleException: CalledProcessError in file /home/lucianhu/rna_snakemake/test_ting/Snakefile, line 701:
+Command 'set -euo pipefail;  
+        junction_annotation.py -q 255 -i results/align/bam_markup/RAP1_REP1_treatment/RAP1_REP1_treatment.markdup.sorted.bam -r resources/annotation.filtered.bed -o results/junction_annotation/RAP1_REP1_treatment/RAP1_REP1_treatment > logs/rseqc/RAP1_REP1_treatment.junction_annotation.log 2>&1"' returned non-zero exit status 2.
+
+Full Traceback (most recent call last):
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/executors/local.py", line 423, in run_wrapper
+    run(
+  File "/home/lucianhu/rna_snakemake/test_ting/Snakefile", line 1454, in __rule_junnction_annotation
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/shell.py", line 357, in __new__
+    raise sp.CalledProcessError(retcode, cmd)
+subprocess.CalledProcessError: Command 'set -euo pipefail;  
+        junction_annotation.py -q 255 -i results/align/bam_markup/RAP1_REP2_treatment/RAP1_REP2_treatment.markdup.sorted.bam -r resources/annotation.filtered.bed -o results/junction_annotation/RAP1_REP2_treatment/RAP1_REP2_treatment > logs/rseqc/RAP1_REP2_treatment.junction_annotation.log 2>&1"' returned non-zero exit status 2.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/executors/local.py", line 261, in _callback
+    raise ex
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/executors/local.py", line 247, in cached_or_run
+    run_func(*args)
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/executors/local.py", line 459, in run_wrapper
+    raise RuleException(
+snakemake.exceptions.RuleException: CalledProcessError in file /home/lucianhu/rna_snakemake/test_ting/Snakefile, line 701:
+Command 'set -euo pipefail;  
+        junction_annotation.py -q 255 -i results/align/bam_markup/RAP1_REP2_treatment/RAP1_REP2_treatment.markdup.sorted.bam -r resources/annotation.filtered.bed -o results/junction_annotation/RAP1_REP2_treatment/RAP1_REP2_treatment > logs/rseqc/RAP1_REP2_treatment.junction_annotation.log 2>&1"' returned non-zero exit status 2.
+
+RuleException:
+CalledProcessError in file /home/lucianhu/rna_snakemake/test_ting/Snakefile, line 701:
+Command 'set -euo pipefail;  
+        junction_annotation.py -q 255 -i results/align/bam_markup/RAP1_REP1_treatment/RAP1_REP1_treatment.markdup.sorted.bam -r resources/annotation.filtered.bed -o results/junction_annotation/RAP1_REP1_treatment/RAP1_REP1_treatment > logs/rseqc/RAP1_REP1_treatment.junction_annotation.log 2>&1"' returned non-zero exit status 2.
+RuleException:
+CalledProcessError in file /home/lucianhu/rna_snakemake/test_ting/Snakefile, line 701:
+Command 'set -euo pipefail;  
+        junction_annotation.py -q 255 -i results/align/bam_markup/RAP1_REP2_treatment/RAP1_REP2_treatment.markdup.sorted.bam -r resources/annotation.filtered.bed -o results/junction_annotation/RAP1_REP2_treatment/RAP1_REP2_treatment > logs/rseqc/RAP1_REP2_treatment.junction_annotation.log 2>&1"' returned non-zero exit status 2.
+[Mon Aug 19 01:03:34 2024]
+[Mon Aug 19 01:03:34 2024]
+Error in rule junnction_annotation:
+    jobid: 81
+    input: results/align/bam_markup/RAP1_REP1_treatment/RAP1_REP1_treatment.markdup.sorted.bam, resources/annotation.filtered.bed
+    output: results/junction_annotation/RAP1_REP1_treatment/RAP1_REP1_treatment.junction.bed
+    log: logs/rseqc/RAP1_REP1_treatment.junction_annotation.log (check log file(s) for error details)
+    conda-env: /home/lucianhu/rna_snakemake/test_ting/.snakemake/conda/75573665ecd5eadd18c4d5be2650a852_
+    shell:
+        
+        junction_annotation.py -q 255 -i results/align/bam_markup/RAP1_REP1_treatment/RAP1_REP1_treatment.markdup.sorted.bam -r resources/annotation.filtered.bed -o results/junction_annotation/RAP1_REP1_treatment/RAP1_REP1_treatment > logs/rseqc/RAP1_REP1_treatment.junction_annotation.log 2>&1"
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Error in rule junnction_annotation:
+    jobid: 82
+    input: results/align/bam_markup/RAP1_REP2_treatment/RAP1_REP2_treatment.markdup.sorted.bam, resources/annotation.filtered.bed
+    output: results/junction_annotation/RAP1_REP2_treatment/RAP1_REP2_treatment.junction.bed
+    log: logs/rseqc/RAP1_REP2_treatment.junction_annotation.log (check log file(s) for error details)
+    conda-env: /home/lucianhu/rna_snakemake/test_ting/.snakemake/conda/75573665ecd5eadd18c4d5be2650a852_
+    shell:
+        
+        junction_annotation.py -q 255 -i results/align/bam_markup/RAP1_REP2_treatment/RAP1_REP2_treatment.markdup.sorted.bam -r resources/annotation.filtered.bed -o results/junction_annotation/RAP1_REP2_treatment/RAP1_REP2_treatment > logs/rseqc/RAP1_REP2_treatment.junction_annotation.log 2>&1"
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+
+[Mon Aug 19 01:03:34 2024]
+localrule junnction_annotation:
+    input: results/align/bam_markup/WT_REP2_control/WT_REP2_control.markdup.sorted.bam, resources/annotation.filtered.bed
+    output: results/junction_annotation/WT_REP2_control/WT_REP2_control.junction.bed
+    log: logs/rseqc/WT_REP2_control.junction_annotation.log
+    jobid: 79
+    reason: Missing output files: results/junction_annotation/WT_REP2_control/WT_REP2_control.junction.bed
+    wildcards: sample=WT_REP2_control
+    priority: 1
+    resources: tmpdir=/tmp
+
+Full Traceback (most recent call last):
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/executors/local.py", line 423, in run_wrapper
+    run(
+  File "/home/lucianhu/rna_snakemake/test_ting/Snakefile", line 1454, in __rule_junnction_annotation
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/shell.py", line 357, in __new__
+    raise sp.CalledProcessError(retcode, cmd)
+subprocess.CalledProcessError: Command 'set -euo pipefail;  
+        junction_annotation.py -q 255 -i results/align/bam_markup/WT_REP3_control/WT_REP3_control.markdup.sorted.bam -r resources/annotation.filtered.bed -o results/junction_annotation/WT_REP3_control/WT_REP3_control > logs/rseqc/WT_REP3_control.junction_annotation.log 2>&1"' returned non-zero exit status 2.
+
+Full Traceback (most recent call last):
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/executors/local.py", line 423, in run_wrapper
+    run(
+  File "/home/lucianhu/rna_snakemake/test_ting/Snakefile", line 1454, in __rule_junnction_annotation
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/shell.py", line 357, in __new__
+    raise sp.CalledProcessError(retcode, cmd)
+subprocess.CalledProcessError: Command 'set -euo pipefail;  
+        junction_annotation.py -q 255 -i results/align/bam_markup/WT_REP3_control/WT_REP3_control.markdup.sorted.bam -r resources/annotation.filtered.bed -o results/junction_annotation/WT_REP3_control/WT_REP3_control > logs/rseqc/WT_REP3_control.junction_annotation.log 2>&1"' returned non-zero exit status 2.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/executors/local.py", line 261, in _callback
+    raise ex
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/executors/local.py", line 247, in cached_or_run
+    run_func(*args)
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/executors/local.py", line 459, in run_wrapper
+    raise RuleException(
+snakemake.exceptions.RuleException: CalledProcessError in file /home/lucianhu/rna_snakemake/test_ting/Snakefile, line 701:
+Command 'set -euo pipefail;  
+        junction_annotation.py -q 255 -i results/align/bam_markup/WT_REP3_control/WT_REP3_control.markdup.sorted.bam -r resources/annotation.filtered.bed -o results/junction_annotation/WT_REP3_control/WT_REP3_control > logs/rseqc/WT_REP3_control.junction_annotation.log 2>&1"' returned non-zero exit status 2.
+
+Full Traceback (most recent call last):
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/executors/local.py", line 423, in run_wrapper
+    run(
+  File "/home/lucianhu/rna_snakemake/test_ting/Snakefile", line 1454, in __rule_junnction_annotation
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/shell.py", line 357, in __new__
+    raise sp.CalledProcessError(retcode, cmd)
+subprocess.CalledProcessError: Command 'set -euo pipefail;  
+        junction_annotation.py -q 255 -i results/align/bam_markup/WT_REP2_control/WT_REP2_control.markdup.sorted.bam -r resources/annotation.filtered.bed -o results/junction_annotation/WT_REP2_control/WT_REP2_control > logs/rseqc/WT_REP2_control.junction_annotation.log 2>&1"' returned non-zero exit status 2.
+
+RuleException:
+CalledProcessError in file /home/lucianhu/rna_snakemake/test_ting/Snakefile, line 701:
+Command 'set -euo pipefail;  
+        junction_annotation.py -q 255 -i results/align/bam_markup/WT_REP3_control/WT_REP3_control.markdup.sorted.bam -r resources/annotation.filtered.bed -o results/junction_annotation/WT_REP3_control/WT_REP3_control > logs/rseqc/WT_REP3_control.junction_annotation.log 2>&1"' returned non-zero exit status 2.
+
+Full Traceback (most recent call last):
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/executors/local.py", line 423, in run_wrapper
+    run(
+  File "/home/lucianhu/rna_snakemake/test_ting/Snakefile", line 1454, in __rule_junnction_annotation
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/shell.py", line 357, in __new__
+    raise sp.CalledProcessError(retcode, cmd)
+subprocess.CalledProcessError: Command 'set -euo pipefail;  
+        junction_annotation.py -q 255 -i results/align/bam_markup/WT_REP2_control/WT_REP2_control.markdup.sorted.bam -r resources/annotation.filtered.bed -o results/junction_annotation/WT_REP2_control/WT_REP2_control > logs/rseqc/WT_REP2_control.junction_annotation.log 2>&1"' returned non-zero exit status 2.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/executors/local.py", line 261, in _callback
+    raise ex
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/executors/local.py", line 247, in cached_or_run
+    run_func(*args)
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/executors/local.py", line 459, in run_wrapper
+    raise RuleException(
+snakemake.exceptions.RuleException: CalledProcessError in file /home/lucianhu/rna_snakemake/test_ting/Snakefile, line 701:
+Command 'set -euo pipefail;  
+        junction_annotation.py -q 255 -i results/align/bam_markup/WT_REP2_control/WT_REP2_control.markdup.sorted.bam -r resources/annotation.filtered.bed -o results/junction_annotation/WT_REP2_control/WT_REP2_control > logs/rseqc/WT_REP2_control.junction_annotation.log 2>&1"' returned non-zero exit status 2.
+
+[Mon Aug 19 01:03:34 2024]
+[Mon Aug 19 01:03:34 2024]
+RuleException:
+CalledProcessError in file /home/lucianhu/rna_snakemake/test_ting/Snakefile, line 701:
+Command 'set -euo pipefail;  
+        junction_annotation.py -q 255 -i results/align/bam_markup/WT_REP2_control/WT_REP2_control.markdup.sorted.bam -r resources/annotation.filtered.bed -o results/junction_annotation/WT_REP2_control/WT_REP2_control > logs/rseqc/WT_REP2_control.junction_annotation.log 2>&1"' returned non-zero exit status 2.
+Error in rule junnction_annotation:
+    jobid: 80
+    input: results/align/bam_markup/WT_REP3_control/WT_REP3_control.markdup.sorted.bam, resources/annotation.filtered.bed
+    output: results/junction_annotation/WT_REP3_control/WT_REP3_control.junction.bed
+    log: logs/rseqc/WT_REP3_control.junction_annotation.log (check log file(s) for error details)
+    conda-env: /home/lucianhu/rna_snakemake/test_ting/.snakemake/conda/75573665ecd5eadd18c4d5be2650a852_
+    shell:
+        
+        junction_annotation.py -q 255 -i results/align/bam_markup/WT_REP3_control/WT_REP3_control.markdup.sorted.bam -r resources/annotation.filtered.bed -o results/junction_annotation/WT_REP3_control/WT_REP3_control > logs/rseqc/WT_REP3_control.junction_annotation.log 2>&1"
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+localrule junnction_annotation:
+    input: results/align/bam_markup/RAP1_REP3_treatment/RAP1_REP3_treatment.markdup.sorted.bam, resources/annotation.filtered.bed
+    output: results/junction_annotation/RAP1_REP3_treatment/RAP1_REP3_treatment.junction.bed
+    log: logs/rseqc/RAP1_REP3_treatment.junction_annotation.log
+    jobid: 83
+    reason: Missing output files: results/junction_annotation/RAP1_REP3_treatment/RAP1_REP3_treatment.junction.bed
+    wildcards: sample=RAP1_REP3_treatment
+    priority: 1
+    resources: tmpdir=/tmp
+[Mon Aug 19 01:03:34 2024]
+
+Error in rule junnction_annotation:
+    jobid: 79
+    input: results/align/bam_markup/WT_REP2_control/WT_REP2_control.markdup.sorted.bam, resources/annotation.filtered.bed
+    output: results/junction_annotation/WT_REP2_control/WT_REP2_control.junction.bed
+    log: logs/rseqc/WT_REP2_control.junction_annotation.log (check log file(s) for error details)
+    conda-env: /home/lucianhu/rna_snakemake/test_ting/.snakemake/conda/75573665ecd5eadd18c4d5be2650a852_
+    shell:
+        
+        junction_annotation.py -q 255 -i results/align/bam_markup/WT_REP2_control/WT_REP2_control.markdup.sorted.bam -r resources/annotation.filtered.bed -o results/junction_annotation/WT_REP2_control/WT_REP2_control > logs/rseqc/WT_REP2_control.junction_annotation.log 2>&1"
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+
+[Mon Aug 19 01:03:34 2024]
+localrule junnction_annotation:
+    input: results/align/bam_markup/WT_REP1_control/WT_REP1_control.markdup.sorted.bam, resources/annotation.filtered.bed
+    output: results/junction_annotation/WT_REP1_control/WT_REP1_control.junction.bed
+    log: logs/rseqc/WT_REP1_control.junction_annotation.log
+    jobid: 78
+    reason: Missing output files: results/junction_annotation/WT_REP1_control/WT_REP1_control.junction.bed
+    wildcards: sample=WT_REP1_control
+    priority: 1
+    resources: tmpdir=/tmp
+
+Full Traceback (most recent call last):
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/executors/local.py", line 423, in run_wrapper
+    run(
+  File "/home/lucianhu/rna_snakemake/test_ting/Snakefile", line 1454, in __rule_junnction_annotation
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/shell.py", line 357, in __new__
+    raise sp.CalledProcessError(retcode, cmd)
+subprocess.CalledProcessError: Command 'set -euo pipefail;  
+        junction_annotation.py -q 255 -i results/align/bam_markup/RAP1_REP3_treatment/RAP1_REP3_treatment.markdup.sorted.bam -r resources/annotation.filtered.bed -o results/junction_annotation/RAP1_REP3_treatment/RAP1_REP3_treatment > logs/rseqc/RAP1_REP3_treatment.junction_annotation.log 2>&1"' returned non-zero exit status 2.
+
+Full Traceback (most recent call last):
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/executors/local.py", line 423, in run_wrapper
+    run(
+  File "/home/lucianhu/rna_snakemake/test_ting/Snakefile", line 1454, in __rule_junnction_annotation
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/shell.py", line 357, in __new__
+    raise sp.CalledProcessError(retcode, cmd)
+subprocess.CalledProcessError: Command 'set -euo pipefail;  
+        junction_annotation.py -q 255 -i results/align/bam_markup/RAP1_REP3_treatment/RAP1_REP3_treatment.markdup.sorted.bam -r resources/annotation.filtered.bed -o results/junction_annotation/RAP1_REP3_treatment/RAP1_REP3_treatment > logs/rseqc/RAP1_REP3_treatment.junction_annotation.log 2>&1"' returned non-zero exit status 2.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/executors/local.py", line 261, in _callback
+    raise ex
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/executors/local.py", line 247, in cached_or_run
+    run_func(*args)
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/executors/local.py", line 459, in run_wrapper
+    raise RuleException(
+snakemake.exceptions.RuleException: CalledProcessError in file /home/lucianhu/rna_snakemake/test_ting/Snakefile, line 701:
+Command 'set -euo pipefail;  
+        junction_annotation.py -q 255 -i results/align/bam_markup/RAP1_REP3_treatment/RAP1_REP3_treatment.markdup.sorted.bam -r resources/annotation.filtered.bed -o results/junction_annotation/RAP1_REP3_treatment/RAP1_REP3_treatment > logs/rseqc/RAP1_REP3_treatment.junction_annotation.log 2>&1"' returned non-zero exit status 2.
+
+Full Traceback (most recent call last):
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/executors/local.py", line 423, in run_wrapper
+    run(
+  File "/home/lucianhu/rna_snakemake/test_ting/Snakefile", line 1454, in __rule_junnction_annotation
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/shell.py", line 357, in __new__
+    raise sp.CalledProcessError(retcode, cmd)
+subprocess.CalledProcessError: Command 'set -euo pipefail;  
+        junction_annotation.py -q 255 -i results/align/bam_markup/WT_REP1_control/WT_REP1_control.markdup.sorted.bam -r resources/annotation.filtered.bed -o results/junction_annotation/WT_REP1_control/WT_REP1_control > logs/rseqc/WT_REP1_control.junction_annotation.log 2>&1"' returned non-zero exit status 2.
+
+RuleException:
+CalledProcessError in file /home/lucianhu/rna_snakemake/test_ting/Snakefile, line 701:
+Command 'set -euo pipefail;  
+        junction_annotation.py -q 255 -i results/align/bam_markup/RAP1_REP3_treatment/RAP1_REP3_treatment.markdup.sorted.bam -r resources/annotation.filtered.bed -o results/junction_annotation/RAP1_REP3_treatment/RAP1_REP3_treatment > logs/rseqc/RAP1_REP3_treatment.junction_annotation.log 2>&1"' returned non-zero exit status 2.
+Full Traceback (most recent call last):
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/executors/local.py", line 423, in run_wrapper
+    run(
+  File "/home/lucianhu/rna_snakemake/test_ting/Snakefile", line 1454, in __rule_junnction_annotation
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/shell.py", line 357, in __new__
+    raise sp.CalledProcessError(retcode, cmd)
+subprocess.CalledProcessError: Command 'set -euo pipefail;  
+        junction_annotation.py -q 255 -i results/align/bam_markup/WT_REP1_control/WT_REP1_control.markdup.sorted.bam -r resources/annotation.filtered.bed -o results/junction_annotation/WT_REP1_control/WT_REP1_control > logs/rseqc/WT_REP1_control.junction_annotation.log 2>&1"' returned non-zero exit status 2.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/executors/local.py", line 261, in _callback
+    raise ex
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/executors/local.py", line 247, in cached_or_run
+    run_func(*args)
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/executors/local.py", line 459, in run_wrapper
+    raise RuleException(
+snakemake.exceptions.RuleException: CalledProcessError in file /home/lucianhu/rna_snakemake/test_ting/Snakefile, line 701:
+Command 'set -euo pipefail;  
+        junction_annotation.py -q 255 -i results/align/bam_markup/WT_REP1_control/WT_REP1_control.markdup.sorted.bam -r resources/annotation.filtered.bed -o results/junction_annotation/WT_REP1_control/WT_REP1_control > logs/rseqc/WT_REP1_control.junction_annotation.log 2>&1"' returned non-zero exit status 2.
+
+[Mon Aug 19 01:03:34 2024]
+Error in rule junnction_annotation:
+    jobid: 83
+    input: results/align/bam_markup/RAP1_REP3_treatment/RAP1_REP3_treatment.markdup.sorted.bam, resources/annotation.filtered.bed
+    output: results/junction_annotation/RAP1_REP3_treatment/RAP1_REP3_treatment.junction.bed
+    log: logs/rseqc/RAP1_REP3_treatment.junction_annotation.log (check log file(s) for error details)
+    conda-env: /home/lucianhu/rna_snakemake/test_ting/.snakemake/conda/75573665ecd5eadd18c4d5be2650a852_
+    shell:
+        
+        junction_annotation.py -q 255 -i results/align/bam_markup/RAP1_REP3_treatment/RAP1_REP3_treatment.markdup.sorted.bam -r resources/annotation.filtered.bed -o results/junction_annotation/RAP1_REP3_treatment/RAP1_REP3_treatment > logs/rseqc/RAP1_REP3_treatment.junction_annotation.log 2>&1"
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+RuleException:
+CalledProcessError in file /home/lucianhu/rna_snakemake/test_ting/Snakefile, line 701:
+Command 'set -euo pipefail;  
+        junction_annotation.py -q 255 -i results/align/bam_markup/WT_REP1_control/WT_REP1_control.markdup.sorted.bam -r resources/annotation.filtered.bed -o results/junction_annotation/WT_REP1_control/WT_REP1_control > logs/rseqc/WT_REP1_control.junction_annotation.log 2>&1"' returned non-zero exit status 2.
+[Mon Aug 19 01:03:34 2024]
+Error in rule junnction_annotation:
+    jobid: 78
+    input: results/align/bam_markup/WT_REP1_control/WT_REP1_control.markdup.sorted.bam, resources/annotation.filtered.bed
+    output: results/junction_annotation/WT_REP1_control/WT_REP1_control.junction.bed
+    log: logs/rseqc/WT_REP1_control.junction_annotation.log (check log file(s) for error details)
+    conda-env: /home/lucianhu/rna_snakemake/test_ting/.snakemake/conda/75573665ecd5eadd18c4d5be2650a852_
+    shell:
+        
+        junction_annotation.py -q 255 -i results/align/bam_markup/WT_REP1_control/WT_REP1_control.markdup.sorted.bam -r resources/annotation.filtered.bed -o results/junction_annotation/WT_REP1_control/WT_REP1_control > logs/rseqc/WT_REP1_control.junction_annotation.log 2>&1"
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2024-08-19T010334.740169.snakemake.log
+unlocking
+removing lock
+removing lock
+removed all locks
+Full Traceback (most recent call last):
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/cli.py", line 2103, in args_to_api
+    dag_api.execute_workflow(
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/api.py", line 594, in execute_workflow
+    workflow.execute(
+  File "/home/lucianhu/micromamba/envs/rna_snakemake/lib/python3.12/site-packages/snakemake/workflow.py", line 1286, in execute
+    raise WorkflowError("At least one job did not complete successfully.")
+snakemake_interface_common.exceptions.WorkflowError: At least one job did not complete successfully.
+
+WorkflowError:
+At least one job did not complete successfully.

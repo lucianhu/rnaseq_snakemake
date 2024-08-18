@@ -1,0 +1,213 @@
+Building DAG of jobs...
+shared_storage_local_copies: True
+remote_exec: False
+Using shell: /usr/bin/bash
+Provided cores: 24
+Rules claiming more threads will be scaled down.
+Conda environments: ignored
+Job stats:
+job               count
+--------------  -------
+all                   1
+fastqc                6
+feature_counts        6
+total                13
+
+Resources before job selection: {'_cores': 24, '_nodes': 9223372036854775807}
+Ready jobs (12)
+Select jobs to execute...
+Selected jobs (4)
+Resources after job selection: {'_cores': 0, '_nodes': 9223372036854775803}
+Execute 4 jobs...
+
+[Sun Aug 18 22:54:55 2024]
+Job 50: RAP1_REP1_treatment: Read counting relative to gene biotype
+Reason: Missing output files: results/feature_counts/RAP1_REP1_treatment/RAP1_REP1_treatment.biotype_counts_rrna_mqc.tsv, results/feature_counts/RAP1_REP1_treatment/RAP1_REP1_treatment.featurecounts.txt, results/feature_counts/RAP1_REP1_treatment/RAP1_REP1_treatment.featurecounts.txt.summary
+
+
+[Sun Aug 18 22:54:55 2024]
+Job 3: WT_REP3_control: Performing quality control on raw reads
+Reason: Code has changed since last execution
+
+
+[Sun Aug 18 22:54:55 2024]
+Job 51: RAP1_REP2_treatment: Read counting relative to gene biotype
+Reason: Missing output files: results/feature_counts/RAP1_REP2_treatment/RAP1_REP2_treatment.biotype_counts_rrna_mqc.tsv, results/feature_counts/RAP1_REP2_treatment/RAP1_REP2_treatment.featurecounts.txt.summary, results/feature_counts/RAP1_REP2_treatment/RAP1_REP2_treatment.featurecounts.txt
+
+
+[Sun Aug 18 22:54:55 2024]
+Job 52: RAP1_REP3_treatment: Read counting relative to gene biotype
+Reason: Missing output files: results/feature_counts/RAP1_REP3_treatment/RAP1_REP3_treatment.biotype_counts_rrna_mqc.tsv, results/feature_counts/RAP1_REP3_treatment/RAP1_REP3_treatment.featurecounts.txt, results/feature_counts/RAP1_REP3_treatment/RAP1_REP3_treatment.featurecounts.txt.summary
+
+Completion of job ['feature_counts'] reported to scheduler.
+jobs registered as running before removal {feature_counts, fastqc, feature_counts, feature_counts}
+[Sun Aug 18 22:54:55 2024]
+Finished job 50.
+1 of 13 steps (8%) done
+Resources before job selection: {'_cores': 6, '_nodes': 9223372036854775804}
+Completion of job ['feature_counts'] reported to scheduler.
+Ready jobs (8)
+Select jobs to execute...
+Completion of job ['feature_counts'] reported to scheduler.
+Selected jobs (1)
+Resources after job selection: {'_cores': 0, '_nodes': 9223372036854775803}
+Execute 1 jobs...
+
+[Sun Aug 18 22:54:55 2024]
+Job 4: RAP1_REP1_treatment: Performing quality control on raw reads
+Reason: Code has changed since last execution
+
+jobs registered as running before removal {fastqc, fastqc, feature_counts, feature_counts}
+[Sun Aug 18 22:54:55 2024]
+Finished job 52.
+2 of 13 steps (15%) done
+jobs registered as running before removal {fastqc, fastqc, feature_counts}
+[Sun Aug 18 22:54:55 2024]
+Finished job 51.
+3 of 13 steps (23%) done
+Resources before job selection: {'_cores': 12, '_nodes': 9223372036854775805}
+Ready jobs (7)
+Select jobs to execute...
+Selected jobs (2)
+Resources after job selection: {'_cores': 0, '_nodes': 9223372036854775803}
+Execute 2 jobs...
+
+[Sun Aug 18 22:54:55 2024]
+Job 49: WT_REP3_control: Read counting relative to gene biotype
+Reason: Missing output files: results/feature_counts/WT_REP3_control/WT_REP3_control.featurecounts.txt, results/feature_counts/WT_REP3_control/WT_REP3_control.biotype_counts_rrna_mqc.tsv, results/feature_counts/WT_REP3_control/WT_REP3_control.featurecounts.txt.summary
+
+
+[Sun Aug 18 22:54:55 2024]
+Job 48: WT_REP2_control: Read counting relative to gene biotype
+Reason: Missing output files: results/feature_counts/WT_REP2_control/WT_REP2_control.biotype_counts_rrna_mqc.tsv, results/feature_counts/WT_REP2_control/WT_REP2_control.featurecounts.txt, results/feature_counts/WT_REP2_control/WT_REP2_control.featurecounts.txt.summary
+
+Resources before job selection: {'_cores': 0, '_nodes': 9223372036854775803}
+Ready jobs (5)
+Select jobs to execute...
+Selected jobs (0)
+Resources after job selection: {'_cores': 0, '_nodes': 9223372036854775803}
+Completion of job ['feature_counts'] reported to scheduler.
+jobs registered as running before removal {fastqc, feature_counts, feature_counts, fastqc}
+[Sun Aug 18 22:54:55 2024]
+Finished job 49.
+4 of 13 steps (31%) done
+Resources before job selection: {'_cores': 6, '_nodes': 9223372036854775804}
+Ready jobs (5)
+Completion of job ['feature_counts'] reported to scheduler.
+Selected jobs (1)
+Resources after job selection: {'_cores': 0, '_nodes': 9223372036854775803}
+Execute 1 jobs...
+
+[Sun Aug 18 22:54:55 2024]
+Job 1: WT_REP1_control: Performing quality control on raw reads
+Reason: Code has changed since last execution
+
+jobs registered as running before removal {fastqc, fastqc, feature_counts, fastqc}
+[Sun Aug 18 22:54:55 2024]
+Finished job 48.
+5 of 13 steps (38%) done
+Resources before job selection: {'_cores': 6, '_nodes': 9223372036854775804}
+Ready jobs (4)
+Select jobs to execute...
+Selected jobs (1)
+Resources after job selection: {'_cores': 0, '_nodes': 9223372036854775803}
+Execute 1 jobs...
+
+[Sun Aug 18 22:54:55 2024]
+Job 6: RAP1_REP3_treatment: Performing quality control on raw reads
+Reason: Code has changed since last execution
+
+Completion of job ['fastqc'] reported to scheduler.
+jobs registered as running before removal {fastqc, fastqc, fastqc, fastqc}
+[Sun Aug 18 22:54:57 2024]
+Finished job 3.
+6 of 13 steps (46%) done
+Resources before job selection: {'_cores': 6, '_nodes': 9223372036854775804}
+Ready jobs (3)
+Select jobs to execute...
+Selected jobs (1)
+Resources after job selection: {'_cores': 0, '_nodes': 9223372036854775803}
+Execute 1 jobs...
+
+[Sun Aug 18 22:54:57 2024]
+Job 5: RAP1_REP2_treatment: Performing quality control on raw reads
+Reason: Code has changed since last execution
+
+Completion of job ['fastqc'] reported to scheduler.
+jobs registered as running before removal {fastqc, fastqc, fastqc, fastqc}
+[Sun Aug 18 22:54:57 2024]
+Finished job 4.
+7 of 13 steps (54%) done
+Resources before job selection: {'_cores': 6, '_nodes': 9223372036854775804}
+Ready jobs (2)
+Select jobs to execute...
+Selected jobs (1)
+Resources after job selection: {'_cores': 0, '_nodes': 9223372036854775803}
+Execute 1 jobs...
+
+[Sun Aug 18 22:54:57 2024]
+Job 2: WT_REP2_control: Performing quality control on raw reads
+Reason: Code has changed since last execution
+
+Completion of job ['fastqc'] reported to scheduler.
+jobs registered as running before removal {fastqc, fastqc, fastqc, fastqc}
+[Sun Aug 18 22:54:57 2024]
+Finished job 1.
+8 of 13 steps (62%) done
+Resources before job selection: {'_cores': 6, '_nodes': 9223372036854775804}
+Ready jobs (1)
+Select jobs to execute...
+Using greedy selector because only single job has to be scheduled.
+Selected jobs (1)
+Resources after job selection: {'_cores': 0, '_nodes': 9223372036854775803}
+Execute 1 jobs...
+
+[Sun Aug 18 22:54:57 2024]
+Job 47: WT_REP1_control: Read counting relative to gene biotype
+Reason: Missing output files: results/feature_counts/WT_REP1_control/WT_REP1_control.biotype_counts_rrna_mqc.tsv, results/feature_counts/WT_REP1_control/WT_REP1_control.featurecounts.txt, results/feature_counts/WT_REP1_control/WT_REP1_control.featurecounts.txt.summary
+
+Completion of job ['fastqc'] reported to scheduler.
+jobs registered as running before removal {fastqc, fastqc, feature_counts, fastqc}
+[Sun Aug 18 22:54:57 2024]
+Finished job 6.
+9 of 13 steps (69%) done
+Completion of job ['feature_counts'] reported to scheduler.
+jobs registered as running before removal {fastqc, fastqc, feature_counts}
+[Sun Aug 18 22:54:58 2024]
+Finished job 47.
+10 of 13 steps (77%) done
+Completion of job ['fastqc'] reported to scheduler.
+jobs registered as running before removal {fastqc, fastqc}
+[Sun Aug 18 22:54:58 2024]
+Finished job 5.
+11 of 13 steps (85%) done
+Completion of job ['fastqc'] reported to scheduler.
+jobs registered as running before removal {fastqc}
+[Sun Aug 18 22:54:59 2024]
+Finished job 2.
+12 of 13 steps (92%) done
+Resources before job selection: {'_cores': 24, '_nodes': 9223372036854775807}
+Ready jobs (1)
+Select jobs to execute...
+Using greedy selector because only single job has to be scheduled.
+Selected jobs (1)
+Resources after job selection: {'_cores': 23, '_nodes': 9223372036854775806}
+Execute 1 jobs...
+
+[Sun Aug 18 22:54:59 2024]
+localrule all:
+    input: results/fastqc/WT_REP1_control, results/fastqc/WT_REP2_control, results/fastqc/WT_REP3_control, results/fastqc/RAP1_REP1_treatment, results/fastqc/RAP1_REP2_treatment, results/fastqc/RAP1_REP3_treatment, results/trimmed/WT_REP1_control, results/trimmed/WT_REP2_control, results/trimmed/WT_REP3_control, results/trimmed/RAP1_REP1_treatment, results/trimmed/RAP1_REP2_treatment, results/trimmed/RAP1_REP3_treatment, results/align/bam_original/WT_REP1_control/WT_REP1_control.Aligned.out.bam, results/align/bam_original/WT_REP2_control/WT_REP2_control.Aligned.out.bam, results/align/bam_original/WT_REP3_control/WT_REP3_control.Aligned.out.bam, results/align/bam_original/RAP1_REP1_treatment/RAP1_REP1_treatment.Aligned.out.bam, results/align/bam_original/RAP1_REP2_treatment/RAP1_REP2_treatment.Aligned.out.bam, results/align/bam_original/RAP1_REP3_treatment/RAP1_REP3_treatment.Aligned.out.bam, results/align/bam_original/WT_REP1_control/WT_REP1_control.Aligned.toTranscriptome.out.bam, results/align/bam_original/WT_REP2_control/WT_REP2_control.Aligned.toTranscriptome.out.bam, results/align/bam_original/WT_REP3_control/WT_REP3_control.Aligned.toTranscriptome.out.bam, results/align/bam_original/RAP1_REP1_treatment/RAP1_REP1_treatment.Aligned.toTranscriptome.out.bam, results/align/bam_original/RAP1_REP2_treatment/RAP1_REP2_treatment.Aligned.toTranscriptome.out.bam, results/align/bam_original/RAP1_REP3_treatment/RAP1_REP3_treatment.Aligned.toTranscriptome.out.bam, results/align/bam_original/WT_REP1_control/WT_REP1_control.sorted.bam, results/align/bam_original/WT_REP2_control/WT_REP2_control.sorted.bam, results/align/bam_original/WT_REP3_control/WT_REP3_control.sorted.bam, results/align/bam_original/RAP1_REP1_treatment/RAP1_REP1_treatment.sorted.bam, results/align/bam_original/RAP1_REP2_treatment/RAP1_REP2_treatment.sorted.bam, results/align/bam_original/RAP1_REP3_treatment/RAP1_REP3_treatment.sorted.bam, results/align/bam_original/WT_REP1_control/WT_REP1_control.sorted.bam.bai, results/align/bam_original/WT_REP2_control/WT_REP2_control.sorted.bam.bai, results/align/bam_original/WT_REP3_control/WT_REP3_control.sorted.bam.bai, results/align/bam_original/RAP1_REP1_treatment/RAP1_REP1_treatment.sorted.bam.bai, results/align/bam_original/RAP1_REP2_treatment/RAP1_REP2_treatment.sorted.bam.bai, results/align/bam_original/RAP1_REP3_treatment/RAP1_REP3_treatment.sorted.bam.bai, results/align/bam_original/WT_REP1_control/WT_REP1_control.sorted.bam.stats, results/align/bam_original/WT_REP2_control/WT_REP2_control.sorted.bam.stats, results/align/bam_original/WT_REP3_control/WT_REP3_control.sorted.bam.stats, results/align/bam_original/RAP1_REP1_treatment/RAP1_REP1_treatment.sorted.bam.stats, results/align/bam_original/RAP1_REP2_treatment/RAP1_REP2_treatment.sorted.bam.stats, results/align/bam_original/RAP1_REP3_treatment/RAP1_REP3_treatment.sorted.bam.stats, results/align/bam_original/WT_REP1_control/WT_REP1_control.sorted.bam.flagstat, results/align/bam_original/WT_REP2_control/WT_REP2_control.sorted.bam.flagstat, results/align/bam_original/WT_REP3_control/WT_REP3_control.sorted.bam.flagstat, results/align/bam_original/RAP1_REP1_treatment/RAP1_REP1_treatment.sorted.bam.flagstat, results/align/bam_original/RAP1_REP2_treatment/RAP1_REP2_treatment.sorted.bam.flagstat, results/align/bam_original/RAP1_REP3_treatment/RAP1_REP3_treatment.sorted.bam.flagstat, results/align/bam_original/WT_REP1_control/WT_REP1_control.sorted.bam.idxstats, results/align/bam_original/WT_REP2_control/WT_REP2_control.sorted.bam.idxstats, results/align/bam_original/WT_REP3_control/WT_REP3_control.sorted.bam.idxstats, results/align/bam_original/RAP1_REP1_treatment/RAP1_REP1_treatment.sorted.bam.idxstats, results/align/bam_original/RAP1_REP2_treatment/RAP1_REP2_treatment.sorted.bam.idxstats, results/align/bam_original/RAP1_REP3_treatment/RAP1_REP3_treatment.sorted.bam.idxstats, results/align/bam_markup/WT_REP1_control/WT_REP1_control.markdup.sorted.bam, results/align/bam_markup/WT_REP2_control/WT_REP2_control.markdup.sorted.bam, results/align/bam_markup/WT_REP3_control/WT_REP3_control.markdup.sorted.bam, results/align/bam_markup/RAP1_REP1_treatment/RAP1_REP1_treatment.markdup.sorted.bam, results/align/bam_markup/RAP1_REP2_treatment/RAP1_REP2_treatment.markdup.sorted.bam, results/align/bam_markup/RAP1_REP3_treatment/RAP1_REP3_treatment.markdup.sorted.bam, results/align/bam_markup/WT_REP1_control/WT_REP1_control.markdup.sorted.MarkDuplicates.metrics.txt, results/align/bam_markup/WT_REP2_control/WT_REP2_control.markdup.sorted.MarkDuplicates.metrics.txt, results/align/bam_markup/WT_REP3_control/WT_REP3_control.markdup.sorted.MarkDuplicates.metrics.txt, results/align/bam_markup/RAP1_REP1_treatment/RAP1_REP1_treatment.markdup.sorted.MarkDuplicates.metrics.txt, results/align/bam_markup/RAP1_REP2_treatment/RAP1_REP2_treatment.markdup.sorted.MarkDuplicates.metrics.txt, results/align/bam_markup/RAP1_REP3_treatment/RAP1_REP3_treatment.markdup.sorted.MarkDuplicates.metrics.txt, results/align/bam_markup/WT_REP1_control/WT_REP1_control.markdup.sorted.bam.bai, results/align/bam_markup/WT_REP2_control/WT_REP2_control.markdup.sorted.bam.bai, results/align/bam_markup/WT_REP3_control/WT_REP3_control.markdup.sorted.bam.bai, results/align/bam_markup/RAP1_REP1_treatment/RAP1_REP1_treatment.markdup.sorted.bam.bai, results/align/bam_markup/RAP1_REP2_treatment/RAP1_REP2_treatment.markdup.sorted.bam.bai, results/align/bam_markup/RAP1_REP3_treatment/RAP1_REP3_treatment.markdup.sorted.bam.bai, results/align/bam_markup/WT_REP1_control/WT_REP1_control.markdup.sorted.bam.stats, results/align/bam_markup/WT_REP2_control/WT_REP2_control.markdup.sorted.bam.stats, results/align/bam_markup/WT_REP3_control/WT_REP3_control.markdup.sorted.bam.stats, results/align/bam_markup/RAP1_REP1_treatment/RAP1_REP1_treatment.markdup.sorted.bam.stats, results/align/bam_markup/RAP1_REP2_treatment/RAP1_REP2_treatment.markdup.sorted.bam.stats, results/align/bam_markup/RAP1_REP3_treatment/RAP1_REP3_treatment.markdup.sorted.bam.stats, results/align/bam_markup/WT_REP1_control/WT_REP1_control.markdup.sorted.bam.flagstat, results/align/bam_markup/WT_REP2_control/WT_REP2_control.markdup.sorted.bam.flagstat, results/align/bam_markup/WT_REP3_control/WT_REP3_control.markdup.sorted.bam.flagstat, results/align/bam_markup/RAP1_REP1_treatment/RAP1_REP1_treatment.markdup.sorted.bam.flagstat, results/align/bam_markup/RAP1_REP2_treatment/RAP1_REP2_treatment.markdup.sorted.bam.flagstat, results/align/bam_markup/RAP1_REP3_treatment/RAP1_REP3_treatment.markdup.sorted.bam.flagstat, results/align/bam_markup/WT_REP1_control/WT_REP1_control.markdup.sorted.bam.idxstats, results/align/bam_markup/WT_REP2_control/WT_REP2_control.markdup.sorted.bam.idxstats, results/align/bam_markup/WT_REP3_control/WT_REP3_control.markdup.sorted.bam.idxstats, results/align/bam_markup/RAP1_REP1_treatment/RAP1_REP1_treatment.markdup.sorted.bam.idxstats, results/align/bam_markup/RAP1_REP2_treatment/RAP1_REP2_treatment.markdup.sorted.bam.idxstats, results/align/bam_markup/RAP1_REP3_treatment/RAP1_REP3_treatment.markdup.sorted.bam.idxstats, results/stringtie/WT_REP1_control/WT_REP1_control.transcripts.gtf, results/stringtie/WT_REP2_control/WT_REP2_control.transcripts.gtf, results/stringtie/WT_REP3_control/WT_REP3_control.transcripts.gtf, results/stringtie/RAP1_REP1_treatment/RAP1_REP1_treatment.transcripts.gtf, results/stringtie/RAP1_REP2_treatment/RAP1_REP2_treatment.transcripts.gtf, results/stringtie/RAP1_REP3_treatment/RAP1_REP3_treatment.transcripts.gtf, results/stringtie/WT_REP1_control/WT_REP1_control.gene.abundance.txt, results/stringtie/WT_REP2_control/WT_REP2_control.gene.abundance.txt, results/stringtie/WT_REP3_control/WT_REP3_control.gene.abundance.txt, results/stringtie/RAP1_REP1_treatment/RAP1_REP1_treatment.gene.abundance.txt, results/stringtie/RAP1_REP2_treatment/RAP1_REP2_treatment.gene.abundance.txt, results/stringtie/RAP1_REP3_treatment/RAP1_REP3_treatment.gene.abundance.txt, results/stringtie/WT_REP1_control/WT_REP1_control.coverage.gtf, results/stringtie/WT_REP2_control/WT_REP2_control.coverage.gtf, results/stringtie/WT_REP3_control/WT_REP3_control.coverage.gtf, results/stringtie/RAP1_REP1_treatment/RAP1_REP1_treatment.coverage.gtf, results/stringtie/RAP1_REP2_treatment/RAP1_REP2_treatment.coverage.gtf, results/stringtie/RAP1_REP3_treatment/RAP1_REP3_treatment.coverage.gtf, results/stringtie/WT_REP1_control/WT_REP1_control.ballgown, results/stringtie/WT_REP2_control/WT_REP2_control.ballgown, results/stringtie/WT_REP3_control/WT_REP3_control.ballgown, results/stringtie/RAP1_REP1_treatment/RAP1_REP1_treatment.ballgown, results/stringtie/RAP1_REP2_treatment/RAP1_REP2_treatment.ballgown, results/stringtie/RAP1_REP3_treatment/RAP1_REP3_treatment.ballgown, results/feature_counts/WT_REP1_control/WT_REP1_control.featurecounts.txt, results/feature_counts/WT_REP2_control/WT_REP2_control.featurecounts.txt, results/feature_counts/WT_REP3_control/WT_REP3_control.featurecounts.txt, results/feature_counts/RAP1_REP1_treatment/RAP1_REP1_treatment.featurecounts.txt, results/feature_counts/RAP1_REP2_treatment/RAP1_REP2_treatment.featurecounts.txt, results/feature_counts/RAP1_REP3_treatment/RAP1_REP3_treatment.featurecounts.txt, results/feature_counts/WT_REP1_control/WT_REP1_control.featurecounts.txt.summary, results/feature_counts/WT_REP2_control/WT_REP2_control.featurecounts.txt.summary, results/feature_counts/WT_REP3_control/WT_REP3_control.featurecounts.txt.summary, results/feature_counts/RAP1_REP1_treatment/RAP1_REP1_treatment.featurecounts.txt.summary, results/feature_counts/RAP1_REP2_treatment/RAP1_REP2_treatment.featurecounts.txt.summary, results/feature_counts/RAP1_REP3_treatment/RAP1_REP3_treatment.featurecounts.txt.summary, results/feature_counts/WT_REP1_control/WT_REP1_control.biotype_counts_rrna_mqc.tsv, results/feature_counts/WT_REP2_control/WT_REP2_control.biotype_counts_rrna_mqc.tsv, results/feature_counts/WT_REP3_control/WT_REP3_control.biotype_counts_rrna_mqc.tsv, results/feature_counts/RAP1_REP1_treatment/RAP1_REP1_treatment.biotype_counts_rrna_mqc.tsv, results/feature_counts/RAP1_REP2_treatment/RAP1_REP2_treatment.biotype_counts_rrna_mqc.tsv, results/feature_counts/RAP1_REP3_treatment/RAP1_REP3_treatment.biotype_counts_rrna_mqc.tsv
+    jobid: 0
+    reason: Input files updated by another job: results/feature_counts/WT_REP3_control/WT_REP3_control.biotype_counts_rrna_mqc.tsv, results/feature_counts/WT_REP1_control/WT_REP1_control.biotype_counts_rrna_mqc.tsv, results/feature_counts/RAP1_REP3_treatment/RAP1_REP3_treatment.featurecounts.txt, results/feature_counts/WT_REP1_control/WT_REP1_control.featurecounts.txt.summary, results/fastqc/RAP1_REP3_treatment, results/feature_counts/RAP1_REP1_treatment/RAP1_REP1_treatment.biotype_counts_rrna_mqc.tsv, results/feature_counts/RAP1_REP1_treatment/RAP1_REP1_treatment.featurecounts.txt, results/feature_counts/WT_REP3_control/WT_REP3_control.featurecounts.txt.summary, results/fastqc/WT_REP3_control, results/feature_counts/RAP1_REP2_treatment/RAP1_REP2_treatment.biotype_counts_rrna_mqc.tsv, results/fastqc/WT_REP2_control, results/fastqc/RAP1_REP2_treatment, results/fastqc/WT_REP1_control, results/feature_counts/RAP1_REP2_treatment/RAP1_REP2_treatment.featurecounts.txt, results/feature_counts/RAP1_REP1_treatment/RAP1_REP1_treatment.featurecounts.txt.summary, results/feature_counts/WT_REP2_control/WT_REP2_control.biotype_counts_rrna_mqc.tsv, results/feature_counts/WT_REP2_control/WT_REP2_control.featurecounts.txt, results/feature_counts/RAP1_REP2_treatment/RAP1_REP2_treatment.featurecounts.txt.summary, results/feature_counts/RAP1_REP3_treatment/RAP1_REP3_treatment.featurecounts.txt.summary, results/feature_counts/WT_REP3_control/WT_REP3_control.featurecounts.txt, results/feature_counts/RAP1_REP3_treatment/RAP1_REP3_treatment.biotype_counts_rrna_mqc.tsv, results/feature_counts/WT_REP1_control/WT_REP1_control.featurecounts.txt, results/fastqc/RAP1_REP1_treatment, results/feature_counts/WT_REP2_control/WT_REP2_control.featurecounts.txt.summary
+    resources: tmpdir=/tmp
+
+Completion of job ['all'] reported to scheduler.
+jobs registered as running before removal {all}
+[Sun Aug 18 22:54:59 2024]
+Finished job 0.
+13 of 13 steps (100%) done
+Complete log: .snakemake/log/2024-08-18T225455.355943.snakemake.log
+unlocking
+removing lock
+removing lock
+removed all locks

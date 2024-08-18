@@ -1,0 +1,1060 @@
+Building DAG of jobs...
+shared_storage_local_copies: True
+remote_exec: False
+Using shell: /usr/bin/bash
+Provided cores: 24
+Rules claiming more threads will be scaled down.
+Conda environments: ignored
+Job stats:
+job                            count
+---------------------------  -------
+align_paired                       3
+align_single                       3
+all                                1
+bam_stat                           6
+dupradar                           6
+fastqc                             6
+feature_counts                     6
+filter_gtf                         1
+infer_experiment                   6
+picard_mark_duplicates             6
+qualimap                           6
+samtools_markdup_processing        6
+samtools_process                   6
+star_genome_generate               1
+stringtie                          6
+total                             69
+
+Resources before job selection: {'_cores': 24, '_nodes': 9223372036854775807}
+Ready jobs (7)
+Select jobs to execute...
+Selected jobs (4)
+Resources after job selection: {'_cores': 0, '_nodes': 9223372036854775803}
+Execute 4 jobs...
+
+[Mon Aug 19 00:52:32 2024]
+Job 2: WT_REP2_control: Performing quality control on raw reads
+Reason: Code has changed since last execution
+
+
+[Mon Aug 19 00:52:32 2024]
+Job 3: WT_REP3_control: Performing quality control on raw reads
+Reason: Code has changed since last execution
+
+
+[Mon Aug 19 00:52:32 2024]
+Job 5: RAP1_REP2_treatment: Performing quality control on raw reads
+Reason: Code has changed since last execution
+
+
+[Mon Aug 19 00:52:32 2024]
+Job 6: RAP1_REP3_treatment: Performing quality control on raw reads
+Reason: Code has changed since last execution
+
+Completion of job ['fastqc'] reported to scheduler.
+jobs registered as running before removal {fastqc, fastqc, fastqc, fastqc}
+[Mon Aug 19 00:52:35 2024]
+Finished job 2.
+1 of 69 steps (1%) done
+Resources before job selection: {'_cores': 6, '_nodes': 9223372036854775804}
+Ready jobs (3)
+Select jobs to execute...
+Completion of job ['fastqc'] reported to scheduler.
+Selected jobs (1)
+Resources after job selection: {'_cores': 0, '_nodes': 9223372036854775803}
+Execute 1 jobs...
+
+[Mon Aug 19 00:52:35 2024]
+Job 1: WT_REP1_control: Performing quality control on raw reads
+Reason: Code has changed since last execution
+
+jobs registered as running before removal {fastqc, fastqc, fastqc, fastqc}
+[Mon Aug 19 00:52:35 2024]
+Finished job 3.
+2 of 69 steps (3%) done
+Resources before job selection: {'_cores': 6, '_nodes': 9223372036854775804}
+Ready jobs (2)
+Select jobs to execute...
+Completion of job ['fastqc'] reported to scheduler.
+Completion of job ['fastqc'] reported to scheduler.
+Selected jobs (1)
+Resources after job selection: {'_cores': 0, '_nodes': 9223372036854775803}
+Execute 1 jobs...
+
+[Mon Aug 19 00:52:35 2024]
+Job 4: RAP1_REP1_treatment: Performing quality control on raw reads
+Reason: Code has changed since last execution
+
+jobs registered as running before removal {fastqc, fastqc, fastqc, fastqc}
+[Mon Aug 19 00:52:35 2024]
+Finished job 5.
+3 of 69 steps (4%) done
+jobs registered as running before removal {fastqc, fastqc, fastqc}
+[Mon Aug 19 00:52:35 2024]
+Finished job 6.
+4 of 69 steps (6%) done
+Resources before job selection: {'_cores': 12, '_nodes': 9223372036854775805}
+Ready jobs (1)
+Select jobs to execute...
+Using greedy selector because only single job has to be scheduled.
+Selected jobs (1)
+Resources after job selection: {'_cores': 11, '_nodes': 9223372036854775804}
+Execute 1 jobs...
+
+[Mon Aug 19 00:52:35 2024]
+Job 14: Refining the input GTF
+Reason: Code has changed since last execution
+
+Completion of job ['filter_gtf'] reported to scheduler.
+jobs registered as running before removal {filter_gtf, fastqc, fastqc}
+[Mon Aug 19 00:52:35 2024]
+Finished job 14.
+5 of 69 steps (7%) done
+Resources before job selection: {'_cores': 12, '_nodes': 9223372036854775805}
+Ready jobs (1)
+Select jobs to execute...
+Using greedy selector because only single job has to be scheduled.
+Selected jobs (1)
+Resources after job selection: {'_cores': 0, '_nodes': 9223372036854775804}
+Execute 1 jobs...
+
+[Mon Aug 19 00:52:35 2024]
+Job 17: Creating a reference genome index
+Reason: Input files updated by another job: resources/annotation.filtered.gtf
+
+Completion of job ['star_genome_generate'] reported to scheduler.
+jobs registered as running before removal {star_genome_generate, fastqc, fastqc}
+[Mon Aug 19 00:52:35 2024]
+Finished job 17.
+6 of 69 steps (9%) done
+Resources before job selection: {'_cores': 12, '_nodes': 9223372036854775805}
+Ready jobs (6)
+Select jobs to execute...
+Selected jobs (1)
+Resources after job selection: {'_cores': 0, '_nodes': 9223372036854775804}
+Execute 1 jobs...
+
+[Mon Aug 19 00:52:35 2024]
+Job 18: WT_REP2_control: Aligning on paired-end FASTQ files
+Reason: Input files updated by another job: resources/annotation.filtered.gtf, resources/star_index
+
+Completion of job ['fastqc'] reported to scheduler.
+jobs registered as running before removal {align_paired, fastqc, fastqc}
+[Mon Aug 19 00:52:37 2024]
+Finished job 1.
+7 of 69 steps (10%) done
+Resources before job selection: {'_cores': 6, '_nodes': 9223372036854775805}
+Ready jobs (5)
+Select jobs to execute...
+Selected jobs (0)
+Resources after job selection: {'_cores': 6, '_nodes': 9223372036854775805}
+Completion of job ['fastqc'] reported to scheduler.
+jobs registered as running before removal {align_paired, fastqc}
+[Mon Aug 19 00:52:37 2024]
+Finished job 4.
+8 of 69 steps (12%) done
+Resources before job selection: {'_cores': 12, '_nodes': 9223372036854775806}
+Ready jobs (5)
+Selected jobs (1)
+Resources after job selection: {'_cores': 0, '_nodes': 9223372036854775805}
+Execute 1 jobs...
+
+[Mon Aug 19 00:52:37 2024]
+Job 21: RAP1_REP2_treatment: Aligning on single-end FASTQ files
+Reason: Input files updated by another job: resources/annotation.filtered.gtf, resources/star_index
+
+Completion of job ['align_single'] reported to scheduler.
+jobs registered as running before removal {align_single, align_paired}
+[Mon Aug 19 00:52:45 2024]
+Finished job 21.
+9 of 69 steps (13%) done
+Resources before job selection: {'_cores': 12, '_nodes': 9223372036854775806}
+Ready jobs (5)
+Select jobs to execute...
+Selected jobs (1)
+Resources after job selection: {'_cores': 0, '_nodes': 9223372036854775805}
+Execute 1 jobs...
+
+[Mon Aug 19 00:52:45 2024]
+Job 22: RAP1_REP3_treatment: Aligning on single-end FASTQ files
+Reason: Input files updated by another job: resources/annotation.filtered.gtf, resources/star_index
+
+Completion of job ['align_single'] reported to scheduler.
+jobs registered as running before removal {align_single, align_paired}
+[Mon Aug 19 00:52:54 2024]
+Finished job 22.
+10 of 69 steps (14%) done
+Resources before job selection: {'_cores': 12, '_nodes': 9223372036854775806}
+Ready jobs (5)
+Select jobs to execute...
+Selected jobs (1)
+Resources after job selection: {'_cores': 0, '_nodes': 9223372036854775805}
+Execute 1 jobs...
+
+[Mon Aug 19 00:52:54 2024]
+Job 19: WT_REP3_control: Aligning on paired-end FASTQ files
+Reason: Input files updated by another job: resources/annotation.filtered.gtf, resources/star_index
+
+Completion of job ['align_paired'] reported to scheduler.
+jobs registered as running before removal {align_paired, align_paired}
+[Mon Aug 19 00:53:28 2024]
+Finished job 18.
+11 of 69 steps (16%) done
+Resources before job selection: {'_cores': 12, '_nodes': 9223372036854775806}
+Ready jobs (5)
+Select jobs to execute...
+Selected jobs (1)
+Resources after job selection: {'_cores': 0, '_nodes': 9223372036854775805}
+Execute 1 jobs...
+
+[Mon Aug 19 00:53:28 2024]
+Job 13: WT_REP1_control: Aligning on paired-end FASTQ files
+Reason: Input files updated by another job: resources/annotation.filtered.gtf, resources/star_index
+
+Completion of job ['align_paired'] reported to scheduler.
+jobs registered as running before removal {align_paired, align_paired}
+[Mon Aug 19 00:53:47 2024]
+Finished job 19.
+12 of 69 steps (17%) done
+Resources before job selection: {'_cores': 12, '_nodes': 9223372036854775806}
+Ready jobs (5)
+Select jobs to execute...
+Selected jobs (1)
+Resources after job selection: {'_cores': 0, '_nodes': 9223372036854775805}
+Execute 1 jobs...
+
+[Mon Aug 19 00:53:47 2024]
+Job 20: RAP1_REP1_treatment: Aligning on single-end FASTQ files
+Reason: Input files updated by another job: resources/annotation.filtered.gtf, resources/star_index
+
+Completion of job ['align_single'] reported to scheduler.
+jobs registered as running before removal {align_paired, align_single}
+[Mon Aug 19 00:53:55 2024]
+Finished job 20.
+13 of 69 steps (19%) done
+Resources before job selection: {'_cores': 12, '_nodes': 9223372036854775806}
+Ready jobs (5)
+Select jobs to execute...
+Selected jobs (1)
+Resources after job selection: {'_cores': 4, '_nodes': 9223372036854775805}
+Execute 1 jobs...
+
+[Mon Aug 19 00:53:55 2024]
+Job 26: RAP1_REP1_treatment: Sorting and indexing alignments
+Reason: Input files updated by another job: results/align/bam_original/RAP1_REP1_treatment/RAP1_REP1_treatment.Aligned.out.bam
+
+Completion of job ['samtools_process'] reported to scheduler.
+jobs registered as running before removal {samtools_process, align_paired}
+[Mon Aug 19 00:53:55 2024]
+Finished job 26.
+14 of 69 steps (20%) done
+Resources before job selection: {'_cores': 12, '_nodes': 9223372036854775806}
+Ready jobs (5)
+Select jobs to execute...
+Selected jobs (1)
+Resources after job selection: {'_cores': 0, '_nodes': 9223372036854775805}
+Execute 1 jobs...
+
+[Mon Aug 19 00:53:55 2024]
+Job 32: RAP1_REP1_treatment: Marking duplicate reads
+Reason: Input files updated by another job: results/align/bam_original/RAP1_REP1_treatment/RAP1_REP1_treatment.sorted.bam
+
+Completion of job ['picard_mark_duplicates'] reported to scheduler.
+jobs registered as running before removal {picard_mark_duplicates, align_paired}
+[Mon Aug 19 00:53:56 2024]
+Finished job 32.
+15 of 69 steps (22%) done
+Resources before job selection: {'_cores': 12, '_nodes': 9223372036854775806}
+Ready jobs (11)
+Select jobs to execute...
+Selected jobs (2)
+Resources after job selection: {'_cores': 0, '_nodes': 9223372036854775804}
+Execute 2 jobs...
+
+[Mon Aug 19 00:53:56 2024]
+Job 62: RAP1_REP1_treatment: Running dupRadar to evaluate technical and biological read duplication
+Reason: Input files updated by another job: results/align/bam_markup/RAP1_REP1_treatment/RAP1_REP1_treatment.markdup.sorted.bam, resources/annotation.filtered.gtf
+
+
+[Mon Aug 19 00:53:56 2024]
+Job 27: RAP1_REP2_treatment: Sorting and indexing alignments
+Reason: Input files updated by another job: results/align/bam_original/RAP1_REP2_treatment/RAP1_REP2_treatment.Aligned.out.bam
+
+Completion of job ['samtools_process'] reported to scheduler.
+jobs registered as running before removal {align_paired, dupradar, samtools_process}
+[Mon Aug 19 00:53:57 2024]
+Finished job 27.
+16 of 69 steps (23%) done
+Resources before job selection: {'_cores': 8, '_nodes': 9223372036854775805}
+Ready jobs (10)
+Select jobs to execute...
+Selected jobs (3)
+Resources after job selection: {'_cores': 0, '_nodes': 9223372036854775802}
+Execute 3 jobs...
+
+[Mon Aug 19 00:53:57 2024]
+Job 75: RAP1_REP1_treatment: Running Infer experiment
+Reason: Input files updated by another job: results/align/bam_markup/RAP1_REP1_treatment/RAP1_REP1_treatment.markdup.sorted.bam
+
+
+[Mon Aug 19 00:53:57 2024]
+Job 68: RAP1_REP1_treatment: Running BAM stat
+Reason: Input files updated by another job: results/align/bam_markup/RAP1_REP1_treatment/RAP1_REP1_treatment.markdup.sorted.bam
+
+
+[Mon Aug 19 00:53:57 2024]
+Job 44: RAP1_REP1_treatment: Running Stringtie to assemble and quantify transcripts
+Reason: Input files updated by another job: results/align/bam_markup/RAP1_REP1_treatment/RAP1_REP1_treatment.markdup.sorted.bam, resources/annotation.filtered.gtf
+
+Completion of job ['stringtie'] reported to scheduler.
+jobs registered as running before removal {bam_stat, align_paired, infer_experiment, dupradar, stringtie}
+[Mon Aug 19 00:53:57 2024]
+Finished job 44.
+17 of 69 steps (25%) done
+Resources before job selection: {'_cores': 6, '_nodes': 9223372036854775803}
+Ready jobs (7)
+Select jobs to execute...
+Selected jobs (1)
+Resources after job selection: {'_cores': 0, '_nodes': 9223372036854775802}
+Execute 1 jobs...
+
+[Mon Aug 19 00:53:57 2024]
+Job 56: RAP1_REP1_treatment: Running Qualimap
+Reason: Input files updated by another job: results/align/bam_markup/RAP1_REP1_treatment/RAP1_REP1_treatment.markdup.sorted.bam, resources/annotation.filtered.gtf
+
+Completion of job ['infer_experiment'] reported to scheduler.
+jobs registered as running before removal {bam_stat, align_paired, qualimap, infer_experiment, dupradar}
+[Mon Aug 19 00:53:57 2024]
+Finished job 75.
+18 of 69 steps (26%) done
+Resources before job selection: {'_cores': 1, '_nodes': 9223372036854775803}
+Ready jobs (6)
+Select jobs to execute...
+Completion of job ['bam_stat'] reported to scheduler.
+Selected jobs (1)
+Resources after job selection: {'_cores': 0, '_nodes': 9223372036854775802}
+Execute 1 jobs...
+
+[Mon Aug 19 00:53:57 2024]
+Job 38: RAP1_REP1_treatment: Running Samtools to mark duplicate reads
+Reason: Input files updated by another job: results/align/bam_markup/RAP1_REP1_treatment/RAP1_REP1_treatment.markdup.sorted.bam
+
+jobs registered as running before removal {samtools_markdup_processing, bam_stat, align_paired, qualimap, dupradar}
+[Mon Aug 19 00:53:57 2024]
+Finished job 68.
+19 of 69 steps (28%) done
+Resources before job selection: {'_cores': 1, '_nodes': 9223372036854775803}
+Ready jobs (5)
+Select jobs to execute...
+Selected jobs (0)
+Resources after job selection: {'_cores': 1, '_nodes': 9223372036854775803}
+Completion of job ['samtools_markdup_processing'] reported to scheduler.
+jobs registered as running before removal {samtools_markdup_processing, align_paired, qualimap, dupradar}
+[Mon Aug 19 00:53:57 2024]
+Finished job 38.
+20 of 69 steps (29%) done
+Resources before job selection: {'_cores': 2, '_nodes': 9223372036854775804}
+Ready jobs (5)
+Selected jobs (0)
+Resources after job selection: {'_cores': 2, '_nodes': 9223372036854775804}
+Completion of job ['dupradar'] reported to scheduler.
+jobs registered as running before removal {align_paired, qualimap, dupradar}
+[Mon Aug 19 00:53:58 2024]
+Finished job 62.
+21 of 69 steps (30%) done
+Resources before job selection: {'_cores': 6, '_nodes': 9223372036854775805}
+Ready jobs (5)
+Selected jobs (1)
+Resources after job selection: {'_cores': 0, '_nodes': 9223372036854775804}
+Execute 1 jobs...
+
+[Mon Aug 19 00:53:58 2024]
+Job 50: RAP1_REP1_treatment: Read counting relative to gene biotype
+Reason: Input files updated by another job: results/align/bam_markup/RAP1_REP1_treatment/RAP1_REP1_treatment.markdup.sorted.bam, resources/annotation.filtered.gtf
+
+Completion of job ['feature_counts'] reported to scheduler.
+jobs registered as running before removal {align_paired, qualimap, feature_counts}
+[Mon Aug 19 00:53:58 2024]
+Finished job 50.
+22 of 69 steps (32%) done
+Resources before job selection: {'_cores': 6, '_nodes': 9223372036854775805}
+Ready jobs (4)
+Select jobs to execute...
+Selected jobs (0)
+Resources after job selection: {'_cores': 6, '_nodes': 9223372036854775805}
+Completion of job ['qualimap'] reported to scheduler.
+jobs registered as running before removal {align_paired, qualimap}
+[Mon Aug 19 00:53:58 2024]
+Finished job 56.
+23 of 69 steps (33%) done
+Resources before job selection: {'_cores': 12, '_nodes': 9223372036854775806}
+Ready jobs (4)
+Selected jobs (1)
+Resources after job selection: {'_cores': 0, '_nodes': 9223372036854775805}
+Execute 1 jobs...
+
+[Mon Aug 19 00:53:58 2024]
+Job 33: RAP1_REP2_treatment: Marking duplicate reads
+Reason: Input files updated by another job: results/align/bam_original/RAP1_REP2_treatment/RAP1_REP2_treatment.sorted.bam
+
+Completion of job ['picard_mark_duplicates'] reported to scheduler.
+jobs registered as running before removal {align_paired, picard_mark_duplicates}
+[Mon Aug 19 00:53:59 2024]
+Finished job 33.
+24 of 69 steps (35%) done
+Resources before job selection: {'_cores': 12, '_nodes': 9223372036854775806}
+Ready jobs (10)
+Select jobs to execute...
+Selected jobs (2)
+Resources after job selection: {'_cores': 0, '_nodes': 9223372036854775804}
+Execute 2 jobs...
+
+[Mon Aug 19 00:53:59 2024]
+Job 45: RAP1_REP2_treatment: Running Stringtie to assemble and quantify transcripts
+Reason: Input files updated by another job: resources/annotation.filtered.gtf, results/align/bam_markup/RAP1_REP2_treatment/RAP1_REP2_treatment.markdup.sorted.bam
+
+
+[Mon Aug 19 00:53:59 2024]
+Job 51: RAP1_REP2_treatment: Read counting relative to gene biotype
+Reason: Input files updated by another job: resources/annotation.filtered.gtf, results/align/bam_markup/RAP1_REP2_treatment/RAP1_REP2_treatment.markdup.sorted.bam
+
+Completion of job ['stringtie'] reported to scheduler.
+jobs registered as running before removal {stringtie, align_paired, feature_counts}
+[Mon Aug 19 00:53:59 2024]
+Finished job 45.
+25 of 69 steps (36%) done
+Resources before job selection: {'_cores': 6, '_nodes': 9223372036854775805}
+Ready jobs (8)
+Select jobs to execute...
+Selected jobs (1)
+Resources after job selection: {'_cores': 0, '_nodes': 9223372036854775804}
+Execute 1 jobs...
+
+[Mon Aug 19 00:53:59 2024]
+Job 57: RAP1_REP2_treatment: Running Qualimap
+Reason: Input files updated by another job: resources/annotation.filtered.gtf, results/align/bam_markup/RAP1_REP2_treatment/RAP1_REP2_treatment.markdup.sorted.bam
+
+Completion of job ['feature_counts'] reported to scheduler.
+jobs registered as running before removal {qualimap, align_paired, feature_counts}
+[Mon Aug 19 00:53:59 2024]
+Finished job 51.
+26 of 69 steps (38%) done
+Resources before job selection: {'_cores': 6, '_nodes': 9223372036854775805}
+Ready jobs (7)
+Select jobs to execute...
+Selected jobs (3)
+Resources after job selection: {'_cores': 0, '_nodes': 9223372036854775802}
+Execute 3 jobs...
+
+[Mon Aug 19 00:53:59 2024]
+Job 63: RAP1_REP2_treatment: Running dupRadar to evaluate technical and biological read duplication
+Reason: Input files updated by another job: resources/annotation.filtered.gtf, results/align/bam_markup/RAP1_REP2_treatment/RAP1_REP2_treatment.markdup.sorted.bam
+
+
+[Mon Aug 19 00:53:59 2024]
+Job 76: RAP1_REP2_treatment: Running Infer experiment
+Reason: Input files updated by another job: results/align/bam_markup/RAP1_REP2_treatment/RAP1_REP2_treatment.markdup.sorted.bam
+
+
+[Mon Aug 19 00:53:59 2024]
+Job 69: RAP1_REP2_treatment: Running BAM stat
+Reason: Input files updated by another job: results/align/bam_markup/RAP1_REP2_treatment/RAP1_REP2_treatment.markdup.sorted.bam
+
+Completion of job ['infer_experiment'] reported to scheduler.
+jobs registered as running before removal {infer_experiment, align_paired, dupradar, bam_stat, qualimap}
+[Mon Aug 19 00:53:59 2024]
+Finished job 76.
+27 of 69 steps (39%) done
+Resources before job selection: {'_cores': 1, '_nodes': 9223372036854775803}
+Ready jobs (4)
+Select jobs to execute...
+Selected jobs (1)
+Resources after job selection: {'_cores': 0, '_nodes': 9223372036854775802}
+Execute 1 jobs...
+
+[Mon Aug 19 00:53:59 2024]
+Job 39: RAP1_REP2_treatment: Running Samtools to mark duplicate reads
+Reason: Input files updated by another job: results/align/bam_markup/RAP1_REP2_treatment/RAP1_REP2_treatment.markdup.sorted.bam
+
+Completion of job ['bam_stat'] reported to scheduler.
+jobs registered as running before removal {align_paired, dupradar, bam_stat, samtools_markdup_processing, qualimap}
+[Mon Aug 19 00:53:59 2024]
+Finished job 69.
+28 of 69 steps (41%) done
+Resources before job selection: {'_cores': 1, '_nodes': 9223372036854775803}
+Ready jobs (3)
+Select jobs to execute...
+Selected jobs (0)
+Resources after job selection: {'_cores': 1, '_nodes': 9223372036854775803}
+Completion of job ['samtools_markdup_processing'] reported to scheduler.
+jobs registered as running before removal {align_paired, dupradar, samtools_markdup_processing, qualimap}
+[Mon Aug 19 00:53:59 2024]
+Finished job 39.
+29 of 69 steps (42%) done
+Resources before job selection: {'_cores': 2, '_nodes': 9223372036854775804}
+Ready jobs (3)
+Selected jobs (0)
+Resources after job selection: {'_cores': 2, '_nodes': 9223372036854775804}
+Completion of job ['qualimap'] reported to scheduler.
+jobs registered as running before removal {align_paired, dupradar, qualimap}
+[Mon Aug 19 00:54:00 2024]
+Finished job 57.
+30 of 69 steps (43%) done
+Resources before job selection: {'_cores': 8, '_nodes': 9223372036854775805}
+Ready jobs (3)
+Selected jobs (1)
+Resources after job selection: {'_cores': 0, '_nodes': 9223372036854775804}
+Execute 1 jobs...
+
+[Mon Aug 19 00:54:00 2024]
+Job 28: RAP1_REP3_treatment: Sorting and indexing alignments
+Reason: Input files updated by another job: results/align/bam_original/RAP1_REP3_treatment/RAP1_REP3_treatment.Aligned.out.bam
+
+Completion of job ['dupradar'] reported to scheduler.
+jobs registered as running before removal {align_paired, samtools_process, dupradar}
+[Mon Aug 19 00:54:00 2024]
+Finished job 63.
+31 of 69 steps (45%) done
+Resources before job selection: {'_cores': 4, '_nodes': 9223372036854775805}
+Ready jobs (2)
+Select jobs to execute...
+Selected jobs (0)
+Resources after job selection: {'_cores': 4, '_nodes': 9223372036854775805}
+Completion of job ['samtools_process'] reported to scheduler.
+jobs registered as running before removal {align_paired, samtools_process}
+[Mon Aug 19 00:54:00 2024]
+Finished job 28.
+32 of 69 steps (46%) done
+Resources before job selection: {'_cores': 12, '_nodes': 9223372036854775806}
+Ready jobs (3)
+Selected jobs (1)
+Resources after job selection: {'_cores': 0, '_nodes': 9223372036854775805}
+Execute 1 jobs...
+
+[Mon Aug 19 00:54:00 2024]
+Job 34: RAP1_REP3_treatment: Marking duplicate reads
+Reason: Input files updated by another job: results/align/bam_original/RAP1_REP3_treatment/RAP1_REP3_treatment.sorted.bam
+
+Completion of job ['picard_mark_duplicates'] reported to scheduler.
+jobs registered as running before removal {align_paired, picard_mark_duplicates}
+[Mon Aug 19 00:54:01 2024]
+Finished job 34.
+33 of 69 steps (48%) done
+Resources before job selection: {'_cores': 12, '_nodes': 9223372036854775806}
+Ready jobs (9)
+Select jobs to execute...
+Selected jobs (2)
+Resources after job selection: {'_cores': 0, '_nodes': 9223372036854775804}
+Execute 2 jobs...
+
+[Mon Aug 19 00:54:01 2024]
+Job 52: RAP1_REP3_treatment: Read counting relative to gene biotype
+Reason: Input files updated by another job: resources/annotation.filtered.gtf, results/align/bam_markup/RAP1_REP3_treatment/RAP1_REP3_treatment.markdup.sorted.bam
+
+
+[Mon Aug 19 00:54:01 2024]
+Job 58: RAP1_REP3_treatment: Running Qualimap
+Reason: Input files updated by another job: resources/annotation.filtered.gtf, results/align/bam_markup/RAP1_REP3_treatment/RAP1_REP3_treatment.markdup.sorted.bam
+
+Completion of job ['feature_counts'] reported to scheduler.
+jobs registered as running before removal {feature_counts, align_paired, qualimap}
+[Mon Aug 19 00:54:01 2024]
+Finished job 52.
+34 of 69 steps (49%) done
+Resources before job selection: {'_cores': 6, '_nodes': 9223372036854775805}
+Ready jobs (7)
+Select jobs to execute...
+Selected jobs (1)
+Resources after job selection: {'_cores': 0, '_nodes': 9223372036854775804}
+Execute 1 jobs...
+
+[Mon Aug 19 00:54:01 2024]
+Job 46: RAP1_REP3_treatment: Running Stringtie to assemble and quantify transcripts
+Reason: Input files updated by another job: resources/annotation.filtered.gtf, results/align/bam_markup/RAP1_REP3_treatment/RAP1_REP3_treatment.markdup.sorted.bam
+
+Completion of job ['stringtie'] reported to scheduler.
+jobs registered as running before removal {stringtie, align_paired, qualimap}
+[Mon Aug 19 00:54:01 2024]
+Finished job 46.
+35 of 69 steps (51%) done
+Resources before job selection: {'_cores': 6, '_nodes': 9223372036854775805}
+Ready jobs (6)
+Select jobs to execute...
+Selected jobs (3)
+Resources after job selection: {'_cores': 0, '_nodes': 9223372036854775802}
+Execute 3 jobs...
+
+[Mon Aug 19 00:54:01 2024]
+Job 40: RAP1_REP3_treatment: Running Samtools to mark duplicate reads
+Reason: Input files updated by another job: results/align/bam_markup/RAP1_REP3_treatment/RAP1_REP3_treatment.markdup.sorted.bam
+
+
+[Mon Aug 19 00:54:01 2024]
+Job 64: RAP1_REP3_treatment: Running dupRadar to evaluate technical and biological read duplication
+Reason: Input files updated by another job: resources/annotation.filtered.gtf, results/align/bam_markup/RAP1_REP3_treatment/RAP1_REP3_treatment.markdup.sorted.bam
+
+
+[Mon Aug 19 00:54:01 2024]
+Job 70: RAP1_REP3_treatment: Running BAM stat
+Reason: Input files updated by another job: results/align/bam_markup/RAP1_REP3_treatment/RAP1_REP3_treatment.markdup.sorted.bam
+
+Completion of job ['samtools_markdup_processing'] reported to scheduler.
+jobs registered as running before removal {dupradar, align_paired, bam_stat, qualimap, samtools_markdup_processing}
+[Mon Aug 19 00:54:01 2024]
+Finished job 40.
+36 of 69 steps (52%) done
+Resources before job selection: {'_cores': 1, '_nodes': 9223372036854775803}
+Ready jobs (3)
+Select jobs to execute...
+Selected jobs (1)
+Resources after job selection: {'_cores': 0, '_nodes': 9223372036854775802}
+Execute 1 jobs...
+
+[Mon Aug 19 00:54:01 2024]
+Job 77: RAP1_REP3_treatment: Running Infer experiment
+Reason: Input files updated by another job: results/align/bam_markup/RAP1_REP3_treatment/RAP1_REP3_treatment.markdup.sorted.bam
+
+Completion of job ['bam_stat'] reported to scheduler.
+jobs registered as running before removal {dupradar, align_paired, bam_stat, qualimap, infer_experiment}
+[Mon Aug 19 00:54:01 2024]
+Finished job 70.
+37 of 69 steps (54%) done
+Resources before job selection: {'_cores': 1, '_nodes': 9223372036854775803}
+Ready jobs (2)
+Select jobs to execute...
+Selected jobs (0)
+Resources after job selection: {'_cores': 1, '_nodes': 9223372036854775803}
+Completion of job ['infer_experiment'] reported to scheduler.
+jobs registered as running before removal {dupradar, align_paired, qualimap, infer_experiment}
+[Mon Aug 19 00:54:01 2024]
+Finished job 77.
+38 of 69 steps (55%) done
+Resources before job selection: {'_cores': 2, '_nodes': 9223372036854775804}
+Ready jobs (2)
+Selected jobs (0)
+Resources after job selection: {'_cores': 2, '_nodes': 9223372036854775804}
+Completion of job ['dupradar'] reported to scheduler.
+jobs registered as running before removal {dupradar, align_paired, qualimap}
+[Mon Aug 19 00:54:02 2024]
+Finished job 64.
+39 of 69 steps (57%) done
+Resources before job selection: {'_cores': 6, '_nodes': 9223372036854775805}
+Ready jobs (2)
+Selected jobs (0)
+Resources after job selection: {'_cores': 6, '_nodes': 9223372036854775805}
+Completion of job ['qualimap'] reported to scheduler.
+jobs registered as running before removal {align_paired, qualimap}
+[Mon Aug 19 00:54:02 2024]
+Finished job 58.
+40 of 69 steps (58%) done
+Resources before job selection: {'_cores': 12, '_nodes': 9223372036854775806}
+Ready jobs (2)
+Selected jobs (1)
+Resources after job selection: {'_cores': 4, '_nodes': 9223372036854775805}
+Execute 1 jobs...
+
+[Mon Aug 19 00:54:02 2024]
+Job 25: WT_REP3_control: Sorting and indexing alignments
+Reason: Input files updated by another job: results/align/bam_original/WT_REP3_control/WT_REP3_control.Aligned.out.bam
+
+Completion of job ['samtools_process'] reported to scheduler.
+jobs registered as running before removal {align_paired, samtools_process}
+[Mon Aug 19 00:54:03 2024]
+Finished job 25.
+41 of 69 steps (59%) done
+Resources before job selection: {'_cores': 12, '_nodes': 9223372036854775806}
+Ready jobs (2)
+Select jobs to execute...
+Selected jobs (1)
+Resources after job selection: {'_cores': 0, '_nodes': 9223372036854775805}
+Execute 1 jobs...
+
+[Mon Aug 19 00:54:03 2024]
+Job 31: WT_REP3_control: Marking duplicate reads
+Reason: Input files updated by another job: results/align/bam_original/WT_REP3_control/WT_REP3_control.sorted.bam
+
+Completion of job ['picard_mark_duplicates'] reported to scheduler.
+jobs registered as running before removal {align_paired, picard_mark_duplicates}
+[Mon Aug 19 00:54:04 2024]
+Finished job 31.
+42 of 69 steps (61%) done
+Resources before job selection: {'_cores': 12, '_nodes': 9223372036854775806}
+Ready jobs (8)
+Select jobs to execute...
+Selected jobs (2)
+Resources after job selection: {'_cores': 0, '_nodes': 9223372036854775804}
+Execute 2 jobs...
+
+[Mon Aug 19 00:54:04 2024]
+Job 55: WT_REP3_control: Running Qualimap
+Reason: Input files updated by another job: results/align/bam_markup/WT_REP3_control/WT_REP3_control.markdup.sorted.bam, resources/annotation.filtered.gtf
+
+
+[Mon Aug 19 00:54:04 2024]
+Job 49: WT_REP3_control: Read counting relative to gene biotype
+Reason: Input files updated by another job: results/align/bam_markup/WT_REP3_control/WT_REP3_control.markdup.sorted.bam, resources/annotation.filtered.gtf
+
+Completion of job ['feature_counts'] reported to scheduler.
+jobs registered as running before removal {qualimap, align_paired, feature_counts}
+[Mon Aug 19 00:54:04 2024]
+Finished job 49.
+43 of 69 steps (62%) done
+Resources before job selection: {'_cores': 6, '_nodes': 9223372036854775805}
+Ready jobs (6)
+Select jobs to execute...
+Selected jobs (1)
+Resources after job selection: {'_cores': 0, '_nodes': 9223372036854775804}
+Execute 1 jobs...
+
+[Mon Aug 19 00:54:04 2024]
+Job 43: WT_REP3_control: Running Stringtie to assemble and quantify transcripts
+Reason: Input files updated by another job: results/align/bam_markup/WT_REP3_control/WT_REP3_control.markdup.sorted.bam, resources/annotation.filtered.gtf
+
+Completion of job ['stringtie'] reported to scheduler.
+jobs registered as running before removal {qualimap, align_paired, stringtie}
+[Mon Aug 19 00:54:04 2024]
+Finished job 43.
+44 of 69 steps (64%) done
+Resources before job selection: {'_cores': 6, '_nodes': 9223372036854775805}
+Ready jobs (5)
+Select jobs to execute...
+Selected jobs (3)
+Resources after job selection: {'_cores': 0, '_nodes': 9223372036854775802}
+Execute 3 jobs...
+
+[Mon Aug 19 00:54:05 2024]
+Job 74: WT_REP3_control: Running Infer experiment
+Reason: Input files updated by another job: results/align/bam_markup/WT_REP3_control/WT_REP3_control.markdup.sorted.bam
+
+
+[Mon Aug 19 00:54:05 2024]
+Job 61: WT_REP3_control: Running dupRadar to evaluate technical and biological read duplication
+Reason: Input files updated by another job: results/align/bam_markup/WT_REP3_control/WT_REP3_control.markdup.sorted.bam, resources/annotation.filtered.gtf
+
+
+[Mon Aug 19 00:54:05 2024]
+Job 37: WT_REP3_control: Running Samtools to mark duplicate reads
+Reason: Input files updated by another job: results/align/bam_markup/WT_REP3_control/WT_REP3_control.markdup.sorted.bam
+
+Completion of job ['samtools_markdup_processing'] reported to scheduler.
+jobs registered as running before removal {infer_experiment, dupradar, align_paired, samtools_markdup_processing, qualimap}
+[Mon Aug 19 00:54:05 2024]
+Finished job 37.
+45 of 69 steps (65%) done
+Resources before job selection: {'_cores': 1, '_nodes': 9223372036854775803}
+Ready jobs (2)
+Select jobs to execute...
+Selected jobs (1)
+Resources after job selection: {'_cores': 0, '_nodes': 9223372036854775802}
+Execute 1 jobs...
+
+[Mon Aug 19 00:54:05 2024]
+Job 67: WT_REP3_control: Running BAM stat
+Reason: Input files updated by another job: results/align/bam_markup/WT_REP3_control/WT_REP3_control.markdup.sorted.bam
+
+Completion of job ['infer_experiment'] reported to scheduler.
+jobs registered as running before removal {infer_experiment, dupradar, align_paired, qualimap, bam_stat}
+[Mon Aug 19 00:54:05 2024]
+Finished job 74.
+46 of 69 steps (67%) done
+Resources before job selection: {'_cores': 1, '_nodes': 9223372036854775803}
+Ready jobs (1)
+Select jobs to execute...
+Using greedy selector because only single job has to be scheduled.
+Selected jobs (0)
+Resources after job selection: {'_cores': 1, '_nodes': 9223372036854775803}
+Completion of job ['bam_stat'] reported to scheduler.
+jobs registered as running before removal {dupradar, align_paired, qualimap, bam_stat}
+[Mon Aug 19 00:54:05 2024]
+Finished job 67.
+47 of 69 steps (68%) done
+Resources before job selection: {'_cores': 2, '_nodes': 9223372036854775804}
+Ready jobs (1)
+Using greedy selector because only single job has to be scheduled.
+Selected jobs (0)
+Resources after job selection: {'_cores': 2, '_nodes': 9223372036854775804}
+Completion of job ['qualimap'] reported to scheduler.
+jobs registered as running before removal {dupradar, align_paired, qualimap}
+[Mon Aug 19 00:54:05 2024]
+Finished job 55.
+48 of 69 steps (70%) done
+Resources before job selection: {'_cores': 8, '_nodes': 9223372036854775805}
+Ready jobs (1)
+Using greedy selector because only single job has to be scheduled.
+Selected jobs (1)
+Resources after job selection: {'_cores': 0, '_nodes': 9223372036854775804}
+Execute 1 jobs...
+
+[Mon Aug 19 00:54:05 2024]
+Job 24: WT_REP2_control: Sorting and indexing alignments
+Reason: Input files updated by another job: results/align/bam_original/WT_REP2_control/WT_REP2_control.Aligned.out.bam
+
+Completion of job ['dupradar'] reported to scheduler.
+jobs registered as running before removal {dupradar, align_paired, samtools_process}
+[Mon Aug 19 00:54:06 2024]
+Finished job 61.
+49 of 69 steps (71%) done
+Completion of job ['samtools_process'] reported to scheduler.
+jobs registered as running before removal {align_paired, samtools_process}
+[Mon Aug 19 00:54:06 2024]
+Finished job 24.
+50 of 69 steps (72%) done
+Resources before job selection: {'_cores': 12, '_nodes': 9223372036854775806}
+Ready jobs (1)
+Select jobs to execute...
+Using greedy selector because only single job has to be scheduled.
+Selected jobs (1)
+Resources after job selection: {'_cores': 0, '_nodes': 9223372036854775805}
+Execute 1 jobs...
+
+[Mon Aug 19 00:54:06 2024]
+Job 30: WT_REP2_control: Marking duplicate reads
+Reason: Input files updated by another job: results/align/bam_original/WT_REP2_control/WT_REP2_control.sorted.bam
+
+Completion of job ['picard_mark_duplicates'] reported to scheduler.
+jobs registered as running before removal {align_paired, picard_mark_duplicates}
+[Mon Aug 19 00:54:07 2024]
+Finished job 30.
+51 of 69 steps (74%) done
+Resources before job selection: {'_cores': 12, '_nodes': 9223372036854775806}
+Ready jobs (7)
+Select jobs to execute...
+Selected jobs (2)
+Resources after job selection: {'_cores': 0, '_nodes': 9223372036854775804}
+Execute 2 jobs...
+
+[Mon Aug 19 00:54:07 2024]
+Job 42: WT_REP2_control: Running Stringtie to assemble and quantify transcripts
+Reason: Input files updated by another job: results/align/bam_markup/WT_REP2_control/WT_REP2_control.markdup.sorted.bam, resources/annotation.filtered.gtf
+
+
+[Mon Aug 19 00:54:07 2024]
+Job 54: WT_REP2_control: Running Qualimap
+Reason: Input files updated by another job: results/align/bam_markup/WT_REP2_control/WT_REP2_control.markdup.sorted.bam, resources/annotation.filtered.gtf
+
+Completion of job ['stringtie'] reported to scheduler.
+jobs registered as running before removal {align_paired, stringtie, qualimap}
+[Mon Aug 19 00:54:07 2024]
+Finished job 42.
+52 of 69 steps (75%) done
+Resources before job selection: {'_cores': 6, '_nodes': 9223372036854775805}
+Ready jobs (5)
+Select jobs to execute...
+Selected jobs (1)
+Resources after job selection: {'_cores': 0, '_nodes': 9223372036854775804}
+Execute 1 jobs...
+
+[Mon Aug 19 00:54:07 2024]
+Job 48: WT_REP2_control: Read counting relative to gene biotype
+Reason: Input files updated by another job: results/align/bam_markup/WT_REP2_control/WT_REP2_control.markdup.sorted.bam, resources/annotation.filtered.gtf
+
+Completion of job ['feature_counts'] reported to scheduler.
+jobs registered as running before removal {feature_counts, align_paired, qualimap}
+[Mon Aug 19 00:54:07 2024]
+Finished job 48.
+53 of 69 steps (77%) done
+Resources before job selection: {'_cores': 6, '_nodes': 9223372036854775805}
+Ready jobs (4)
+Select jobs to execute...
+Selected jobs (3)
+Resources after job selection: {'_cores': 0, '_nodes': 9223372036854775802}
+Execute 3 jobs...
+
+[Mon Aug 19 00:54:07 2024]
+Job 36: WT_REP2_control: Running Samtools to mark duplicate reads
+Reason: Input files updated by another job: results/align/bam_markup/WT_REP2_control/WT_REP2_control.markdup.sorted.bam
+
+
+[Mon Aug 19 00:54:07 2024]
+Job 60: WT_REP2_control: Running dupRadar to evaluate technical and biological read duplication
+Reason: Input files updated by another job: results/align/bam_markup/WT_REP2_control/WT_REP2_control.markdup.sorted.bam, resources/annotation.filtered.gtf
+
+
+[Mon Aug 19 00:54:07 2024]
+Job 66: WT_REP2_control: Running BAM stat
+Reason: Input files updated by another job: results/align/bam_markup/WT_REP2_control/WT_REP2_control.markdup.sorted.bam
+
+Completion of job ['samtools_markdup_processing'] reported to scheduler.
+jobs registered as running before removal {bam_stat, align_paired, samtools_markdup_processing, dupradar, qualimap}
+[Mon Aug 19 00:54:07 2024]
+Finished job 36.
+54 of 69 steps (78%) done
+Resources before job selection: {'_cores': 1, '_nodes': 9223372036854775803}
+Ready jobs (1)
+Select jobs to execute...
+Using greedy selector because only single job has to be scheduled.
+Selected jobs (1)
+Resources after job selection: {'_cores': 0, '_nodes': 9223372036854775802}
+Execute 1 jobs...
+
+[Mon Aug 19 00:54:07 2024]
+Job 73: WT_REP2_control: Running Infer experiment
+Reason: Input files updated by another job: results/align/bam_markup/WT_REP2_control/WT_REP2_control.markdup.sorted.bam
+
+Completion of job ['bam_stat'] reported to scheduler.
+jobs registered as running before removal {bam_stat, align_paired, infer_experiment, dupradar, qualimap}
+[Mon Aug 19 00:54:07 2024]
+Finished job 66.
+55 of 69 steps (80%) done
+Completion of job ['infer_experiment'] reported to scheduler.
+jobs registered as running before removal {align_paired, infer_experiment, dupradar, qualimap}
+[Mon Aug 19 00:54:08 2024]
+Finished job 73.
+56 of 69 steps (81%) done
+Completion of job ['qualimap'] reported to scheduler.
+jobs registered as running before removal {align_paired, dupradar, qualimap}
+[Mon Aug 19 00:54:08 2024]
+Finished job 54.
+57 of 69 steps (83%) done
+Completion of job ['dupradar'] reported to scheduler.
+jobs registered as running before removal {align_paired, dupradar}
+[Mon Aug 19 00:54:08 2024]
+Finished job 60.
+58 of 69 steps (84%) done
+Completion of job ['align_paired'] reported to scheduler.
+jobs registered as running before removal {align_paired}
+[Mon Aug 19 00:54:27 2024]
+Finished job 13.
+59 of 69 steps (86%) done
+Resources before job selection: {'_cores': 24, '_nodes': 9223372036854775807}
+Ready jobs (1)
+Select jobs to execute...
+Using greedy selector because only single job has to be scheduled.
+Selected jobs (1)
+Resources after job selection: {'_cores': 16, '_nodes': 9223372036854775806}
+Execute 1 jobs...
+
+[Mon Aug 19 00:54:27 2024]
+Job 23: WT_REP1_control: Sorting and indexing alignments
+Reason: Input files updated by another job: results/align/bam_original/WT_REP1_control/WT_REP1_control.Aligned.out.bam
+
+Completion of job ['samtools_process'] reported to scheduler.
+jobs registered as running before removal {samtools_process}
+[Mon Aug 19 00:54:27 2024]
+Finished job 23.
+60 of 69 steps (87%) done
+Resources before job selection: {'_cores': 24, '_nodes': 9223372036854775807}
+Ready jobs (1)
+Select jobs to execute...
+Using greedy selector because only single job has to be scheduled.
+Selected jobs (1)
+Resources after job selection: {'_cores': 12, '_nodes': 9223372036854775806}
+Execute 1 jobs...
+
+[Mon Aug 19 00:54:27 2024]
+Job 29: WT_REP1_control: Marking duplicate reads
+Reason: Input files updated by another job: results/align/bam_original/WT_REP1_control/WT_REP1_control.sorted.bam
+
+Completion of job ['picard_mark_duplicates'] reported to scheduler.
+jobs registered as running before removal {picard_mark_duplicates}
+[Mon Aug 19 00:54:28 2024]
+Finished job 29.
+61 of 69 steps (88%) done
+Resources before job selection: {'_cores': 24, '_nodes': 9223372036854775807}
+Ready jobs (7)
+Select jobs to execute...
+Selected jobs (6)
+Resources after job selection: {'_cores': 0, '_nodes': 9223372036854775801}
+Execute 6 jobs...
+
+[Mon Aug 19 00:54:28 2024]
+Job 47: WT_REP1_control: Read counting relative to gene biotype
+Reason: Input files updated by another job: results/align/bam_markup/WT_REP1_control/WT_REP1_control.markdup.sorted.bam, resources/annotation.filtered.gtf
+
+
+[Mon Aug 19 00:54:28 2024]
+Job 53: WT_REP1_control: Running Qualimap
+Reason: Input files updated by another job: results/align/bam_markup/WT_REP1_control/WT_REP1_control.markdup.sorted.bam, resources/annotation.filtered.gtf
+
+
+[Mon Aug 19 00:54:28 2024]
+Job 35: WT_REP1_control: Running Samtools to mark duplicate reads
+Reason: Input files updated by another job: results/align/bam_markup/WT_REP1_control/WT_REP1_control.markdup.sorted.bam
+
+
+[Mon Aug 19 00:54:28 2024]
+Job 65: WT_REP1_control: Running BAM stat
+Reason: Input files updated by another job: results/align/bam_markup/WT_REP1_control/WT_REP1_control.markdup.sorted.bam
+
+
+[Mon Aug 19 00:54:28 2024]
+Job 59: WT_REP1_control: Running dupRadar to evaluate technical and biological read duplication
+Reason: Input files updated by another job: results/align/bam_markup/WT_REP1_control/WT_REP1_control.markdup.sorted.bam, resources/annotation.filtered.gtf
+
+
+[Mon Aug 19 00:54:28 2024]
+Job 41: WT_REP1_control: Running Stringtie to assemble and quantify transcripts
+Reason: Input files updated by another job: results/align/bam_markup/WT_REP1_control/WT_REP1_control.markdup.sorted.bam, resources/annotation.filtered.gtf
+
+Completion of job ['stringtie'] reported to scheduler.
+jobs registered as running before removal {dupradar, stringtie, feature_counts, qualimap, samtools_markdup_processing, bam_stat}
+[Mon Aug 19 00:54:28 2024]
+Finished job 41.
+62 of 69 steps (90%) done
+Resources before job selection: {'_cores': 6, '_nodes': 9223372036854775802}
+Ready jobs (1)
+Select jobs to execute...
+Using greedy selector because only single job has to be scheduled.
+Selected jobs (1)
+Resources after job selection: {'_cores': 5, '_nodes': 9223372036854775801}
+Execute 1 jobs...
+
+[Mon Aug 19 00:54:28 2024]
+Job 71: WT_REP1_control: Running Infer experiment
+Reason: Input files updated by another job: results/align/bam_markup/WT_REP1_control/WT_REP1_control.markdup.sorted.bam
+
+Completion of job ['samtools_markdup_processing'] reported to scheduler.
+jobs registered as running before removal {dupradar, feature_counts, qualimap, samtools_markdup_processing, bam_stat, infer_experiment}
+[Mon Aug 19 00:54:28 2024]
+Finished job 35.
+63 of 69 steps (91%) done
+Completion of job ['feature_counts'] reported to scheduler.
+jobs registered as running before removal {dupradar, feature_counts, qualimap, bam_stat, infer_experiment}
+[Mon Aug 19 00:54:28 2024]
+Finished job 47.
+64 of 69 steps (93%) done
+Completion of job ['bam_stat'] reported to scheduler.
+jobs registered as running before removal {dupradar, qualimap, bam_stat, infer_experiment}
+[Mon Aug 19 00:54:28 2024]
+Finished job 65.
+65 of 69 steps (94%) done
+Completion of job ['infer_experiment'] reported to scheduler.
+jobs registered as running before removal {dupradar, qualimap, infer_experiment}
+[Mon Aug 19 00:54:29 2024]
+Finished job 71.
+66 of 69 steps (96%) done
+Completion of job ['dupradar'] reported to scheduler.
+jobs registered as running before removal {dupradar, qualimap}
+[Mon Aug 19 00:54:29 2024]
+Finished job 59.
+67 of 69 steps (97%) done
+Completion of job ['qualimap'] reported to scheduler.
+jobs registered as running before removal {qualimap}
+[Mon Aug 19 00:54:29 2024]
+Finished job 53.
+68 of 69 steps (99%) done
+Resources before job selection: {'_cores': 24, '_nodes': 9223372036854775807}
+Ready jobs (1)
+Select jobs to execute...
+Using greedy selector because only single job has to be scheduled.
+Selected jobs (1)
+Resources after job selection: {'_cores': 23, '_nodes': 9223372036854775806}
+Execute 1 jobs...
+
+[Mon Aug 19 00:54:29 2024]
+localrule all:
+    input: results/fastqc/WT_REP1_control, results/fastqc/WT_REP2_control, results/fastqc/WT_REP3_control, results/fastqc/RAP1_REP1_treatment, results/fastqc/RAP1_REP2_treatment, results/fastqc/RAP1_REP3_treatment, results/trimmed/WT_REP1_control, results/trimmed/WT_REP2_control, results/trimmed/WT_REP3_control, results/trimmed/RAP1_REP1_treatment, results/trimmed/RAP1_REP2_treatment, results/trimmed/RAP1_REP3_treatment, results/align/bam_original/WT_REP1_control/WT_REP1_control.Aligned.out.bam, results/align/bam_original/WT_REP2_control/WT_REP2_control.Aligned.out.bam, results/align/bam_original/WT_REP3_control/WT_REP3_control.Aligned.out.bam, results/align/bam_original/RAP1_REP1_treatment/RAP1_REP1_treatment.Aligned.out.bam, results/align/bam_original/RAP1_REP2_treatment/RAP1_REP2_treatment.Aligned.out.bam, results/align/bam_original/RAP1_REP3_treatment/RAP1_REP3_treatment.Aligned.out.bam, results/align/bam_original/WT_REP1_control/WT_REP1_control.Aligned.toTranscriptome.out.bam, results/align/bam_original/WT_REP2_control/WT_REP2_control.Aligned.toTranscriptome.out.bam, results/align/bam_original/WT_REP3_control/WT_REP3_control.Aligned.toTranscriptome.out.bam, results/align/bam_original/RAP1_REP1_treatment/RAP1_REP1_treatment.Aligned.toTranscriptome.out.bam, results/align/bam_original/RAP1_REP2_treatment/RAP1_REP2_treatment.Aligned.toTranscriptome.out.bam, results/align/bam_original/RAP1_REP3_treatment/RAP1_REP3_treatment.Aligned.toTranscriptome.out.bam, results/align/bam_original/WT_REP1_control/WT_REP1_control.sorted.bam, results/align/bam_original/WT_REP2_control/WT_REP2_control.sorted.bam, results/align/bam_original/WT_REP3_control/WT_REP3_control.sorted.bam, results/align/bam_original/RAP1_REP1_treatment/RAP1_REP1_treatment.sorted.bam, results/align/bam_original/RAP1_REP2_treatment/RAP1_REP2_treatment.sorted.bam, results/align/bam_original/RAP1_REP3_treatment/RAP1_REP3_treatment.sorted.bam, results/align/bam_original/WT_REP1_control/WT_REP1_control.sorted.bam.bai, results/align/bam_original/WT_REP2_control/WT_REP2_control.sorted.bam.bai, results/align/bam_original/WT_REP3_control/WT_REP3_control.sorted.bam.bai, results/align/bam_original/RAP1_REP1_treatment/RAP1_REP1_treatment.sorted.bam.bai, results/align/bam_original/RAP1_REP2_treatment/RAP1_REP2_treatment.sorted.bam.bai, results/align/bam_original/RAP1_REP3_treatment/RAP1_REP3_treatment.sorted.bam.bai, results/align/bam_original/WT_REP1_control/WT_REP1_control.sorted.bam.stats, results/align/bam_original/WT_REP2_control/WT_REP2_control.sorted.bam.stats, results/align/bam_original/WT_REP3_control/WT_REP3_control.sorted.bam.stats, results/align/bam_original/RAP1_REP1_treatment/RAP1_REP1_treatment.sorted.bam.stats, results/align/bam_original/RAP1_REP2_treatment/RAP1_REP2_treatment.sorted.bam.stats, results/align/bam_original/RAP1_REP3_treatment/RAP1_REP3_treatment.sorted.bam.stats, results/align/bam_original/WT_REP1_control/WT_REP1_control.sorted.bam.flagstat, results/align/bam_original/WT_REP2_control/WT_REP2_control.sorted.bam.flagstat, results/align/bam_original/WT_REP3_control/WT_REP3_control.sorted.bam.flagstat, results/align/bam_original/RAP1_REP1_treatment/RAP1_REP1_treatment.sorted.bam.flagstat, results/align/bam_original/RAP1_REP2_treatment/RAP1_REP2_treatment.sorted.bam.flagstat, results/align/bam_original/RAP1_REP3_treatment/RAP1_REP3_treatment.sorted.bam.flagstat, results/align/bam_original/WT_REP1_control/WT_REP1_control.sorted.bam.idxstats, results/align/bam_original/WT_REP2_control/WT_REP2_control.sorted.bam.idxstats, results/align/bam_original/WT_REP3_control/WT_REP3_control.sorted.bam.idxstats, results/align/bam_original/RAP1_REP1_treatment/RAP1_REP1_treatment.sorted.bam.idxstats, results/align/bam_original/RAP1_REP2_treatment/RAP1_REP2_treatment.sorted.bam.idxstats, results/align/bam_original/RAP1_REP3_treatment/RAP1_REP3_treatment.sorted.bam.idxstats, results/align/bam_markup/WT_REP1_control/WT_REP1_control.markdup.sorted.bam, results/align/bam_markup/WT_REP2_control/WT_REP2_control.markdup.sorted.bam, results/align/bam_markup/WT_REP3_control/WT_REP3_control.markdup.sorted.bam, results/align/bam_markup/RAP1_REP1_treatment/RAP1_REP1_treatment.markdup.sorted.bam, results/align/bam_markup/RAP1_REP2_treatment/RAP1_REP2_treatment.markdup.sorted.bam, results/align/bam_markup/RAP1_REP3_treatment/RAP1_REP3_treatment.markdup.sorted.bam, results/align/bam_markup/WT_REP1_control/WT_REP1_control.markdup.sorted.MarkDuplicates.metrics.txt, results/align/bam_markup/WT_REP2_control/WT_REP2_control.markdup.sorted.MarkDuplicates.metrics.txt, results/align/bam_markup/WT_REP3_control/WT_REP3_control.markdup.sorted.MarkDuplicates.metrics.txt, results/align/bam_markup/RAP1_REP1_treatment/RAP1_REP1_treatment.markdup.sorted.MarkDuplicates.metrics.txt, results/align/bam_markup/RAP1_REP2_treatment/RAP1_REP2_treatment.markdup.sorted.MarkDuplicates.metrics.txt, results/align/bam_markup/RAP1_REP3_treatment/RAP1_REP3_treatment.markdup.sorted.MarkDuplicates.metrics.txt, results/align/bam_markup/WT_REP1_control/WT_REP1_control.markdup.sorted.bam.bai, results/align/bam_markup/WT_REP2_control/WT_REP2_control.markdup.sorted.bam.bai, results/align/bam_markup/WT_REP3_control/WT_REP3_control.markdup.sorted.bam.bai, results/align/bam_markup/RAP1_REP1_treatment/RAP1_REP1_treatment.markdup.sorted.bam.bai, results/align/bam_markup/RAP1_REP2_treatment/RAP1_REP2_treatment.markdup.sorted.bam.bai, results/align/bam_markup/RAP1_REP3_treatment/RAP1_REP3_treatment.markdup.sorted.bam.bai, results/align/bam_markup/WT_REP1_control/WT_REP1_control.markdup.sorted.bam.stats, results/align/bam_markup/WT_REP2_control/WT_REP2_control.markdup.sorted.bam.stats, results/align/bam_markup/WT_REP3_control/WT_REP3_control.markdup.sorted.bam.stats, results/align/bam_markup/RAP1_REP1_treatment/RAP1_REP1_treatment.markdup.sorted.bam.stats, results/align/bam_markup/RAP1_REP2_treatment/RAP1_REP2_treatment.markdup.sorted.bam.stats, results/align/bam_markup/RAP1_REP3_treatment/RAP1_REP3_treatment.markdup.sorted.bam.stats, results/align/bam_markup/WT_REP1_control/WT_REP1_control.markdup.sorted.bam.flagstat, results/align/bam_markup/WT_REP2_control/WT_REP2_control.markdup.sorted.bam.flagstat, results/align/bam_markup/WT_REP3_control/WT_REP3_control.markdup.sorted.bam.flagstat, results/align/bam_markup/RAP1_REP1_treatment/RAP1_REP1_treatment.markdup.sorted.bam.flagstat, results/align/bam_markup/RAP1_REP2_treatment/RAP1_REP2_treatment.markdup.sorted.bam.flagstat, results/align/bam_markup/RAP1_REP3_treatment/RAP1_REP3_treatment.markdup.sorted.bam.flagstat, results/align/bam_markup/WT_REP1_control/WT_REP1_control.markdup.sorted.bam.idxstats, results/align/bam_markup/WT_REP2_control/WT_REP2_control.markdup.sorted.bam.idxstats, results/align/bam_markup/WT_REP3_control/WT_REP3_control.markdup.sorted.bam.idxstats, results/align/bam_markup/RAP1_REP1_treatment/RAP1_REP1_treatment.markdup.sorted.bam.idxstats, results/align/bam_markup/RAP1_REP2_treatment/RAP1_REP2_treatment.markdup.sorted.bam.idxstats, results/align/bam_markup/RAP1_REP3_treatment/RAP1_REP3_treatment.markdup.sorted.bam.idxstats, results/stringtie/WT_REP1_control/WT_REP1_control.transcripts.gtf, results/stringtie/WT_REP2_control/WT_REP2_control.transcripts.gtf, results/stringtie/WT_REP3_control/WT_REP3_control.transcripts.gtf, results/stringtie/RAP1_REP1_treatment/RAP1_REP1_treatment.transcripts.gtf, results/stringtie/RAP1_REP2_treatment/RAP1_REP2_treatment.transcripts.gtf, results/stringtie/RAP1_REP3_treatment/RAP1_REP3_treatment.transcripts.gtf, results/stringtie/WT_REP1_control/WT_REP1_control.gene.abundance.txt, results/stringtie/WT_REP2_control/WT_REP2_control.gene.abundance.txt, results/stringtie/WT_REP3_control/WT_REP3_control.gene.abundance.txt, results/stringtie/RAP1_REP1_treatment/RAP1_REP1_treatment.gene.abundance.txt, results/stringtie/RAP1_REP2_treatment/RAP1_REP2_treatment.gene.abundance.txt, results/stringtie/RAP1_REP3_treatment/RAP1_REP3_treatment.gene.abundance.txt, results/stringtie/WT_REP1_control/WT_REP1_control.coverage.gtf, results/stringtie/WT_REP2_control/WT_REP2_control.coverage.gtf, results/stringtie/WT_REP3_control/WT_REP3_control.coverage.gtf, results/stringtie/RAP1_REP1_treatment/RAP1_REP1_treatment.coverage.gtf, results/stringtie/RAP1_REP2_treatment/RAP1_REP2_treatment.coverage.gtf, results/stringtie/RAP1_REP3_treatment/RAP1_REP3_treatment.coverage.gtf, results/stringtie/WT_REP1_control/WT_REP1_control.ballgown, results/stringtie/WT_REP2_control/WT_REP2_control.ballgown, results/stringtie/WT_REP3_control/WT_REP3_control.ballgown, results/stringtie/RAP1_REP1_treatment/RAP1_REP1_treatment.ballgown, results/stringtie/RAP1_REP2_treatment/RAP1_REP2_treatment.ballgown, results/stringtie/RAP1_REP3_treatment/RAP1_REP3_treatment.ballgown, results/feature_counts/WT_REP1_control/WT_REP1_control.featurecounts.txt, results/feature_counts/WT_REP2_control/WT_REP2_control.featurecounts.txt, results/feature_counts/WT_REP3_control/WT_REP3_control.featurecounts.txt, results/feature_counts/RAP1_REP1_treatment/RAP1_REP1_treatment.featurecounts.txt, results/feature_counts/RAP1_REP2_treatment/RAP1_REP2_treatment.featurecounts.txt, results/feature_counts/RAP1_REP3_treatment/RAP1_REP3_treatment.featurecounts.txt, results/feature_counts/WT_REP1_control/WT_REP1_control.featurecounts.txt.summary, results/feature_counts/WT_REP2_control/WT_REP2_control.featurecounts.txt.summary, results/feature_counts/WT_REP3_control/WT_REP3_control.featurecounts.txt.summary, results/feature_counts/RAP1_REP1_treatment/RAP1_REP1_treatment.featurecounts.txt.summary, results/feature_counts/RAP1_REP2_treatment/RAP1_REP2_treatment.featurecounts.txt.summary, results/feature_counts/RAP1_REP3_treatment/RAP1_REP3_treatment.featurecounts.txt.summary, results/feature_counts/WT_REP1_control/WT_REP1_control.biotype_counts_rrna_mqc.tsv, results/feature_counts/WT_REP2_control/WT_REP2_control.biotype_counts_rrna_mqc.tsv, results/feature_counts/WT_REP3_control/WT_REP3_control.biotype_counts_rrna_mqc.tsv, results/feature_counts/RAP1_REP1_treatment/RAP1_REP1_treatment.biotype_counts_rrna_mqc.tsv, results/feature_counts/RAP1_REP2_treatment/RAP1_REP2_treatment.biotype_counts_rrna_mqc.tsv, results/feature_counts/RAP1_REP3_treatment/RAP1_REP3_treatment.biotype_counts_rrna_mqc.tsv, results/qualimap/WT_REP1_control, results/qualimap/WT_REP2_control, results/qualimap/WT_REP3_control, results/qualimap/RAP1_REP1_treatment, results/qualimap/RAP1_REP2_treatment, results/qualimap/RAP1_REP3_treatment, results/dupradar/WT_REP1_control, results/dupradar/WT_REP2_control, results/dupradar/WT_REP3_control, results/dupradar/RAP1_REP1_treatment, results/dupradar/RAP1_REP2_treatment, results/dupradar/RAP1_REP3_treatment, results/rseqc/bam_stat/WT_REP1_control/WT_REP1_control.bam_stat.txt, results/rseqc/bam_stat/WT_REP2_control/WT_REP2_control.bam_stat.txt, results/rseqc/bam_stat/WT_REP3_control/WT_REP3_control.bam_stat.txt, results/rseqc/bam_stat/RAP1_REP1_treatment/RAP1_REP1_treatment.bam_stat.txt, results/rseqc/bam_stat/RAP1_REP2_treatment/RAP1_REP2_treatment.bam_stat.txt, results/rseqc/bam_stat/RAP1_REP3_treatment/RAP1_REP3_treatment.bam_stat.txt, results/rseqc/infer_experiment/WT_REP1_control/WT_REP1_control.infer_experiment.txt, results/rseqc/infer_experiment/WT_REP2_control/WT_REP2_control.infer_experiment.txt, results/rseqc/infer_experiment/WT_REP3_control/WT_REP3_control.infer_experiment.txt, results/rseqc/infer_experiment/RAP1_REP1_treatment/RAP1_REP1_treatment.infer_experiment.txt, results/rseqc/infer_experiment/RAP1_REP2_treatment/RAP1_REP2_treatment.infer_experiment.txt, results/rseqc/infer_experiment/RAP1_REP3_treatment/RAP1_REP3_treatment.infer_experiment.txt
+    jobid: 0
+    reason: Input files updated by another job: results/stringtie/WT_REP3_control/WT_REP3_control.transcripts.gtf, results/rseqc/bam_stat/RAP1_REP1_treatment/RAP1_REP1_treatment.bam_stat.txt, results/align/bam_original/RAP1_REP2_treatment/RAP1_REP2_treatment.sorted.bam.idxstats, results/rseqc/bam_stat/WT_REP1_control/WT_REP1_control.bam_stat.txt, results/stringtie/RAP1_REP2_treatment/RAP1_REP2_treatment.gene.abundance.txt, results/align/bam_markup/RAP1_REP3_treatment/RAP1_REP3_treatment.markdup.sorted.bam.bai, results/align/bam_original/WT_REP2_control/WT_REP2_control.sorted.bam.idxstats, results/align/bam_original/WT_REP2_control/WT_REP2_control.Aligned.toTranscriptome.out.bam, results/feature_counts/WT_REP3_control/WT_REP3_control.featurecounts.txt.summary, results/stringtie/RAP1_REP2_treatment/RAP1_REP2_treatment.coverage.gtf, results/align/bam_original/WT_REP1_control/WT_REP1_control.Aligned.toTranscriptome.out.bam, results/align/bam_markup/RAP1_REP3_treatment/RAP1_REP3_treatment.markdup.sorted.bam, results/fastqc/WT_REP1_control, results/align/bam_original/RAP1_REP2_treatment/RAP1_REP2_treatment.Aligned.out.bam, results/stringtie/RAP1_REP2_treatment/RAP1_REP2_treatment.ballgown, results/stringtie/RAP1_REP1_treatment/RAP1_REP1_treatment.ballgown, results/stringtie/RAP1_REP3_treatment/RAP1_REP3_treatment.gene.abundance.txt, results/align/bam_original/RAP1_REP2_treatment/RAP1_REP2_treatment.sorted.bam.flagstat, results/rseqc/bam_stat/WT_REP3_control/WT_REP3_control.bam_stat.txt, results/align/bam_original/WT_REP2_control/WT_REP2_control.sorted.bam.bai, results/align/bam_original/RAP1_REP2_treatment/RAP1_REP2_treatment.sorted.bam, results/stringtie/RAP1_REP1_treatment/RAP1_REP1_treatment.transcripts.gtf, results/align/bam_markup/WT_REP2_control/WT_REP2_control.markdup.sorted.bam, results/feature_counts/WT_REP2_control/WT_REP2_control.featurecounts.txt.summary, results/feature_counts/WT_REP1_control/WT_REP1_control.biotype_counts_rrna_mqc.tsv, results/feature_counts/RAP1_REP2_treatment/RAP1_REP2_treatment.biotype_counts_rrna_mqc.tsv, results/stringtie/WT_REP2_control/WT_REP2_control.gene.abundance.txt, results/fastqc/RAP1_REP1_treatment, results/align/bam_original/RAP1_REP1_treatment/RAP1_REP1_treatment.sorted.bam.idxstats, results/align/bam_original/RAP1_REP1_treatment/RAP1_REP1_treatment.sorted.bam, results/feature_counts/RAP1_REP1_treatment/RAP1_REP1_treatment.featurecounts.txt, results/align/bam_markup/RAP1_REP2_treatment/RAP1_REP2_treatment.markdup.sorted.bam.idxstats, results/feature_counts/RAP1_REP1_treatment/RAP1_REP1_treatment.biotype_counts_rrna_mqc.tsv, results/align/bam_markup/WT_REP3_control/WT_REP3_control.markdup.sorted.bam, results/align/bam_markup/WT_REP1_control/WT_REP1_control.markdup.sorted.bam.flagstat, results/stringtie/WT_REP1_control/WT_REP1_control.gene.abundance.txt, results/align/bam_markup/WT_REP3_control/WT_REP3_control.markdup.sorted.bam.flagstat, results/align/bam_original/RAP1_REP3_treatment/RAP1_REP3_treatment.Aligned.out.bam, results/align/bam_original/WT_REP1_control/WT_REP1_control.sorted.bam.idxstats, results/align/bam_markup/RAP1_REP2_treatment/RAP1_REP2_treatment.markdup.sorted.bam.flagstat, results/rseqc/infer_experiment/WT_REP1_control/WT_REP1_control.infer_experiment.txt, results/align/bam_markup/RAP1_REP1_treatment/RAP1_REP1_treatment.markdup.sorted.bam, results/feature_counts/WT_REP3_control/WT_REP3_control.biotype_counts_rrna_mqc.tsv, results/align/bam_original/WT_REP3_control/WT_REP3_control.sorted.bam, results/fastqc/WT_REP2_control, results/align/bam_markup/RAP1_REP2_treatment/RAP1_REP2_treatment.markdup.sorted.bam.stats, results/dupradar/WT_REP3_control, results/align/bam_original/WT_REP2_control/WT_REP2_control.sorted.bam.stats, results/feature_counts/RAP1_REP1_treatment/RAP1_REP1_treatment.featurecounts.txt.summary, results/align/bam_original/RAP1_REP2_treatment/RAP1_REP2_treatment.sorted.bam.bai, results/stringtie/WT_REP1_control/WT_REP1_control.ballgown, results/align/bam_original/RAP1_REP1_treatment/RAP1_REP1_treatment.sorted.bam.flagstat, results/align/bam_markup/RAP1_REP3_treatment/RAP1_REP3_treatment.markdup.sorted.bam.flagstat, results/qualimap/WT_REP3_control, results/rseqc/infer_experiment/WT_REP3_control/WT_REP3_control.infer_experiment.txt, results/align/bam_original/WT_REP3_control/WT_REP3_control.Aligned.toTranscriptome.out.bam, results/stringtie/WT_REP1_control/WT_REP1_control.transcripts.gtf, results/align/bam_original/RAP1_REP3_treatment/RAP1_REP3_treatment.sorted.bam.bai, results/align/bam_markup/WT_REP2_control/WT_REP2_control.markdup.sorted.bam.idxstats, results/align/bam_markup/WT_REP2_control/WT_REP2_control.markdup.sorted.MarkDuplicates.metrics.txt, results/feature_counts/WT_REP2_control/WT_REP2_control.biotype_counts_rrna_mqc.tsv, results/align/bam_original/RAP1_REP2_treatment/RAP1_REP2_treatment.sorted.bam.stats, results/stringtie/WT_REP2_control/WT_REP2_control.ballgown, results/align/bam_markup/RAP1_REP1_treatment/RAP1_REP1_treatment.markdup.sorted.bam.bai, results/feature_counts/RAP1_REP3_treatment/RAP1_REP3_treatment.biotype_counts_rrna_mqc.tsv, results/qualimap/WT_REP2_control, results/rseqc/infer_experiment/RAP1_REP1_treatment/RAP1_REP1_treatment.infer_experiment.txt, results/align/bam_markup/RAP1_REP3_treatment/RAP1_REP3_treatment.markdup.sorted.bam.idxstats, results/fastqc/WT_REP3_control, results/align/bam_markup/WT_REP2_control/WT_REP2_control.markdup.sorted.bam.bai, results/align/bam_markup/WT_REP3_control/WT_REP3_control.markdup.sorted.bam.stats, results/align/bam_markup/WT_REP2_control/WT_REP2_control.markdup.sorted.bam.flagstat, results/rseqc/bam_stat/RAP1_REP3_treatment/RAP1_REP3_treatment.bam_stat.txt, results/align/bam_original/WT_REP1_control/WT_REP1_control.sorted.bam.bai, results/align/bam_original/WT_REP1_control/WT_REP1_control.sorted.bam.flagstat, results/feature_counts/RAP1_REP2_treatment/RAP1_REP2_treatment.featurecounts.txt, results/qualimap/RAP1_REP1_treatment, results/feature_counts/WT_REP1_control/WT_REP1_control.featurecounts.txt.summary, results/align/bam_markup/WT_REP3_control/WT_REP3_control.markdup.sorted.MarkDuplicates.metrics.txt, results/align/bam_markup/RAP1_REP3_treatment/RAP1_REP3_treatment.markdup.sorted.MarkDuplicates.metrics.txt, results/qualimap/RAP1_REP3_treatment, results/feature_counts/WT_REP3_control/WT_REP3_control.featurecounts.txt, results/align/bam_original/RAP1_REP3_treatment/RAP1_REP3_treatment.Aligned.toTranscriptome.out.bam, results/stringtie/RAP1_REP3_treatment/RAP1_REP3_treatment.coverage.gtf, results/stringtie/RAP1_REP1_treatment/RAP1_REP1_treatment.gene.abundance.txt, results/align/bam_original/WT_REP2_control/WT_REP2_control.Aligned.out.bam, results/stringtie/RAP1_REP3_treatment/RAP1_REP3_treatment.transcripts.gtf, results/feature_counts/WT_REP1_control/WT_REP1_control.featurecounts.txt, results/align/bam_original/RAP1_REP3_treatment/RAP1_REP3_treatment.sorted.bam.idxstats, results/stringtie/WT_REP1_control/WT_REP1_control.coverage.gtf, results/align/bam_markup/WT_REP3_control/WT_REP3_control.markdup.sorted.bam.bai, results/rseqc/infer_experiment/RAP1_REP2_treatment/RAP1_REP2_treatment.infer_experiment.txt, results/stringtie/WT_REP3_control/WT_REP3_control.ballgown, results/align/bam_original/RAP1_REP1_treatment/RAP1_REP1_treatment.sorted.bam.bai, results/align/bam_markup/RAP1_REP2_treatment/RAP1_REP2_treatment.markdup.sorted.MarkDuplicates.metrics.txt, results/stringtie/WT_REP2_control/WT_REP2_control.coverage.gtf, results/align/bam_original/WT_REP3_control/WT_REP3_control.sorted.bam.bai, results/align/bam_markup/WT_REP2_control/WT_REP2_control.markdup.sorted.bam.stats, results/rseqc/bam_stat/WT_REP2_control/WT_REP2_control.bam_stat.txt, results/rseqc/infer_experiment/WT_REP2_control/WT_REP2_control.infer_experiment.txt, results/align/bam_original/WT_REP2_control/WT_REP2_control.sorted.bam, results/dupradar/RAP1_REP3_treatment, results/align/bam_original/WT_REP2_control/WT_REP2_control.sorted.bam.flagstat, results/align/bam_markup/RAP1_REP1_treatment/RAP1_REP1_treatment.markdup.sorted.bam.stats, results/align/bam_original/RAP1_REP3_treatment/RAP1_REP3_treatment.sorted.bam, results/rseqc/infer_experiment/RAP1_REP3_treatment/RAP1_REP3_treatment.infer_experiment.txt, results/align/bam_original/WT_REP1_control/WT_REP1_control.sorted.bam, results/align/bam_original/RAP1_REP3_treatment/RAP1_REP3_treatment.sorted.bam.stats, results/align/bam_markup/RAP1_REP1_treatment/RAP1_REP1_treatment.markdup.sorted.bam.idxstats, results/feature_counts/RAP1_REP2_treatment/RAP1_REP2_treatment.featurecounts.txt.summary, results/align/bam_original/WT_REP3_control/WT_REP3_control.sorted.bam.flagstat, results/align/bam_original/WT_REP3_control/WT_REP3_control.sorted.bam.stats, results/align/bam_markup/WT_REP1_control/WT_REP1_control.markdup.sorted.MarkDuplicates.metrics.txt, results/align/bam_original/RAP1_REP1_treatment/RAP1_REP1_treatment.sorted.bam.stats, results/align/bam_markup/RAP1_REP2_treatment/RAP1_REP2_treatment.markdup.sorted.bam.bai, results/align/bam_original/RAP1_REP1_treatment/RAP1_REP1_treatment.Aligned.toTranscriptome.out.bam, results/stringtie/RAP1_REP1_treatment/RAP1_REP1_treatment.coverage.gtf, results/align/bam_markup/RAP1_REP1_treatment/RAP1_REP1_treatment.markdup.sorted.MarkDuplicates.metrics.txt, results/fastqc/RAP1_REP3_treatment, results/align/bam_markup/WT_REP3_control/WT_REP3_control.markdup.sorted.bam.idxstats, results/stringtie/WT_REP2_control/WT_REP2_control.transcripts.gtf, results/dupradar/RAP1_REP1_treatment, results/align/bam_markup/WT_REP1_control/WT_REP1_control.markdup.sorted.bam.bai, results/rseqc/bam_stat/RAP1_REP2_treatment/RAP1_REP2_treatment.bam_stat.txt, results/fastqc/RAP1_REP2_treatment, results/align/bam_markup/RAP1_REP1_treatment/RAP1_REP1_treatment.markdup.sorted.bam.flagstat, results/align/bam_original/RAP1_REP3_treatment/RAP1_REP3_treatment.sorted.bam.flagstat, results/stringtie/WT_REP3_control/WT_REP3_control.coverage.gtf, results/align/bam_original/RAP1_REP2_treatment/RAP1_REP2_treatment.Aligned.toTranscriptome.out.bam, results/stringtie/RAP1_REP2_treatment/RAP1_REP2_treatment.transcripts.gtf, results/align/bam_original/WT_REP1_control/WT_REP1_control.sorted.bam.stats, results/dupradar/RAP1_REP2_treatment, results/feature_counts/RAP1_REP3_treatment/RAP1_REP3_treatment.featurecounts.txt, results/dupradar/WT_REP2_control, results/stringtie/WT_REP3_control/WT_REP3_control.gene.abundance.txt, results/align/bam_markup/WT_REP1_control/WT_REP1_control.markdup.sorted.bam.idxstats, results/align/bam_markup/WT_REP1_control/WT_REP1_control.markdup.sorted.bam, results/dupradar/WT_REP1_control, results/qualimap/WT_REP1_control, results/align/bam_original/WT_REP3_control/WT_REP3_control.Aligned.out.bam, results/align/bam_original/WT_REP3_control/WT_REP3_control.sorted.bam.idxstats, results/qualimap/RAP1_REP2_treatment, results/align/bam_markup/RAP1_REP2_treatment/RAP1_REP2_treatment.markdup.sorted.bam, results/align/bam_markup/RAP1_REP3_treatment/RAP1_REP3_treatment.markdup.sorted.bam.stats, results/feature_counts/RAP1_REP3_treatment/RAP1_REP3_treatment.featurecounts.txt.summary, results/stringtie/RAP1_REP3_treatment/RAP1_REP3_treatment.ballgown, results/align/bam_markup/WT_REP1_control/WT_REP1_control.markdup.sorted.bam.stats, results/align/bam_original/WT_REP1_control/WT_REP1_control.Aligned.out.bam, results/align/bam_original/RAP1_REP1_treatment/RAP1_REP1_treatment.Aligned.out.bam, results/feature_counts/WT_REP2_control/WT_REP2_control.featurecounts.txt
+    resources: tmpdir=/tmp
+
+Completion of job ['all'] reported to scheduler.
+jobs registered as running before removal {all}
+[Mon Aug 19 00:54:29 2024]
+Finished job 0.
+69 of 69 steps (100%) done
+Complete log: .snakemake/log/2024-08-19T005232.853422.snakemake.log
+unlocking
+removing lock
+removing lock
+removed all locks

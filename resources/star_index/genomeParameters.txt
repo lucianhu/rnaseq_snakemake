@@ -1,0 +1,19 @@
+### /home/lucianhu/micromamba/envs/rna_snakemake/bin/STAR-avx2   --runMode genomeGenerate      --runThreadN 12   --genomeDir resources/star_index   --genomeFastaFiles resources/genome.fa      --genomeSAindexNbases 8   --limitGenomeGenerateRAM 77209411328   --sjdbGTFfile resources/annotation.filtered.gtf
+### GstrandBit 32
+versionGenome	2.7.4a
+genomeType	Full
+genomeFastaFiles	resources/genome.fa 
+genomeSAindexNbases	8
+genomeChrBinNbits	18
+genomeSAsparseD	1
+genomeTransformType	None
+genomeTransformVCF	-
+sjdbOverhang	100
+sjdbFileChrStartEnd	- 
+sjdbGTFfile	resources/annotation.filtered.gtf
+sjdbGTFchrPrefix	-
+sjdbGTFfeatureExon	exon
+sjdbGTFtagExonParentTranscript	transcript_id
+sjdbGTFtagExonParentGene	gene_id
+sjdbInsertSave	Basic
+genomeFileSizes	263149 1907552

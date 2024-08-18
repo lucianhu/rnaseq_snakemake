@@ -1,0 +1,9 @@
+Input bam      (Arg 1): results/align/bam_markup/RAP1_REP2_treatment/RAP1_REP2_treatment.markdup.sorted.bam
+Input gtf      (Arg 2): resources/annotation.filtered.gtf
+Strandness     (Arg 3): reverse
+paired/single  (Arg 4): single
+Nb threads     (Arg 5): 4
+R package loc. (Arg 6): single
+Output basename       : results/dupradar/RAP1_REP2_treatment
+Loading required package: dupRadar
+Loading required package: parallel
